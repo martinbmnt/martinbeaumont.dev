@@ -4,7 +4,7 @@
     "email": "hello@martinbeaumont.dev",
     "url": "https://martinbeaumont.dev"
   },
-  "name": "@martinbmnt/astro-starter",
+  "name": "@martinbmnt/martinbeaumont.dev",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -13,8 +13,8 @@
     "preview": "astro preview",
     "format": "prettier -w .",
     "lint:a11y": "start-test 3000 lint:a11y:local",
-    "lint:a11y:local": "pa11y-ci --sitemap http://localhost:3000/sitemap-0.xml --sitemap-find https://site.url --sitemap-replace http://localhost:3000",
-    "lint:a11y:remote": "pa11y-ci --sitemap 'https://site.url/sitemap-index.xml'",
+    "lint:a11y:local": "pa11y-ci --sitemap http://localhost:3000/sitemap-0.xml --sitemap-find https://martinbeaumont.dev --sitemap-replace http://localhost:3000",
+    "lint:a11y:remote": "pa11y-ci --sitemap 'https://martinbeaumont.dev/sitemap-index.xml'",
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "devDependencies": {

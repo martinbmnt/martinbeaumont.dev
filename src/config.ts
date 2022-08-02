@@ -1,6 +1,6 @@
 export const SITE = {
-  title: 'My site',
-  description: 'My site description',
+  title: 'Martin Beaumont',
+  description: 'Je créé des sites Web rapides, adaptés à tous les écrans (responsive), au référencement optimisé (SEO) et accessibles (a11y). Tout ça à Laval (53) !',
   language: 'fr_FR',
   color: '#E4DCCF',
 };
@@ -10,11 +10,9 @@ export const OPEN_GRAPH = {
     src: null,
     alt: null,
   },
-  twitter: 'twitterusername',
+  twitter: 'martinbmnt',
 };
 
 export const NAVIGATION = [
   { name: 'Accueil', link: '' },
-  { name: 'Présentation', link: 'presentation' },
-  { name: 'Contact', link: 'contact' },
 ];
