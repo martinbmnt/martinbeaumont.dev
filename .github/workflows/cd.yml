@@ -1,0 +1,33 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Tools & Dependencies
+        uses: ./.github/actions/install
+        
+      - name: Build site
+        run: yarn build --silent
+        
+      - name: Deploy
+        env:
+          host: ${{ secrets.DEPLOY_HOST_DEV }}
+          host_port: ${{ secrets.DEPLOY_HOST_PORT_DEV || 22 }}
+          path: ${{ secrets.DEPLOY_PATH_DEV }}
+        run: |
+          echo "${{ secrets.DEPLOY_KEY_DEV }}" > deploy_key
+          chmod 600 ./deploy_key
+          cd dist
+          rsync -chaqz --delete \
+            -e 'ssh -p ${{ env.host_port }} -i ../deploy_key -o StrictHostKeyChecking=no' \
+            ./ ${{ env.host }}:${{ env.path }}
