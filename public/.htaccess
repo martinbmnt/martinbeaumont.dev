@@ -3,8 +3,13 @@ ErrorDocument 404 /404.html
 # Remove trailing .html
 
 RewriteEngine on
+# Redirect to remove trailing .html
 RewriteCond %{THE_REQUEST} /([^.]+).html [NC]
 RewriteRule .+ /%1 [L,R=301]
+# Redirect to remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d [NC]
+RewriteRule ^(.*)/$ /$1 [L,R=302]
+# Return content without .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule (.*)/?$ /$1.html [L]
 
@@ -33,13 +38,16 @@ FileETag none
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
+    AddType image/avif .avif
     ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType video/mp4 "access plus 1 year"
     AddType image/x-icon .ico
     ExpiresByType image/ico "access plus 1 year"
     ExpiresByType image/icon "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
     ExpiresByType text/css "access plus 1 year"
+    AddType text/javascript .js
     ExpiresByType text/javascript "access plus 1 year"
     AddType application/font-woff2 .woff2
     ExpiresByType application/font-woff2 "access plus 1 year"
