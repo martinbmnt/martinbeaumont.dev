@@ -1,0 +1,35 @@
+{
+  "author": {
+    "name": "Martin Beaumont",
+    "email": "hello@martinbeaumont.dev",
+    "url": "https://martinbeaumont.dev"
+  },
+  "name": "@martinbmnt/astro-starter",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro build --silent && astro preview",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier -w .",
+    "lint:a11y": "start-test 3000 lint:a11y:local",
+    "lint:a11y:local": "pa11y-ci --sitemap http://localhost:3000/sitemap-0.xml --sitemap-find https://site.url --sitemap-replace http://localhost:3000",
+    "lint:a11y:remote": "pa11y-ci --sitemap 'https://site.url/sitemap-index.xml'",
+    "lint:eslint": "eslint . --ext .js,.ts,.astro"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^0.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "astro": "^1.0.0-beta.73",
+    "eslint": "^8.20.0",
+    "eslint-plugin-astro": "^0.15.0",
+    "pa11y-ci": "^3.0.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.1.2",
+    "sass": "^1.53.0",
+    "start-server-and-test": "^1.14.0",
+    "the-new-css-reset": "^1.7.2"
+  },
+  "dependencies": {}
+}

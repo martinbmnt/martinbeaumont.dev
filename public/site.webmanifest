@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "My site",
+  "short_name": "My site",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#e2dcc8",
+  "description": "My site description",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/images/icon-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

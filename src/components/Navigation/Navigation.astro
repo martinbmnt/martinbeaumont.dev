@@ -1,0 +1,18 @@
+---
+import { NAVIGATION } from '../../config';
+import { getCurrentPageSlug } from '../../util';
+
+const currentPageSlug = getCurrentPageSlug(new URL(Astro.request.url).pathname);
+---
+
+<nav class="navigation">
+  <ul>
+    {NAVIGATION.map((element) => (
+      <li>
+        <a aria-current={currentPageSlug === element.link ? 'page' : 'false'} href={`${Astro.site.pathname}${element.link}`}>
+          {element.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

@@ -1,0 +1,22 @@
+name: Install Tools & Dependencies
+description: Installs Node.js & package dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v3.4.0
+      with:
+        node-version: 16
+        
+    - name: Cache Node dependencies
+      id: cache-dependencies
+      uses: actions/cache@v3.0.4
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-clear
+        
+    - name: Install Node dependencies
+      if: steps.cache-dependencies.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile --silent
+      shell: bash

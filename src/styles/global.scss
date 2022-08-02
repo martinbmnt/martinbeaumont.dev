@@ -1,0 +1,68 @@
+@import 'the-new-css-reset/css/reset.css';
+
+@import 'partial/mixin';
+
+:root {
+  color-scheme: light;
+  accent-color: var(--color-accent);
+
+  // https://colorhunt.co/palette/f0ebe3e4dccf7d9d9c576f72
+  --color-light: #f8f9fa;
+  --color-light-accent: #e2dcc8;
+  --color-dark: #212529;
+  --color-accent: #0f3d3e;
+  --color-gray-light: #eee;
+  --color-gray-medium: #dadada;
+
+  --outline-color: var(--color-accent);
+
+  --content-max-width: #{$content-max-width};
+  --content-space-around: 1.25rem;
+}
+
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto auto 1fr 0 auto; // header nav main back-to-top footer
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  padding: var(--content-space-around);
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+:focus-visible {
+  outline: 4px dashed var(--outline-color);
+  outline-offset: var(--outline-offset, 1px);
+  border-radius: var(--outline-rounding, 0.25rem);
+}
+
+:focus-visible {
+  outline: 4px dashed var(--outline-color);
+  outline-offset: var(--outline-offset, 1px);
+  border-radius: var(--outline-rounding, 0.25rem);
+}
+
+@import 'partial/typo';
+
+@import 'partial/header';
+
+@import 'partial/navigation';
+
+@import 'partial/content';
+
+@import 'partial/buttons';
+
+@import 'partial/icons';
+
+@import 'partial/footer';

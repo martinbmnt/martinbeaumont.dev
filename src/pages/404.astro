@@ -1,0 +1,12 @@
+---
+import { SITE } from '../config';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="😢 Page not found" description={SITE.description}>
+  <main>
+    <h1>Page not found</h1>
+    <p>Sorry, the page <code>{Astro.canonicalURL.pathname.replace(/\/$/, '')}</code> could not be found.</p>
+    <p><a href="/">Go back to homepage</a></p>
+  </main>
+</Layout>

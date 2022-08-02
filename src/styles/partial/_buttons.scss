@@ -1,0 +1,35 @@
+.button {
+  display: inline-flex;
+  padding: .4rem .8rem;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid var(--color-dark);
+}
+
+.button--backtotop {
+  position: sticky;
+  bottom: var(--content-space-around);
+  place-self: end;
+  margin-top: calc(100vh + 200px);
+  background-color: var(--color-light);
+  font-weight: bold;
+  font-size: var(--font-size-small);
+  -webkit-tap-highlight-color: var(--color-gray-light);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-gray-light);
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+    }
+  }
+
+  @include responsive(laptop) {
+    margin-right: 4rem;
+  }
+}

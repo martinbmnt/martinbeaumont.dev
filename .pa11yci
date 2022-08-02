@@ -1,0 +1,6 @@
+{
+    "defaults": {
+        "hideElements": ".header--home",
+        "standard": "WCAG2AAA"
+    }
+}

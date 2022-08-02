@@ -1,0 +1,76 @@
+.navigation {
+  position: relative;
+  overflow: hidden;
+  margin: 0 calc(-1 * var(--content-space-around));
+  padding-block-start: 1rem;
+  margin-block-end: .5rem;
+
+  @include responsive(laptop) {
+    margin: 0 4rem 2rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: .5px;
+    left: var(--content-space-around);
+    right: var(--content-space-around);
+    border-bottom: 1px solid var(--color-dark);
+
+    @include responsive(laptop) {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    overflow: auto hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1.5rem;
+    padding: 4px var(--content-space-around) 0; // 4px of scrollbar + 4px of bottom border
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--content-space-around);
+    overscroll-behavior-x: contain;
+    // Add gradient on each sides of scollable zone.
+    -webkit-mask: linear-gradient(to right, #0000, #0000 calc(var(--content-space-around) / 4), #000 var(--content-space-around), #000 calc(100% - var(--content-space-around)), #0000 calc(100% - var(--content-space-around) / 4), #0000);
+    mask: linear-gradient(to right, #0000, #0000 calc(var(--content-space-around) / 4), #000 var(--content-space-around), #000 calc(100% - var(--content-space-around)), #0000 calc(100% - var(--content-space-around) / 4), #0000);
+
+    @include responsive(laptop) {
+      margin: 0 calc(-1 * var(--content-space-around));
+    }
+
+    &::-webkit-scrollbar {
+     display: none;
+    }
+  }
+
+  li {
+    scroll-snap-align: start;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+  }
+
+  a {
+    border-bottom: 4px solid transparent;
+    padding-bottom: calc(1rem - 4px);
+    -webkit-tap-highlight-color: var(--color-gray-light);
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-bottom-color: var(--color-gray-light);
+      }
+  
+      &:focus {
+        border-bottom-color: var(--color-gray-medium);
+      }
+    }
+
+    &[aria-current="page"] {
+      border-bottom-color: var(--color-dark);
+    }
+  }
+
+}
