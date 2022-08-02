@@ -2,7 +2,6 @@
   position: relative;
   overflow: hidden;
   margin: 0 calc(-1 * var(--content-space-around));
-  padding-block-start: 1rem;
   margin-block-end: .5rem;
 
   @include responsive(laptop) {
@@ -30,13 +29,14 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 1.5rem;
-    padding: 4px var(--content-space-around) 0; // 4px of scrollbar + 4px of bottom border
+    padding: 4px var(--content-space-around) 0;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 var(--content-space-around);
     overscroll-behavior-x: contain;
     // Add gradient on each sides of scollable zone.
     -webkit-mask: linear-gradient(to right, #0000, #0000 calc(var(--content-space-around) / 4), #000 var(--content-space-around), #000 calc(100% - var(--content-space-around)), #0000 calc(100% - var(--content-space-around) / 4), #0000);
     mask: linear-gradient(to right, #0000, #0000 calc(var(--content-space-around) / 4), #000 var(--content-space-around), #000 calc(100% - var(--content-space-around)), #0000 calc(100% - var(--content-space-around) / 4), #0000);
+    text-transform: lowercase;
 
     @include responsive(laptop) {
       margin: 0 calc(-1 * var(--content-space-around));

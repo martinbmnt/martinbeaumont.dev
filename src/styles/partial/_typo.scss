@@ -7,6 +7,7 @@
   --font-size-h5: 1.125rem;
   --font-size-normal: 1rem;
   --font-size-small: 0.889rem;
+  --font-size-xsmall: 0.702rem;
 
   @include responsive(tablet) {
     --font-size-h1: 2.488rem;
@@ -15,6 +16,7 @@
     --font-size-h4: 1.44rem;
     --font-size-h5: 1.2rem;
     --font-size-small: 0.833rem;
+    --font-size-xsmall: 0.694rem;
   }
 
   @include responsive(desktop) {
@@ -24,6 +26,7 @@
     --font-size-h4: 1.777rem;
     --font-size-h5: 1.333rem;
     --font-size-small: 0.75rem;
+    --font-size-xsmall: var(--font-size-small);
   }
 
   --font-familly-title: 'Lexend Deca', Verdana, sans-serif;
@@ -43,7 +46,6 @@ h5 {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   font: var(--font-title);
-  text-transform: uppercase;
 }
 
 h1 {

@@ -2,4 +2,49 @@
   @include responsive(laptop) {
     padding: 1.25rem 4rem 0;
   }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-familly-title);
+  }
+
+  strong {
+    font-size: var(--font-size-h5);
+    letter-spacing: 1.5px;
+    text-transform: lowercase;
+    font-weight: 400;
+
+    @include responsive(laptop) {
+      letter-spacing: 1.75px;
+      font-size: var(--font-size-h4);
+    }
+
+    @include responsive(desktop) {
+      letter-spacing: 1.2px;
+    }
+  }
+
+  small {
+    font-size: var(--font-size-xsmall);
+    letter-spacing: .8px;
+
+    &::first-letter {
+      text-transform: lowercase;
+    }
+
+    @include responsive(tablet) {
+      letter-spacing: 1.25px;
+    }
+
+    @include responsive(laptop) {
+      font-size: var(--font-size-normal);
+      letter-spacing: 0;
+    }
+
+    @include responsive(desktop) {
+      font-size: var(--font-size-normal);
+      letter-spacing: .8px;
+    }
+  }
 }

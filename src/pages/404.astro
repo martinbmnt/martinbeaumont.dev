@@ -3,10 +3,10 @@ import { SITE } from '../config';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="😢 Page not found" description={SITE.description}>
+<Layout title="😢 Page introuvable" description={SITE.description}>
   <main>
-    <h1>Page not found</h1>
-    <p>Sorry, the page <code>{Astro.canonicalURL.pathname.replace(/\/$/, '')}</code> could not be found.</p>
-    <p><a href="/">Go back to homepage</a></p>
+    <h1>Page introuvable</h1>
+    <p>Désolé, la page <code>{Astro.canonicalURL.pathname.replace(/\/$/, '')}</code> n'existe pas (ou plus).</p>
+    <p><a href="/">Retour à l'accueil</a></p>
   </main>
 </Layout>

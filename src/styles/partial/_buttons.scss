@@ -15,9 +15,10 @@
   place-self: end;
   margin-top: calc(100vh + 200px);
   background-color: var(--color-light);
+  -webkit-tap-highlight-color: var(--color-gray-light);
   font-weight: bold;
   font-size: var(--font-size-small);
-  -webkit-tap-highlight-color: var(--color-gray-light);
+  text-transform: lowercase;
 
   @media (any-hover: hover) {
     &:hover {
