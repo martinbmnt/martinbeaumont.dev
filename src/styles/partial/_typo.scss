@@ -55,12 +55,12 @@ h1 {
 
 h2 {
   font-size: var(--font-size-h2);
-  margin: 4rem 0 .5rem;
+  margin: 4rem 0 0.5rem;
 }
 
 h3 {
   font-size: var(--font-size-h3);
-  margin: 2rem 0 .5rem;
+  margin: 2rem 0 0.5rem;
 }
 
 h4 {
@@ -89,5 +89,5 @@ li {
 code {
   font: var(--font-code);
   background-color: var(--color-gray-light);
-  padding: .125rem .25rem;
+  padding: 0.125rem 0.25rem;
 }

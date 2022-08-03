@@ -18,8 +18,8 @@ const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 <title>{formattedContentTitle}</title>
 <meta name="description" content={content.description ? content.description : SITE.description} />
 <link rel="canonical" href={canonicalURL} />
-<link rel="sitemap" href="/sitemap-index.html">
-<meta name="robots" content="follow, index, max-snippet:-1, max-image-preview:large">
+<link rel="sitemap" href="/sitemap-index.html" />
+<meta name="robots" content="follow, index, max-snippet:-1, max-image-preview:large" />
 <meta property="og:title" content={formattedContentTitle} />
 <meta property="og:type" content="article" />
 <meta property="og:url" content={canonicalURL} />
