@@ -7,6 +7,7 @@ aside {
 
   a {
     text-decoration: underline;
+    text-decoration-color: var(--color-accent);
   }
 
   p {
@@ -14,12 +15,76 @@ aside {
   }
 }
 
-.page_home {
+main[class*='page'] {
+  padding-block-end: calc(4px + 0.8rem + calc(1.4 * var(--font-size-small))); // Height of back to top button
+
   h1 {
     text-align: center;
 
     span {
       white-space: nowrap;
     }
+  }
+}
+
+main.page_about header {
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 70ch;
+    margin: auto;
+    position: relative;
+    line-height: 1.25rem;
+
+    &:before {
+      content: '[n. m.]';
+      font: var(--font-code);
+      background-color: var(--color-gray-light);
+      padding: 0.125rem 0.25rem;
+      margin-right: 0.25rem;
+      vertical-align: text-bottom;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.page_about__presentation p {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page_about__work,
+.page_about__training {
+  ol {
+    @include responsive(laptop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  li {
+    border-bottom: 1px solid var(--color-gray-medium);
+  }
+
+  li h3 {
+    margin-bottom: 0;
+
+    @include responsive(laptop) {
+      margin-top: 1rem;
+    }
+  }
+
+  li p:first-of-type {
+    margin: unset;
+    color: var(--color-accent);
+    text-transform: lowercase;
+  }
+
+  li p:not(:first-of-type) {
+    margin: 0.5rem 0 1rem;
   }
 }

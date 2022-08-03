@@ -1,5 +1,5 @@
 :root {
-  // https://type-scale.com/ - Major second on mobile, then Minor third, and Perfect fourth for bigger screens
+  // https://type-scale.com/ - Major second on mobile, then Minor third, and Major third for bigger screens
   --font-size-h1: 1.802rem;
   --font-size-h2: 1.602rem;
   --font-size-h3: 1.424rem;
@@ -20,12 +20,12 @@
   }
 
   @include responsive(desktop) {
-    --font-size-h1: 4.209rem;
-    --font-size-h2: 3.157rem;
-    --font-size-h3: 2.369rem;
-    --font-size-h4: 1.777rem;
-    --font-size-h5: 1.333rem;
-    --font-size-small: 0.75rem;
+    --font-size-h1: 3.052rem;
+    --font-size-h2: 2.441rem;
+    --font-size-h3: 1.953rem;
+    --font-size-h4: 1.563rem;
+    --font-size-h5: 1.25rem;
+    --font-size-small: 0.8rem;
     --font-size-xsmall: var(--font-size-small);
   }
 
@@ -34,8 +34,8 @@
   --font-familly-code: monospace;
 
   --font-title: normal normal 400 var(--font-size-normal) var(--font-familly-title);
-  --font-text: normal normal 400 var(--font-size-normal) var(--font-familly-text);
-  --font-code: normal normal 400 var(--font-size-normal) var(--font-familly-code);
+  --font-text: normal normal 400 var(--font-size-normal) / 1.75rem var(--font-familly-text);
+  --font-code: normal normal 400 var(--font-size-normal) / 2rem var(--font-familly-code);
 }
 
 h1,
@@ -55,12 +55,12 @@ h1 {
 
 h2 {
   font-size: var(--font-size-h2);
-  margin: 4rem 0 .5rem;
+  margin: 4rem 0 0.5rem;
 }
 
 h3 {
   font-size: var(--font-size-h3);
-  margin: 2rem 0 .5rem;
+  margin: 2rem 0 0.5rem;
 }
 
 h4 {
@@ -76,6 +76,14 @@ strong {
   font-weight: bold;
 }
 
+abbr {
+  text-decoration: underline dashed;
+}
+
+i {
+  font-style: italic;
+}
+
 p,
 address,
 li {
@@ -89,5 +97,16 @@ li {
 code {
   font: var(--font-code);
   background-color: var(--color-gray-light);
-  padding: .125rem .25rem;
+  padding: 0.125rem 0.25rem;
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+hr {
+  border-bottom: 1px solid var(--color-gray-medium);
+  margin: 1rem auto 1.5rem;
+  width: 100%;
+  max-width: 60ch;
 }
