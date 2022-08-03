@@ -15,4 +15,5 @@ export const OPEN_GRAPH = {
 
 export const NAVIGATION = [
   { name: 'Accueil', link: '' },
+  { name: 'Présentation', link: 'presentation' },
 ];
