@@ -6,7 +6,7 @@ export interface Props {
   content: any;
 }
 
-const canonicalURL = getCanonicalURL(Astro.site.host, Astro.canonicalURL.pathname);
+const canonicalURL = getCanonicalURL(Astro.site.host, Astro.url.pathname);
 
 const { content = {} } = Astro.props;
 const formattedContentTitle = content.title ? `${content.title} – ${SITE.title}` : SITE.title;
