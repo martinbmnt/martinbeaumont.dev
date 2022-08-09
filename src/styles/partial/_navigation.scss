@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   margin: 0 calc(-1 * var(--content-space-around));
-  margin-block-end: .5rem;
+  margin-block-end: 0.5rem;
 
   @include responsive(laptop) {
     margin: 0 4rem 2rem;
@@ -11,7 +11,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: .5px;
+    bottom: 0.5px;
     left: var(--content-space-around);
     right: var(--content-space-around);
     border-bottom: 1px solid var(--color-dark);
@@ -34,8 +34,24 @@
     scroll-padding: 0 var(--content-space-around);
     overscroll-behavior-x: contain;
     // Add gradient on each sides of scollable zone.
-    -webkit-mask: linear-gradient(to right, #0000, #0000 calc(var(--content-space-around) / 4), #000 var(--content-space-around), #000 calc(100% - var(--content-space-around)), #0000 calc(100% - var(--content-space-around) / 4), #0000);
-    mask: linear-gradient(to right, #0000, #0000 calc(var(--content-space-around) / 4), #000 var(--content-space-around), #000 calc(100% - var(--content-space-around)), #0000 calc(100% - var(--content-space-around) / 4), #0000);
+    -webkit-mask: linear-gradient(
+      to right,
+      #0000,
+      #0000 calc(var(--content-space-around) / 4),
+      #000 var(--content-space-around),
+      #000 calc(100% - var(--content-space-around)),
+      #0000 calc(100% - var(--content-space-around) / 4),
+      #0000
+    );
+    mask: linear-gradient(
+      to right,
+      #0000,
+      #0000 calc(var(--content-space-around) / 4),
+      #000 var(--content-space-around),
+      #000 calc(100% - var(--content-space-around)),
+      #0000 calc(100% - var(--content-space-around) / 4),
+      #0000
+    );
     text-transform: lowercase;
 
     @include responsive(laptop) {
@@ -43,7 +59,7 @@
     }
 
     &::-webkit-scrollbar {
-     display: none;
+      display: none;
     }
   }
 
@@ -62,15 +78,14 @@
       &:hover {
         border-bottom-color: var(--color-gray-light);
       }
-  
+
       &:focus {
         border-bottom-color: var(--color-gray-medium);
       }
     }
 
-    &[aria-current="page"] {
+    &[aria-current='page'] {
       border-bottom-color: var(--color-dark);
     }
   }
-
 }

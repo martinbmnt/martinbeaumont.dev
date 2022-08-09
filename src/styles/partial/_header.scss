@@ -27,7 +27,7 @@
 
   small {
     font-size: var(--font-size-xsmall);
-    letter-spacing: .8px;
+    letter-spacing: 0.8px;
 
     &::first-letter {
       text-transform: lowercase;
@@ -44,7 +44,7 @@
 
     @include responsive(desktop) {
       font-size: var(--font-size-normal);
-      letter-spacing: .8px;
+      letter-spacing: 0.45px;
     }
   }
 }
