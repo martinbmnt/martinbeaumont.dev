@@ -44,7 +44,7 @@
 
     @include responsive(desktop) {
       font-size: var(--font-size-normal);
-      letter-spacing: 0.8px;
+      letter-spacing: 0.45px;
     }
   }
 }
