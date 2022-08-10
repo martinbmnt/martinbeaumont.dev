@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8f9fa",
-  "theme_color": "#e2dcc8",
+  "theme_color": "#5e1177",
   "description": "Créateur de sites Web rapides, adaptés à tous les écrans (responsive), au référencement optimisé (SEO) et accessibles (a11y).",
   "lang": "en",
   "icons": [

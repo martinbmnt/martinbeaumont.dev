@@ -46,6 +46,7 @@ h5 {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   font: var(--font-title);
+  color: black;
 }
 
 h1 {
@@ -88,6 +89,7 @@ p,
 address,
 li {
   font: var(--font-text);
+  color: var(--color-text);
 }
 
 .visually-hidden {

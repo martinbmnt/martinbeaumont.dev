@@ -6,8 +6,13 @@ aside {
   margin: 0 auto;
 
   a {
-    text-decoration: underline;
+    text-decoration: 2px underline;
     text-decoration-color: var(--color-accent);
+    color: black;
+  }
+
+  strong {
+    color: var(--color-accent);
   }
 
   p {
@@ -54,6 +59,11 @@ main.page_about header {
   max-width: 70ch;
   margin-left: auto;
   margin-right: auto;
+
+  &:first-of-type:before {
+    content: '👋';
+    font: var(--font-text);
+  }
 }
 
 .page_about__work,
