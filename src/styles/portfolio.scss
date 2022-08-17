@@ -8,6 +8,29 @@
   h3 {
     color: var(--color-text);
   }
+
+  > p {
+    margin-bottom: 0;
+  }
+
+  > ul {
+    list-style: square;
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  > li + li {
+    margin-top: 0.5rem;
+  }
+
+  figure > p {
+    margin-bottom: 0.5rem;
+  }
+
+  figcaption {
+    font-style: italic;
+    text-align: center;
+  }
 }
 
 .portfolio_item header {
@@ -63,6 +86,10 @@
     gap: .25rem;
   }
 
+  p {
+    margin: unset;
+  }
+
   li:not(:last-child):after {
     content: '-';
     margin-left: .25rem;
@@ -74,9 +101,6 @@
   flex-direction: column-reverse;
 
   figcaption {
-    text-align: center;
-    font-style: italic;
-
     @include responsive(laptop) {
       text-align: left;
       padding-left: 1ch;
