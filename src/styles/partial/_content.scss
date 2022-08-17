@@ -1,4 +1,5 @@
 main,
+article,
 aside {
   overflow: hidden;
   width: 100%;
@@ -28,6 +29,62 @@ main[class*='page'] {
 
     span {
       white-space: nowrap;
+    }
+  }
+}
+
+.page_portfolio__grid {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 37ch);
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    background-color: var(--color-gray-light);
+
+    h3 {
+      margin: 2rem 1rem 0;
+      font-size: var(--font-size-h5);
+    }
+
+    p:first-of-type {
+      margin: 0 1rem;
+      color: var(--color-accent);
+      font-size: var(--font-size-xsmall);
+      font-style: italic;
+    }
+
+    p:nth-of-type(n+2) {
+      margin: 0.5rem 1rem;
+    }
+
+    p:last-of-type {
+      align-self: flex-end;
+    }
+
+    img {
+      order: -1;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-transform: lowercase;
+      font-size: var(--font-size-small);
+      gap: .25rem;
+      margin-left: auto;
+
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
     }
   }
 }

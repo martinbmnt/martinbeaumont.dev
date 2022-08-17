@@ -1,0 +1,40 @@
+---
+import ProjectCard from "~components/Project/ProjectCard.astro";
+import Layout from "~layouts/Layout.astro";
+
+async function getProjects() {
+  let projects = await Astro.glob('./projet/*.mdx');
+
+  return projects
+    .filter(project => !project.frontmatter.draft)
+    .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
+    .map(project => ({
+      cover: project.frontmatter.cover,
+      cover_alt: project.frontmatter.cover_alt,
+      publishDate: project.frontmatter.publishDate,
+      title: project.frontmatter.title,
+      excerpt: project.frontmatter.excerpt,
+      resume: [project.frontmatter.technologies[0], project.frontmatter.services[0]],
+      slug: project.url,
+    }));
+}
+
+const projects = await getProjects();
+---
+
+<Layout title="Projets et réalisations" description="Découvrez mon portfolio, avec les dernières création de site internet et autres projets d'applications Web">
+  <main class="page_portfolio">
+    <header>
+      <h1>Projets et réalisations</h1>
+    </header>
+    <section class="page_portfolio__grid">
+      <ul>
+        {projects.map(({publishDate, title, excerpt, slug, cover, cover_alt, resume}) => (
+          <li>
+            <ProjectCard {publishDate} {excerpt} {title} {slug} {cover} {cover_alt} {resume}/>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Layout>

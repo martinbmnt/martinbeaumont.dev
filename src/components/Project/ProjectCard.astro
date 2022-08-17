@@ -1,0 +1,28 @@
+---
+export interface Props {
+  cover: string;
+  cover_alt: string;
+  publishDate: Date;
+  title: string;
+  excerpt: string;
+  resume: string[];
+  slug: string;
+}
+
+const content = Astro.props;
+---
+
+<article>
+  <h3>{content.title}</h3>
+  <p>{content.resume.join(', ')}</p>
+  <img src={content.cover} alt={content.cover_alt} width="330" height="220">
+  <p>{content.excerpt}</p>
+  <p>
+    <a class="button" href={content.slug}>
+      <span>Afficher le projet</span>
+      <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
+        <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
+      </svg>
+    </a>
+  </p>
+</article>
