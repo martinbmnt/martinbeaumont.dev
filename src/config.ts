@@ -10,7 +10,9 @@ export const OPEN_GRAPH = {
     src: null,
     alt: null,
   },
-  twitter: 'martinbmnt',
+  site_name: 'Martin Beaumont – Développeur Web Free-lance',
+  twitter: '@martinbmnt',
+  facebook: 'martinbmnt',
 };
 
 export const NAVIGATION = [

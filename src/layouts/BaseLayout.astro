@@ -14,10 +14,17 @@ import BackToTop from '../components/Content/BackToTop.astro';
 export interface Props {
   title: string;
   description?: string;
+  image?: {
+    src?: string;
+    alt?: string;
+  };
+  articleSection?: string | boolean;
+  publishDate?: string;
+  updateDate?: string | false;
 }
 ---
 
-<html dir="ltr" lang={SITE.language.slice(0, 2)}>
+<html dir="ltr" lang={SITE.language.slice(0, 2)} prefix="og: https://ogp.me/ns#">
   <head>
     <HeadCommon />
     <HeadFont />
