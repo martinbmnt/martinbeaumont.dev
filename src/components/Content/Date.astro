@@ -1,0 +1,20 @@
+---
+function formatDate(date: Date): string {
+  return date.toLocaleDateString(undefined, { dateStyle: 'medium' });
+}
+
+export interface Props {
+  datetime: string;
+}
+
+const { datetime } = Astro.props;
+
+---
+
+<time {datetime}>{formatDate(new Date(datetime))}</time>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    Array.from(document.querySelectorAll('time')).map(time => time.textContent = new Date(time.dateTime).toLocaleDateString(undefined, {dateStyle: 'medium'}))
+  });
+</script>

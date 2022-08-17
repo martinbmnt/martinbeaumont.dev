@@ -1,0 +1,47 @@
+---
+import '~styles/portfolio.scss';
+import BaseLayout from '~layouts/BaseLayout.astro';
+import Date from '~components/Content/Date.astro';
+import ProjectIntroduction from '~components/Project/ProjectIntroduction.astro';
+
+export interface Props {
+  publishDate: string;
+  updateDate?: string;
+  title: string;
+  excerpt: string;
+  site: string;
+  technologies: string[];
+  services: string[];
+  cover: string;
+  cover_alt: string;
+}
+
+const { content } = Astro.props;
+---
+
+<BaseLayout
+  title={content.title}
+  description={content.excerpt}
+  image={({src: content.cover, alt: content.cover_alt})}
+  articleSection="Portfolio"
+  publishDate={content.publishDate}
+  updateDate={content.updateDate ?? null}>
+  <article class="portfolio_item">
+    <header>
+      <h1>{content.title}</h1>
+      <p>{content.excerpt}</p>
+    </header>
+    <picture class="portfolio_item__cover">
+      <img src={content.cover} alt={content.cover_alt}>
+    </picture>
+    <ProjectIntroduction technologies={content.technologies} services={content.services} site={content.site} />
+    <slot />
+    <footer>
+      <p>
+        <small>
+          Publié le <Date datetime={content.publishDate} />{content.updateDate && <>, mis à jour le  <Date datetime={content.updateDate}/></>}
+        </small>
+      </p>
+    </footer>
+  </article>
+</BaseLayout>

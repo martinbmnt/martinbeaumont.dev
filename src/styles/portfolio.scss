@@ -1,0 +1,102 @@
+@import 'partial/mixin';
+
+.portfolio_item {
+  --content-max-width: 56rem;
+  display: grid;
+  gap: 1rem;
+
+  h3 {
+    color: var(--color-text);
+  }
+}
+
+.portfolio_item header {
+  padding: 4rem 0;
+
+  @include responsive(laptop) {
+    padding-bottom: 6rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: unset;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.portfolio_item__cover {
+  border: 2px solid var(--color-accent);
+}
+
+.portfolio_item__summary {
+  display: flex;
+  gap: 0 1rem;
+  flex-direction: column;
+
+  @include responsive(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  & > div {
+    min-width: 20ch;
+
+    &:not(:last-child) {
+      flex: 2;
+    }
+
+    &:last-child {
+      flex: 1;
+    }
+  }
+
+  h3 {
+    font-size: var(--font-size-normal);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem;
+  }
+
+  li:not(:last-child):after {
+    content: '-';
+    margin-left: .25rem;
+  }
+}
+
+.portfolio_item__review {
+  display: flex;
+  flex-direction: column-reverse;
+
+  figcaption {
+    text-align: center;
+    font-style: italic;
+
+    @include responsive(laptop) {
+      text-align: left;
+      padding-left: 1ch;
+
+      &:before {
+        content: '–';
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  blockquote p:first-child {
+    margin-bottom: 1rem;
+
+    &:before {
+      content: '“';
+      font-size: 2rem;
+      font-family: var(--font-familly-title);
+      line-height: 0;
+      color: var(--color-accent);
+    }
+  }
+}

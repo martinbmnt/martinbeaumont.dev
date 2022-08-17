@@ -1,0 +1,36 @@
+---
+export interface Props {
+  technologies: string[];
+  services: string[];
+  site?: string;
+}
+
+const content = Astro.props;
+---
+
+<section class="portfolio_item__summary">
+  <h2 class="visually-hidden">Présentation du projet</h2>
+  <slot />
+  <div>
+    <h3>Technologies</h3>
+    <ul>
+      {content.technologies.map(technologie => (
+        <li>{technologie}</li>
+      ))}
+    </ul>
+  </div>
+  <div>
+    <h3>Services</h3>
+    <ul>
+      {content.services.map(service => (
+        <li>{service}</li>
+      ))}
+    </ul>
+  </div>
+  {content.site && (
+    <div>
+      <h3>Voir le projet</h3>
+      <p><span class="visually-hidden">Le projet est disponible sur&nbsp;</span><a href={content.site} rel="noopener" target="_blank">{content.site.replace(/https:\/\//, '')}</a></p>
+    </div>
+  )}
+</section>
