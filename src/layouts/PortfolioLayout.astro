@@ -27,6 +27,14 @@ const { content } = Astro.props;
   publishDate={content.publishDate}
   updateDate={content.updateDate ?? null}>
   <article class="portfolio_item">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <p>Vous êtes ici :</p>
+      <ol>
+        <li><a href="/">Martin Beaumont</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href={Astro.url.pathname} aria-current="page">{content.title}</a></li>
+      </ol>
+    </nav>
     <header>
       <h1>{content.title}</h1>
       <p>{content.excerpt}</p>

@@ -90,3 +90,43 @@
     }
   }
 }
+
+.breadcrumb {
+  ol {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0 0.5rem;
+  }
+
+  li:not(:last-child):after {
+    display: inline-block;
+    margin: 0 0 0.05rem 0.35rem;
+    transform: rotate(-45deg);
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+    height: 6px;
+    width: 6px;
+    content: "";
+  }
+
+  p {
+    display: inline;
+    
+    @include responsive(mobile-only) {
+      @include visually-hidden;
+    }
+  }
+
+  p,
+  a {
+    margin: unset;
+    color: var(--color-text);
+    text-decoration: unset;
+    font-size: var(--font-size-xsmall);
+    font-style: italic;
+  }
+
+  a[aria-current="page"] {
+    color: var(--color-accent);
+  }
+}
