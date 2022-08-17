@@ -1,5 +1,5 @@
 export function getCanonicalURL(host: string, path: string): string {
-  return 'https://' + host + path.replace(/^\/+/, '').replace(/\/+$/, '');
+  return 'https://' + host + path;
 }
 
 export function getCurrentPageSlug(currentPage: string): string {
