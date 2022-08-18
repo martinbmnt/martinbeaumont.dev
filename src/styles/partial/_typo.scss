@@ -93,6 +93,14 @@ li {
   color: var(--color-text);
 }
 
+figcaption {
+  font: var(--font-text);
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  font-style: italic;
+  text-align: center;
+}
+
 .visually-hidden {
   @include visually-hidden;
 }

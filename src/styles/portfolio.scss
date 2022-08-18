@@ -26,11 +26,6 @@
   figure > p {
     margin-bottom: 0.5rem;
   }
-
-  figcaption {
-    font-style: italic;
-    text-align: center;
-  }
 }
 
 .portfolio_item header {
@@ -69,10 +64,6 @@
 
     &:not(:last-child) {
       flex: 2;
-    }
-
-    &:last-child {
-      flex: 1;
     }
   }
 
