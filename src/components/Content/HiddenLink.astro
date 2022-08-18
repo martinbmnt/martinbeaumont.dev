@@ -1,0 +1,57 @@
+---
+export interface Props {
+  value: string;
+  type: "mail" | "phone";
+  showFullTitle?: true;
+}
+
+const content = Astro.props;
+
+const encodedContent = Buffer.from(content.value).toString('base64');
+let title: string;
+
+switch (content.type) {
+  case 'mail':
+    title = "l'adresse mail";
+    break;
+  case 'phone':
+    title = 'le numéro de téléphone';
+    break;
+  default:
+    title = 'le lien';
+}
+
+---
+
+<button class="button" data-encoded={encodedContent} data-type={content.type}>
+  {content.showFullTitle ? `Afficher ${title}` : <>Afficher <span class="visually-hidden">{title}</span></>}
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = Array.from(document.querySelectorAll('button[data-encoded]')) as HTMLButtonElement[];
+
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const decodedContent = atob(button.dataset.encoded);
+      let linkURL: string;
+      
+      switch (button.dataset.type) {
+        case 'mail':
+          linkURL = `mailto:${decodedContent}`;
+          break;
+        case 'phone':
+          linkURL = `tel:+33${decodedContent.replace(/(\s|\.|^0)/g, '')}`;
+          break;
+        default:
+          linkURL = decodedContent;
+      }
+
+      const link = document.createElement('a');
+      link.href = linkURL;
+      link.textContent = decodedContent;
+
+      button.replaceWith(link);
+      link.focus();
+    }));
+  });
+</script>
