@@ -1,0 +1,41 @@
+---
+import Layout from "~layouts/Layout.astro";
+import HiddenLink from "~components/Content/HiddenLink.astro";
+import Date from "~components/Content/Date.astro";
+
+---
+
+<Layout title="Mentions légales" description="Mentions légales du site martinbeaumont.dev">
+  <main class="page_legal">
+    <header>
+      <h1>Mentions légales</h1>
+      <p>Mis à jour le <Date datetime="2022-08-20" /></p>
+    </header>
+    <h2>Éditeur</h2>
+    <p>Ce site est édité par Martin Beaumont (Entrepreneur Individuel), développeur Web free-lance.</p>
+    <ul>
+      <li>
+        <span>Siège social</span> :
+        <address>Martin Beaumont (EI) &ndash; 55 rue de la Paix &ndash; 53000 Laval</address>
+      </li>
+      <li><span>Téléphone</span> : <span><HiddenLink type='phone' value="06.48.83.78.41" /></span> &ndash; <span>Adresse mail</span> : <span><HiddenLink type='mail' value="contact@martinbeaumont.fr" /></span></li>
+      <li><span>SIRET</span> : <span>840 877 591</span> &ndash; <span>SIREN</span> : <span>840 877 591 00049</span></li>
+      <li><span>Numéro RCS</span> : <span>Laval A 840 877 591</span> &ndash; <span>Numéro de TVA</span> : <span>FR54840877591</span></li>
+    </ul>
+    <h2>Conception et gestion du site</h2>
+    <p>Ce site est développé selon un principe d'amélioration continue. De nouvelles fonctionnalités seront ajoutées prochainement.</p>
+    <p>Le code source du site est disponible sur <a href="https://github.com/martinbmnt/martinbeaumont.dev" rel="nofollow noreferrer noopener">le dépôt GitHub</a>.</p>
+    <h2>Propriété intellectuelle et liens vers martinbeaumont.dev</h2>
+    <p>Tout site public ou privé est autorisé à établir, sans autorisation préalable, un lien (y compris profond) vers les informations diffusées sur <a href="/">martinbeaumont.dev</a></p>
+    <p>Sauf mention de propriété intellectuelle détenue par des tiers (notamment un crédit sur certaines images), les contenus de ce site sont proposés sous <a href="https://github.com/martinbmnt/martinbeaumont.dev/blob/main/LICENSE" rel="nofollow noreferrer noopener">licence MIT</a>.</p>
+    <p>La mise en place de liens vers nos contenus et documents est cependant est à privilégier par rapport à la reproduction sur un site tiers. La mention explicite du site source <a href="/">martinbeaumont.dev</a> est recommandée.</p>
+    <h2>Hébergement</h2>
+    <p>Ce site est hébergé chez Infomaniak.</p>
+    <ul>
+      <li><span>Siège social</span> : INFOMANIAK NETWORK SA &ndash; 26, Avenue de la Praille &ndash; 1227 Carouge / Genève &ndash; SUISSE</li>
+      <li><span>Tél.</span> : <span>+41 22 820 35 44</span> &ndash; <span>Fax</span> : <span>+41 22 301 67 69</span></li>
+      <li><span>Adresse mail</span> : contact@infomaniak.ch</li>
+      <li><span>Site internet</span> : <a href="https://infomaniak.com" rel="nofollow noreferrer noopener">www.infomaniak.com</a></li>
+    </ul>
+  </main>
+</Layout>

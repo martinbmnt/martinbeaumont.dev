@@ -155,3 +155,25 @@ main.page_about header {
     margin: 0.5rem 0 1rem;
   }
 }
+
+.page_legal {
+  header p {
+    text-align: center;
+  }
+
+  li {
+    line-height: 2.5rem;
+
+    span:nth-of-type(odd) {
+      font-weight: bold;
+    }
+
+    span:nth-of-type(even) {
+      white-space: nowrap;
+    }
+  }
+
+  address {
+    display: inline;
+  }
+}
