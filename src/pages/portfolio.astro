@@ -7,7 +7,7 @@ async function getProjects() {
 
   return projects
     .filter(project => !project.frontmatter.draft)
-    .sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
+    .sort((a, b) => new Date(b.frontmatter.releaseDate).valueOf() - new Date(a.frontmatter.releaseDate).valueOf())
     .map(project => ({
       cover: project.frontmatter.cover,
       cover_alt: project.frontmatter.cover_alt,
