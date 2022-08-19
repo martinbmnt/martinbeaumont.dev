@@ -111,8 +111,38 @@ code {
   padding: 0.125rem 0.25rem;
 }
 
+pre {
+  padding: 0.5rem 0.75rem;
+  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
+
+  .language-id {
+    margin-bottom: .5rem;
+    font-style: italic;
+
+    &:before {
+      content: 'Langage : ';
+    }
+  }
+
+  code {
+    background-color: unset;
+    padding: unset;
+  }
+}
+
 small {
   font-size: var(--font-size-small);
+}
+
+sup {
+  position: relative;
+  top: -0.5rem;
+  vertical-align: baseline;
+  padding-left: 0.2rem;
+  font-size: 75%;
+  line-height: 0;
 }
 
 hr {
