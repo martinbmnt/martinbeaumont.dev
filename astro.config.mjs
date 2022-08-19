@@ -10,5 +10,10 @@ export default defineConfig({
   build: {
     format: 'file'
   },
-  integrations: [sitemap(), mdx()]
+  integrations: [sitemap(), mdx()],
+  markdown: {
+    shikiConfig: {
+      wrap: false
+    }
+  }
 });
