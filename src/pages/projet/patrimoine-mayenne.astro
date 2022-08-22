@@ -1,7 +1,9 @@
 ---
 import ProjectLayout from "~layouts/ProjectLayout.astro";
+import { Picture } from "@astrojs/image/components";
 
 import cover from '~images/project/patrimoine-mayenne-cover.jpg';
+import accentuedContrastPicture from '~images/project/patrimoine-mayenne-accentued-contrast.jpg';
 
 const content = {
   title: 'Patrimoine La Mayenne',
@@ -38,7 +40,7 @@ const content = {
   <h4>Mode haut contraste</h4>
   <p>L'<strong>accentuation du contraste rend le texte plus lisible</strong>, notamment en remplaçant la couleur principale par du noir, et en retirant les nuances de gris sur les textes.</p>
   <figure>
-    <img src="/assets/project/patrimoine-mayenne-accentued-contrast.jpg" alt="Exemple du mode contraste accentué sur une page du site patrimoine.lamayenne.fr">
+    <Picture alt="Exemple du mode contraste accentué sur une page du site patrimoine.lamayenne.fr" src={accentuedContrastPicture} widths={[480, 896]} aspectRatio="896:628" sizes="(max-width: 950px) 100vw, 896px" />
     <figcaption>Affichage par défaut à gauche, et avec contraste accentué à droite</figcaption>
   </figure>
   <p>Ainsi, tous les contenus ont un ratio de contraste d'au moins 7:1, ce qui est supérieur aux critères `3.2` et `3.3` du <strong>Référentiel Général d'Amélioration de l'Accessibilité (RGAA)</strong>.</p>

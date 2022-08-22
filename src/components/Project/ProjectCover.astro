@@ -9,4 +9,4 @@ export interface Props {
 const content = Astro.props as Props;
 ---
 
-<Picture class="portfolio_item__cover" src={content.cover} alt={content.cover_alt} widths={[480, 640, 896, 1280]} aspectRatio="4:3" sizes="(max-width: 950px) 100vw, 896px" />
+<Picture class="portfolio_item__cover" src={content.cover} alt={content.cover_alt} widths={[480, 640, 896, 1280]} aspectRatio="4:3" sizes="(max-width: 950px) 100vw, 896px" loading="eager" decoding="sync" />
