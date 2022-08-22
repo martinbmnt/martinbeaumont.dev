@@ -52,6 +52,23 @@ main[class*='page'] {
     padding-bottom: 1rem;
     background-color: var(--color-gray-light);
 
+    &:after {
+      content: attr(data-year);
+      position: absolute;
+      background: var(--color-accent);
+      color: var(--color-light);
+      padding: 0.125rem 0.75rem;
+      border-radius: 1rem;
+      margin: unset;
+      right: 0.75rem;
+      top: calc(330px / 3 * 2 + 0.75rem);
+      font-family: var(--font-familly-title);
+
+      @media (max-width: 369px) {
+        display: none;
+      }
+    }
+
     h3 {
       margin: 2rem 1rem 0;
       font-size: var(--font-size-h5);
@@ -75,22 +92,6 @@ main[class*='page'] {
     picture {
       display: flex;
       order: -1;
-    }
-
-    p.portfolio_item__year {
-      position: absolute;
-      background: var(--color-accent);
-      color: var(--color-light);
-      padding: 0.125rem 0.75rem;
-      border-radius: 1rem;
-      margin: unset;
-      right: 0.5rem;
-      top: calc(330px / 3 * 2 + 0.75rem);
-      font-family: var(--font-familly-title);
-
-      @media (max-width: 369px) {
-        display: none;
-      }
     }
 
     a {
