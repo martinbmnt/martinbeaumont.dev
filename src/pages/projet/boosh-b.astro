@@ -16,6 +16,7 @@ const content = {
   coverAlt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
 };
 
+/* eslint-disable no-irregular-whitespace */
 const codeBlock = `
 <ProductLayout title="Le Boosh B" category={ProductCategory.Burger} image="/images/product/burger-boosh-b.png" description="...">
    <Ingredients vegetables="Galette de pommes de terre,Iceberg" meats="Boeuf,Poitrine de porc grillée,Oeuf" cheeses="Cheddar affiné" sauces="Sauce secrète" />
@@ -23,6 +24,7 @@ const codeBlock = `
    <Menu product="Burger Boosh B" productPicture="/images/product/burger-boosh-b-menu.jpg" side={ProductSide.ChickenCroquettes} drink={ProductDrink.CocaCola} />
 </ProductLayout>
 `;
+/* eslint-enable no-irregular-whitespace */
 ---
 
 <ProjectLayout {...content}>
