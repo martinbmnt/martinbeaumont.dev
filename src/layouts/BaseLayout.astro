@@ -22,13 +22,15 @@ export interface Props {
   publishDate?: string;
   updateDate?: string | false;
 }
+
+const content = Astro.props as Props;
 ---
 
 <html dir="ltr" lang={SITE.language.slice(0, 2)} prefix="og: https://ogp.me/ns#">
   <head>
     <HeadCommon />
     <HeadFont />
-    <HeadSEO content={Astro.props} />
+    <HeadSEO {...content} />
   </head>
 
   <body id="top">
