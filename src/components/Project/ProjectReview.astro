@@ -1,0 +1,14 @@
+---
+export interface Props {
+  author: string;
+  link?: string;
+  review: string;
+}
+
+const content = Astro.props as Props;
+---
+
+<figure class="portfolio_item__review">
+  <figcaption><cite>{content.author}{content.link && <span> (via <a href={content.link} rel="noopener nofollow noreferrer" target="_blank">Google</a>)</span>}</cite></figcaption>
+  <blockquote>{content.review}</blockquote>
+</figure>

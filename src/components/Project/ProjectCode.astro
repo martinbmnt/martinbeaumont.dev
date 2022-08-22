@@ -1,0 +1,17 @@
+---
+import Shiki from "shiki";
+
+export interface Props {
+  code: string;
+  lang: string;
+  title: string;
+}
+
+const content = Astro.props as Props;
+
+const code = await Shiki.getHighlighter({theme: 'github-dark'}).then(higlighter => {return higlighter.codeToHtml(content.code, {lang: content.lang})});
+---
+<figure class="portfolio_item__code_block">
+  <div set:html={code} />
+  <figcaption>{content.title}</figcaption>
+</figure>
