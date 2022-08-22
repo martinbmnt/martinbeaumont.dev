@@ -6,7 +6,14 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="😢 Page introuvable" description={SITE.description}>
   <main>
     <h1>Page introuvable</h1>
-    <p>Désolé, la page <code>{Astro.url.pathname.replace(/\/$/, '')}</code> n'existe pas (ou plus).</p>
+    <p>Désolé, la page <code data-path>{Astro.url.pathname.replace(/\/$/, '')}</code> n'existe pas (ou plus).</p>
     <p><a href="/">Retour à l'accueil</a></p>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const pathContainer = document.querySelector('code[data-path]') as HTMLElement;
+    pathContainer.textContent = window.location.pathname;
+  });
+</script>
