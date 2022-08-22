@@ -10,13 +10,14 @@
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
     // Add type definitions for our Astro runtime.
-    "types": ["astro/client"],
+    "types": ["@astrojs/image/client"],
     "baseUrl": ".",
     "paths": {
+      "~images/*": ["src/assets/images/*"],
       "~components/*": ["src/components/*"],
       "~layouts/*": ["src/layouts/*"],
       "~styles/*": ["src/styles/*"],
-    }
+    },
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

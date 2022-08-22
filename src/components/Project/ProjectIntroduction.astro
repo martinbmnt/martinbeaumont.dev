@@ -5,7 +5,7 @@ export interface Props {
   site?: string;
 }
 
-const content = Astro.props;
+const content = Astro.props as Props;
 ---
 
 <section class="portfolio_item__summary">

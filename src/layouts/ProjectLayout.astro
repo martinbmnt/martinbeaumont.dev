@@ -1,0 +1,46 @@
+---
+import '~styles/portfolio.scss';
+import BaseLayout from '~layouts/BaseLayout.astro';
+import Breadcrumb from '~components/Content/Breadcrumb.astro';
+import ProjectIntroduction from '~components/Project/ProjectIntroduction.astro';
+import Date from '~components/Content/Date.astro';
+import ProjectCover from '~components/Project/ProjectCover.astro';
+
+export interface Props {
+  publishDate: string;
+  updateDate?: string;
+  title: string;
+  excerpt: string;
+  site: string;
+  technologies: string[];
+  services: string[];
+  cover: string;
+  coverAlt: string;
+}
+
+const content = Astro.props as Props;
+---
+
+<BaseLayout title={`${content.title} – Portfolio`} description={content.excerpt} image={({src: content.cover, alt: content.coverAlt})}
+  articleSection="Portfolio" publishDate={content.publishDate} updateDate={content.updateDate ?? null}>
+  <article class="portfolio_item" aria-labelledby="article-title">
+    <Breadcrumb page={{path: '/portfolio' , name: 'Portfolio' }} article={content.title} />
+    <header>
+      <h1 id="article-title">{content.title}</h1>
+      <p>{content.excerpt}</p>
+    </header>
+    <ProjectCover cover={content.cover} cover_alt={content.coverAlt} />
+    <ProjectIntroduction technologies={content.technologies} services={content.services} site={content.site} />
+    <slot />
+    <footer>
+      <p>
+        <small>
+          Publié le
+          <Date datetime={content.publishDate} />{content.updateDate && <>, mis à jour le
+            <Date datetime={content.updateDate} />
+          </>}
+        </small>
+      </p>
+    </footer>
+  </article>
+</BaseLayout>

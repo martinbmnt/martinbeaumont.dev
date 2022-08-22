@@ -1,0 +1,17 @@
+---
+export interface Props {
+  page: { path: string; name: string };
+  article?: string;
+}
+
+const nav = Astro.props as Props;
+---
+
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <p>Vous êtes ici :</p>
+  <ol>
+    <li><a href="/">Martin Beaumont</a></li>
+    <li><a href={`${nav.page.path}`} aria-current={nav.article ? 'false' : 'page'}>{nav.page.name}</a></li>
+    {nav.article && (<li><a href={`${Astro.url}`} aria-current="page">{nav.article}</a></li>)}
+  </ol>
+</nav>

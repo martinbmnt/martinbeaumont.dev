@@ -1,7 +1,8 @@
 ---
-import ProjectCard from "~components/Project/ProjectCard.astro";
 import Layout from "~layouts/Layout.astro";
+import ProjectCard from "~components/Project/ProjectCard.astro";
 
+/*
 async function getProjects() {
   let projects = await Astro.glob('./projet/*.mdx');
 
@@ -9,17 +10,57 @@ async function getProjects() {
     .filter(project => !project.frontmatter.draft)
     .sort((a, b) => new Date(b.frontmatter.releaseDate).valueOf() - new Date(a.frontmatter.releaseDate).valueOf())
     .map(project => ({
-      cover: project.frontmatter.cover,
       cover_alt: project.frontmatter.cover_alt,
-      publishDate: project.frontmatter.publishDate,
+      releaseDate: project.frontmatter.releaseDate,
       title: project.frontmatter.title,
       excerpt: project.frontmatter.excerpt,
       resume: [project.frontmatter.technologies[0], project.frontmatter.services[0]],
       slug: project.url,
     }));
 }
+*/
 
-const projects = await getProjects();
+/**
+ * @todo: find a better way to do this. Sadly, I can't figure out how to use MDX and Picture astro element
+ */
+const projects = [
+  {
+    releaseYear: 2022,
+    title: 'Restaurants Boosh-B',
+    excerpt: "Intégration des maquettes réalisées par l'agence ZeAstronaut pour les restaurants Boosh-B.",
+    slug: '/projet/boosh-b',
+    cover: (await import('~images/project/boosh-b-cover.jpg')).default,
+    cover_alt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
+    resume: 'Astro, Intégrations des maquettes'
+  },
+  {
+    releaseYear: 2022,
+    title: 'Patrimoine La Mayenne',
+    excerpt: "Amélioration de l'accessibilité et de la navigation des sites du patrimoine de la Mayenne.",
+    slug: '/projet/patrimoine-mayenne',
+    cover: (await import('~images/project/maine-image-sante-cover.jpg')).default,
+    cover_alt: "Page d'accueil des sites du patrimoine de la Mayenne, visible sur patrimoine.lamayenne.fr",
+    resume: 'WordPress, Accessibilité'
+  },
+  {
+    releaseYear: 2021,
+    title: 'Portfolio de Thurb',
+    excerpt: "Création du site internet / portfolio de Thurb, un graphiste, illustrateur et artiste free-lance.",
+    slug: '/projet/portfolio-thurb',
+    cover: (await import('~images/project/portfolio-thurb-cover.jpg')).default,
+    cover_alt: "Page d'accueil du portfolio de Thurb, visible sur thurbwork.com",
+    resume: 'WordPress, Développement du thème WordPress'
+  },
+  {
+    releaseYear: 2019,
+    title: 'Maine Image Santé',
+    excerpt: "Refonte du site institutionnel du groupe d'imagerie médicale sarthois Maine Image Santé.",
+    slug: '/projet/maine-image-sante',
+    cover: (await import('~images/project/maine-image-sante-cover.jpg')).default,
+    cover_alt: "Page d'accueil du site de Maine Image Santé, visible sur 72mis.fr",
+    resume: 'WordPress, Développement du thème WordPress'
+  },
+];
 ---
 
 <Layout title="Projets et réalisations" description="Découvrez mon portfolio, avec les dernières création de site internet et autres projets d'applications Web">
@@ -29,9 +70,9 @@ const projects = await getProjects();
     </header>
     <section class="page_portfolio__grid">
       <ul>
-        {projects.map(({publishDate, title, excerpt, slug, cover, cover_alt, resume}) => (
+        {projects.map((content, index) => (
           <li>
-            <ProjectCard {publishDate} {excerpt} {title} {slug} {cover} {cover_alt} {resume}/>
+            <ProjectCard {...content} index={index}/>
           </li>
         ))}
       </ul>
