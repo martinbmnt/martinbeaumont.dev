@@ -18,7 +18,7 @@
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.8.1",
+    "@astrojs/image": "^0.3.4",
     "@astrojs/sitemap": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
@@ -29,6 +29,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.1.2",
     "sass": "^1.53.0",
+    "shiki": "^0.11.1",
     "start-server-and-test": "^1.14.0",
     "the-new-css-reset": "^1.7.2"
   },
