@@ -87,8 +87,9 @@ em {
 }
 
 p,
+li,
 address,
-li {
+blockquote {
   font: var(--font-text);
   color: var(--color-text);
 }
@@ -112,23 +113,32 @@ code {
 }
 
 pre {
-  padding: 0.5rem 0.75rem;
-  overflow-x: auto;
-  width: 100%;
   white-space: nowrap;
-
+  
   .language-id {
     margin-bottom: .5rem;
     font-style: italic;
-
+    
     &:before {
       content: 'Langage : ';
     }
   }
-
+  
   code {
+    padding: 0.5rem 0.75rem .5rem 0;
+    overflow-x: auto;
+    width: calc(100% - 1rem);
+    margin-left: 0.5rem;
     background-color: unset;
-    padding: unset;
+    display: block;
+  }
+
+  .line {
+    display: block;
+
+    &:empty {
+      display: none;
+    }
   }
 }
 

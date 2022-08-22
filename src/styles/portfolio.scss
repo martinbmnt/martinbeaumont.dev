@@ -88,6 +88,11 @@
   }
 }
 
+.portfolio_item__code_block {
+  width: 100%;
+  overflow: hidden;
+}
+
 .portfolio_item__review {
   display: flex;
   flex-direction: column-reverse;
@@ -104,7 +109,7 @@
     }
   }
 
-  blockquote p:first-child {
+  blockquote {
     margin-bottom: 1rem;
 
     &:before {
@@ -114,5 +119,11 @@
       line-height: 0;
       color: var(--color-accent);
     }
+  }
+}
+
+.portfolio_item__footnotes {
+  :target {
+    outline: 2px dashed var(--color-accent);
   }
 }

@@ -21,6 +21,10 @@ aside {
   }
 }
 
+img {
+  height: auto;
+}
+
 main[class*='page'] {
   padding-block-end: calc(4px + 0.8rem + calc(1.4 * var(--font-size-small))); // Height of back to top button
 
@@ -36,7 +40,7 @@ main[class*='page'] {
 .page_portfolio__grid {
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 37ch);
+    grid-template-columns: repeat(auto-fit, min(100%, 37ch));
     justify-content: center;
     gap: 2rem;
   }
@@ -68,10 +72,25 @@ main[class*='page'] {
       align-self: flex-end;
     }
 
-    img {
+    picture {
+      display: flex;
       order: -1;
-      width: 100%;
-      height: auto;
+    }
+
+    p.portfolio_item__year {
+      position: absolute;
+      background: var(--color-accent);
+      color: var(--color-light);
+      padding: 0.125rem 0.75rem;
+      border-radius: 1rem;
+      margin: unset;
+      right: 0.5rem;
+      top: calc(330px / 3 * 2 + 0.75rem);
+      font-family: var(--font-familly-title);
+
+      @media (max-width: 369px) {
+        display: none;
+      }
     }
 
     a {
