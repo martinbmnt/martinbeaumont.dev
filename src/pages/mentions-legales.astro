@@ -2,6 +2,7 @@
 import Layout from "~layouts/Layout.astro";
 import HiddenLink from "~components/Content/HiddenLink.astro";
 import Date from "~components/Content/Date.astro";
+import { HiddenTypes } from "~components/Content/HiddenLink.astro";
 
 ---
 
@@ -18,7 +19,7 @@ import Date from "~components/Content/Date.astro";
         <span>Siège social</span> :
         <address>Martin Beaumont (EI) &ndash; 55 rue de la Paix &ndash; 53000 Laval</address>
       </li>
-      <li><span>Téléphone</span> : <span><HiddenLink type='phone' value="06.48.83.78.41" /></span> &ndash; <span>Adresse mail</span> : <span><HiddenLink type='mail' value="hello@martinbeaumont.dev" /></span></li>
+      <li><span>Téléphone</span> : <span><HiddenLink type={HiddenTypes.phone} value="06.48.83.78.41" /></span> &ndash; <span>Adresse mail</span> : <span><HiddenLink type={HiddenTypes.mail} value="hello@martinbeaumont.dev" /></span></li>
       <li><span>SIRET</span> : <span>840 877 591</span> &ndash; <span>SIREN</span> : <span>840 877 591 00049</span></li>
       <li><span>Numéro RCS</span> : <span>Laval A 840 877 591</span> &ndash; <span>Numéro de TVA</span> : <span>FR54840877591</span></li>
     </ul>

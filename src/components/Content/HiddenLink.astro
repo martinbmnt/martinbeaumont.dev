@@ -1,24 +1,32 @@
 ---
+/* eslint-disable no-unused-vars */
+export enum HiddenTypes {
+  mail = 'mail',
+  phone = 'phone',
+  text = 'text',
+}
+/* eslint-enable no-unused-vars */
+
 export interface Props {
   value: string;
-  type: "mail" | "phone";
+  type: HiddenTypes;
   showFullTitle?: true;
 }
 
-const content = Astro.props;
+const content = Astro.props as Props;
 
 const encodedContent = Buffer.from(content.value).toString('base64');
 let title: string;
 
 switch (content.type) {
-  case 'mail':
+  case HiddenTypes.mail:
     title = "l'adresse mail";
     break;
-  case 'phone':
+  case HiddenTypes.phone:
     title = 'le numéro de téléphone';
     break;
   default:
-    title = 'le lien';
+    title = 'le contenu';
 }
 
 ---
@@ -32,10 +40,12 @@ switch (content.type) {
     const buttons = Array.from(document.querySelectorAll('button[data-encoded]')) as HTMLButtonElement[];
 
     buttons.forEach(button => button.addEventListener('click', () => {
+      const type = button.dataset.type as string;
       const decodedContent = atob(button.dataset.encoded);
-      let linkURL: string;
+
+      let linkURL: string | null;
       
-      switch (button.dataset.type) {
+      switch (type) {
         case 'mail':
           linkURL = `mailto:${decodedContent}`;
           break;
@@ -43,15 +53,19 @@ switch (content.type) {
           linkURL = `tel:+33${decodedContent.replace(/(\s|\.|^0)/g, '')}`;
           break;
         default:
-          linkURL = decodedContent;
+          linkURL = null;
       }
 
-      const link = document.createElement('a');
-      link.href = linkURL;
-      link.textContent = decodedContent;
+      const element = (type === 'text') ? document.createElement('p') : document.createElement('a');
 
-      button.replaceWith(link);
-      link.focus();
+      if (element instanceof HTMLAnchorElement) {
+        element.href = linkURL;
+      }
+
+      element.textContent = decodedContent;
+
+      button.replaceWith(element);
+      element.focus();
     }));
   });
 </script>

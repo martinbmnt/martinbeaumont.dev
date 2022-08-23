@@ -212,6 +212,10 @@ main.page_about header {
     span:nth-of-type(even) {
       white-space: nowrap;
     }
+
+    p {
+      display: inline;
+    }
   }
 
   address {
