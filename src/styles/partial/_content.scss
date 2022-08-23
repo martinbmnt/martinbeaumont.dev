@@ -37,6 +37,12 @@ main[class*='page'] {
   }
 }
 
+.page_portfolio header p {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .page_portfolio__grid {
   ul {
     display: grid;

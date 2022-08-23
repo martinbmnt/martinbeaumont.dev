@@ -1,6 +1,6 @@
 ---
-import Layout from "~layouts/Layout.astro";
-import ProjectCard from "~components/Project/ProjectCard.astro";
+import Layout from '~layouts/Layout.astro';
+import ProjectCard from '~components/Project/ProjectCard.astro';
 
 /*
 async function getProjects() {
@@ -31,7 +31,7 @@ const projects = [
     slug: '/projet/boosh-b',
     cover: (await import('~images/project/boosh-b-cover.jpg')).default,
     cover_alt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
-    resume: 'Astro, Intégrations des maquettes'
+    resume: 'Astro, Intégrations des maquettes',
   },
   {
     releaseYear: 2022,
@@ -40,16 +40,16 @@ const projects = [
     slug: '/projet/patrimoine-mayenne',
     cover: (await import('~images/project/patrimoine-mayenne-cover.jpg')).default,
     cover_alt: "Page d'accueil des sites du patrimoine de la Mayenne, visible sur patrimoine.lamayenne.fr",
-    resume: 'WordPress, Accessibilité'
+    resume: 'WordPress, Accessibilité',
   },
   {
     releaseYear: 2021,
     title: 'Portfolio de Thurb',
-    excerpt: "Création du site internet / portfolio de Thurb, un graphiste, illustrateur et artiste free-lance.",
+    excerpt: 'Création du site internet / portfolio de Thurb, un graphiste, illustrateur et artiste free-lance.',
     slug: '/projet/portfolio-thurb',
     cover: (await import('~images/project/portfolio-thurb-cover.jpg')).default,
     cover_alt: "Page d'accueil du portfolio de Thurb, visible sur thurbwork.com",
-    resume: 'WordPress, Développement du thème WordPress'
+    resume: 'WordPress, Développement du thème WordPress',
   },
   {
     releaseYear: 2019,
@@ -58,21 +58,24 @@ const projects = [
     slug: '/projet/maine-image-sante',
     cover: (await import('~images/project/maine-image-sante-cover.jpg')).default,
     cover_alt: "Page d'accueil du site de Maine Image Santé, visible sur 72mis.fr",
-    resume: 'WordPress, Développement du thème WordPress'
+    resume: 'WordPress, Développement du thème WordPress',
   },
 ];
 ---
 
-<Layout title="Projets et réalisations" description="Découvrez mon portfolio, avec les dernières création de site internet et autres projets d'applications Web">
+<Layout title="Projets et réalisations" description="Découvrez mes dernières réalisations et mes compétences de création de sites internet ou autres projets d'applications Web">
   <main class="page_portfolio">
     <header>
       <h1>Projets et réalisations</h1>
+      <p>Entreprises, administrations, artistes ... Mes clients ont tous des profils et des besoins différents, et chaque projet est unique. Découvrez un aperçu de mes services et compétences de création de sites internet sur mesure.</p>
     </header>
     <section class="page_portfolio__grid">
+      <h2>Derniers projets</h2>
+      <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
       <ul>
         {projects.map((content, index) => (
           <li>
-            <ProjectCard {...content} index={index}/>
+            <ProjectCard {...content} index={index} />
           </li>
         ))}
       </ul>
