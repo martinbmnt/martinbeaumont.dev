@@ -176,6 +176,21 @@ main.page_about header {
   }
 }
 
+.page_contact__form {
+  display: grid;
+  gap: 2rem;
+
+  @include responsive(laptop) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .form_row:nth-child(n+3),
+    [role="alert"],
+    button {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
 .page_legal {
   header p {
     text-align: center;

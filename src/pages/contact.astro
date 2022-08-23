@@ -1,0 +1,109 @@
+---
+import Layout from "~layouts/Layout.astro";
+
+---
+
+<Layout title="Contact et demande de devis">
+  <main class="page_contact">
+    <header>
+      <h1>Contact & demande de devis</h1>
+      <p><strong>Un projet à réaliser ?</strong> Vous êtes intéressé par l'une de mes prestations ? Ou bien vous avez tout simplement une question ? Contactez moi à via le formulaire ci-dessous et je répondrai dans les plus brefs délais !</p>
+    </header>
+    <section>
+      <h2>Formulaire de contact</h2>
+      <p id="form-contact-info">Tous les champs du formulaire sont obligatoires.</p>
+      <form aria-live="polite" aria-busy="false" aria-describedby="form-contact-info" class="page_contact__form" action="/api/contact.php" method="post" id="form-contact">
+        <div class="form_row">
+          <label for="form-contact-name">Votre nom complet</label>
+          <input type="text" id="form-contact-name" name="name" placeholder="Nom Prénom" required />
+        </div>
+        <div class="form_row">
+          <label for="form-contact-mail" aria-describedby="form-contact-mail-help">Votre adresse email</label>
+          <input type="text" id="form-contact-mail" name="mail" placeholder="xxx@xxx.xx" required />
+          <p id="form-contact-mail-help"><small>La forme de votre email doit être de type <em>xxx@xxx.xx</em>.</small></p>
+        </div>
+        <div class="form_row">
+          <label for="form-contact-message" aria-describedby="form-contact-message-help">Quelle est votre demande ?</label>
+          <textarea name="message" id="form-contact-message" cols={30} rows={10} minlength={10} required></textarea>
+          <p id="form-contact-message-help"><small><strong>S'il s'agit d'une demande de devis</strong>, vous pouvez m'expliquer votre projet afin que je me renseigne avant de vous recontacter.</small></p>
+        </div>
+        <div class="form_row form_row--checkbox">
+          <label for="form-contact-privacy">J'accepte que mes données personnelles soient conservées par Martin Beaumont. Elles ne seront pas cédées ou revendues à des tiers.</label>
+          <input type="checkbox" id="form-contact-privacy" name="privacy" required>
+        </div>
+        <div role="alert" aria-hidden="true"></div>
+        <button class="button" type="submit">Envoyer le message</button>
+      </form>
+      <hr>
+      <p><small>Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées par ce formulaire, veuillez consulter la <a href="/politique-confidentialite">politique de confidentialité</a>.</small></p>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const contactForm = document.getElementById('form-contact') as HTMLFormElement;
+  const contactFormSubmitButton = contactForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const contactFormAlert = contactForm.querySelector('[role="alert"]') as HTMLElement;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const currentSearchParams = new URLSearchParams(window.location.search);
+    if (currentSearchParams.get('contact_sent') !== 'true') {
+      return;
+    }
+    contactFormSuccess();
+    contactForm.scrollIntoView(true);
+  });
+  
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    contactForm.ariaBusy = 'true';
+    contactForm.setAttribute('aria-busy', 'true');
+    contactFormSubmitButton.setAttribute('disabled', 'disabled');
+
+    const headers = new Headers();
+    headers.append('contact-ajax', 'true');
+
+    const data = new URLSearchParams(new FormData(contactForm) as any);
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      headers: headers,
+      mode: 'cors',
+      body: data,
+    })
+      .then((response) => response.json())
+      .then((json: { status: 'success' | 'error'; message?: string }) => {
+        if (json.status === 'success') {
+          contactFormSuccess();
+        } else {
+          contactFormError(json.message);
+        }
+      })
+      .catch(() => {
+        contactFormError(`<strong>Une erreur est survenue</strong>, actualisez la page puis recommencez, ou bien écrivez-moi à l'adresse mail <a href="mailto:hello@martinbeaumont.dev">hello@martinbeaumont.dev</a>`);
+      });
+  });
+
+  function contactFormSuccess(): void {
+    contactFormAlert.innerHTML = `<p><strong>Votre message a bien été envoyé !</strong> Je vous répond d'ici deux jours ouvrés maximum.</p>`;
+    contactFormAlert.dataset.success = 'true';
+    contactFormAlert.ariaHidden = 'false';
+    contactFormAlert.setAttribute('aria-hidden', 'false');
+    contactFormSubmitButton.setAttribute('disabled', 'disabled');
+    contactForm.querySelectorAll('input:not([type="checkbox"]), textarea').forEach((field) => field.setAttribute('readonly', 'readonly'));
+    contactForm.querySelectorAll('input[type="checkbox"]').forEach((field) => field.setAttribute('disabled', 'disabled'));
+    contactForm.ariaBusy = 'false';
+    contactForm.setAttribute('aria-busy', 'false');
+  }
+
+  function contactFormError(message: string): void {
+    contactFormAlert.innerHTML = `<p>${message}</p>`;
+    contactFormAlert.dataset.success = 'false';
+    contactFormAlert.ariaHidden = 'false';
+    contactFormAlert.setAttribute('aria-hidden', 'false');
+    contactFormSubmitButton.removeAttribute('disabled');
+    contactForm.ariaBusy = 'false';
+    contactForm.setAttribute('aria-busy', 'false');
+  }
+</script>
