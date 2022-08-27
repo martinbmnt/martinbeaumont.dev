@@ -80,11 +80,13 @@ main[class*='page'] {
       font-size: var(--font-size-h5);
     }
 
+    p {
+      color: var(--color-text-accentued);
+    }
+
     p:first-of-type {
       margin: 0 1rem;
       color: var(--color-accent);
-      font-size: var(--font-size-xsmall);
-      font-style: italic;
     }
 
     p:nth-of-type(n+2) {

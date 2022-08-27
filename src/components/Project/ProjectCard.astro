@@ -17,7 +17,7 @@ const content = Astro.props as Props;
 
 <article data-year={content.releaseYear}>
   <h3>{content.title}</h3>
-  <p>{content.resume}</p>
+  <p><small>{content.resume}</small></p>
   <Picture src={content.cover} alt={content.cover_alt} widths={[330, 480, 640]} aspectRatio={"4:3"} sizes="330px" loading={content.index < 6 ? "eager" : "lazy"} decoding={content.index < 3 ? "sync" : "async"}  />
   <p>{content.excerpt}</p>
   <p>
