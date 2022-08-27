@@ -1,0 +1,84 @@
+---
+import ProjectLayout from "~layouts/ProjectLayout.astro";
+import ProjectReview from "~components/Project/ProjectReview.astro";
+import { Picture } from "@astrojs/image/components";
+
+import cover from '~images/project/portfolio-thommy-cover.jpg';
+import vimeoAcceptancePicture from '~images/project/portfolio-thommy-vimeo-rgpd.jpg';
+
+const content = {
+  title: 'Portfolio de Thommy',
+  excerpt: "Refonte du site internet / portfolio de Thommy, un motion-designer, animateur 3D et artiste free-lance.",
+  site: 'https://thommyart.fr',
+  technologies: ["Symfony", "PHP", "TypeScript", "Sass", "Git", "GitHub Actions"],
+  services: ["Création d'un CMS sur-mesure", "Référencement", "Intégration & déploiement continus", "Gestion de l'hébergement"],
+  publishDate: '2022-08-31T14:00:00',
+  updateDate: null,
+  cover: cover,
+  coverAlt: "Page d'accueil du portfolio de Thommy, visible sur thommyart.fr",
+};
+---
+
+<ProjectLayout {...content}>
+  <h2>Le projet</h2>
+  <p>todo: intro de thommy</p>
+  <p>
+    Après avoir réalisé une première version de son portfolio en 2017, Thommy a de nouveau fait appel à moi pour la refonte de son portfolio.
+    Il souhaitait conserver la grille de projets sur la page d'accueil, mais enrichir l'affichage des pages projets, et simplifier le formulaire de contact.
+  </p>
+  <h2>Besoins et demandes du client</h2>
+  <p>
+    Comme sur la première version de son portfolio, Thommy voulait gérer lui-même l'ajout et la mise à jour des projets,
+    avec un Système de Gestion de Contenu (SGC, ou en anglais <em lang="en">Content Management System &ndash; CMS</em>).
+  </p>
+  <p>
+    Les nouveautées principales sont sur les pages des projets, avec l'ajout des crédits pour citer les artistes ayant collaborés,
+    la possibilité d'avoir plusieurs vidéos Vimeo sur un même projet, et un lien vers le projet sur Benance.
+  </p>
+  <h2>Solutions mises en place</h2>
+  <h3>Système de Gestion de Contenu</h3>
+  <p>todo</p>
+  <figure>
+    <!-- <Picture alt="Capture d'écran de la page de gestion des clients présents dans le carousel" src={carouselPicture} widths={[480, 896]} aspectRatio="896:628" sizes="(max-width: 950px) 100vw, 896px" /> -->
+    <figcaption>Page de gestion des clients présents dans le carousel</figcaption>
+  </figure>
+  <h3>Optimisations des performances</h3>
+  <p>
+    Ce projet était l'occasion pour moi de <strong>travailler sur des optimisations de performances côté client</strong>.
+    Le travail de Thommy étant majoritairement graphique, les pages projets comporte de nombreuses images et vidéos.
+  </p>
+  <h4>Redimensionnement des images à la mise en ligne</h4>
+  <p>
+    Lors de l'ajout d'une image à un projet, <strong>le serveur va redimensionner l'image</strong> dans 10 tailles différentes,
+    et créer une copie de chaque image en <em>WEBP</em>, un format compressé sans perte de qualité.
+  </p>
+  <p>
+    À l'affichage du projet sur l'écran du l'utilisateur, les différentes tailles et formats sont proposés au navigateur,
+    et celui-ci va télécharger <strong>l'image la plus adaptée selon les caractéristique de l'écran, telles que la taille et la résolution</strong>.
+  </p>
+  <h4>Chargement asynchrone des vidéos</h4>
+  <p>
+    Sur la page d'accueil et sur les pages projets, les vidéos sont chargées dès lors qu'elles sont dans la partie visible de l'écran du navigateur de l'utilisateur.
+    Ainsi, seules les vidéos qui vont être affichées sont téléchargées, réduisant le temps de chargement initial de la page.
+  </p>
+  <h3>Lecteur Vimeo aux normes RGPD</h3>
+  <p>
+    Les vidéos des projets sont mises en lignes sur Vimeo, un service d'hébergement de vidéos alternatif à YouTube.
+    <strong>Comme tous les services tiers non-essentiels, le consentement de l'utilisateur doit être reccueilli</strong> avant l'utilisation de celui-ci.
+  </p>
+  <p>
+    Lors du premier affichage d'une vidéo Vimeo, <strong>l'utilisateur est averti de l'utilisation d'un service tiers</strong>, et sont consentement est demandé.
+    Tant que l'utilisateur n'a pas donné son accord, le message sera affiché à la place de toutes les vidéos Vimeo du site.
+  </p>
+  <figure>
+    <Picture alt="Capture d'écran du lecteur Vimeo sur une page projet, où le consentement explicite de l'utilisateur est demandé pour afficher la vidéo" src={vimeoAcceptancePicture} widths={[480, 896, 1280]} aspectRatio="16:9" sizes="(max-width: 950px) 100vw, 896px" />
+    <figcaption>Page d'un projet avec une vidéo Vimeo, où l'utilisateur doit donner son consentement pour charger le service tiers</figcaption>
+  </figure>
+  <p>Enfin, l'intégration du lecteur Vimeo traditionnel a été remplacé par LiteVimeoEmbed, un lecteur qui charge les ressources de Vimeo uniquement si l'utilisateur intéragi avec la vidéo.</p>
+  <ProjectReview author="Thommy" link="https://goo.gl/maps/4j1bSkYfGbggaWn2A">
+    J'ai contacté Martin pour la réalisation de mon site Web au cours de l'année. Ma demande était précise et il a su y répondre parfaitement.
+    Malgré des retours parfois hors budget, ils ont été effectué sans problème.
+    Et surtout la réactivité et les délais de réalisation en font un professionnel excellent.
+    Merci Martin !
+  </ProjectReview>
+</ProjectLayout>
