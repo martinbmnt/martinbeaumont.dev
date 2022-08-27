@@ -34,6 +34,9 @@ const content = Astro.props as Props;
     <slot />
     <footer>
       <p>
+        <small>Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site <a href={content.site} rel="noopener" target="_blank">{content.site.replace(/https:\/\//, '')}</a>.</small>
+      </p>
+      <p>
         <small>
           Publié le
           <Date datetime={content.publishDate} />{content.updateDate && <>, mis à jour le
