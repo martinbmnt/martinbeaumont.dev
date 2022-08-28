@@ -4,12 +4,13 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
-    title: 'Restaurants Boosh-B',
-    excerpt: "Intégration des maquettes réalisées par l'agence ZeAstronaut pour les restaurants Boosh-B.",
-    slug: '/projet/boosh-b',
-    cover: (await import('~images/project/boosh-b-cover.jpg')).default,
-    cover_alt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
-    resume: 'Astro, Intégrations des maquettes',
+    releaseYear: 2022,
+    title: 'Portfolio de Thommy',
+    excerpt: "Refonte du site internet / portfolio de Thommy, un motion-designer, animateur 3D et artiste free-lance.",
+    slug: '/projet/portfolio-thommy',
+    cover: (await import('~images/project/portfolio-thommy-cover.jpg')).default,
+    cover_alt: "Page d'accueil du portfolio de Thommy, visible sur thommyart.fr",
+    resume: 'Symfony, Création d\'un CMS sur mesure',
   },
   {
     title: 'Patrimoine La Mayenne',
@@ -20,12 +21,12 @@ const projects = [
     resume: 'WordPress, Accessibilité',
   },
   {
-    title: 'Portfolio de Thurb',
-    excerpt: 'Création du site internet / portfolio de Thurb, un graphiste, illustrateur et artiste free-lance.',
-    slug: '/projet/portfolio-thurb',
-    cover: (await import('~images/project/portfolio-thurb-cover.jpg')).default,
-    cover_alt: "Page d'accueil du portfolio de Thurb, visible sur thurbwork.com",
-    resume: 'WordPress, Développement du thème',
+    title: 'Restaurants Boosh-B',
+    excerpt: "Intégration des maquettes réalisées par l'agence ZeAstronaut pour les restaurants Boosh-B.",
+    slug: '/projet/boosh-b',
+    cover: (await import('~images/project/boosh-b-cover.jpg')).default,
+    cover_alt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
+    resume: 'Astro, Intégrations des maquettes',
   }
 ];
 ---
