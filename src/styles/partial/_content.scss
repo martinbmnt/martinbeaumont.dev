@@ -58,7 +58,7 @@ main[class*='page'] {
     padding-bottom: 1rem;
     background-color: var(--color-gray-light);
 
-    &:after {
+    &[data-year]:not([data-year=""]):after {
       content: attr(data-year);
       position: absolute;
       background: var(--color-accent);
