@@ -58,7 +58,7 @@ const projects = [
     slug: '/projet/portfolio-thurb',
     cover: (await import('~images/project/portfolio-thurb-cover.jpg')).default,
     cover_alt: "Page d'accueil du portfolio de Thurb, visible sur thurbwork.com",
-    resume: 'WordPress, Développement du thème WordPress',
+    resume: 'WordPress, Développement de thème',
   },
   {
     releaseYear: 2019,
@@ -67,7 +67,7 @@ const projects = [
     slug: '/projet/maine-image-sante',
     cover: (await import('~images/project/maine-image-sante-cover.jpg')).default,
     cover_alt: "Page d'accueil du site de Maine Image Santé, visible sur 72mis.fr",
-    resume: 'WordPress, Développement du thème WordPress',
+    resume: 'WordPress, Développement de thème',
   },
 ];
 ---
@@ -78,10 +78,10 @@ const projects = [
       <h1>Projets et réalisations</h1>
       <p>Entreprises, administrations, artistes ... Mes clients ont tous des profils et des besoins différents, et chaque projet est unique. Découvrez un aperçu de mes services et compétences de création de sites internet sur mesure.</p>
     </header>
-    <section class="page_portfolio__grid">
+    <section>
       <h2>Derniers projets</h2>
       <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
-      <ul>
+      <ul class="bloc_portfolio__grid">
         {projects.map((content, index) => (
           <li>
             <ProjectCard {...content} index={index} />

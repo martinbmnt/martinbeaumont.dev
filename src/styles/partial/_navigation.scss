@@ -72,7 +72,7 @@
   a {
     border-bottom: 4px solid transparent;
     padding-bottom: calc(1rem - 4px);
-    -webkit-tap-highlight-color: var(--color-gray-light);
+    -webkit-tap-highlight-color: #5e117740;
 
     @media (any-hover: hover) {
       &:hover {

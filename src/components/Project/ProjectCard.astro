@@ -4,12 +4,12 @@ import { Picture } from "@astrojs/image/components";
 export interface Props {
   cover: string;
   cover_alt: string;
-  releaseYear: number;
+  releaseYear?: number;
   title: string;
   excerpt: string;
   resume: string;
   slug: string;
-  index: number;
+  index?: number;
 }
 
 const content = Astro.props as Props;
@@ -18,10 +18,10 @@ const content = Astro.props as Props;
 <article data-year={content.releaseYear}>
   <h3>{content.title}</h3>
   <p><small>{content.resume}</small></p>
-  <Picture src={content.cover} alt={content.cover_alt} widths={[330, 480, 640]} aspectRatio={"4:3"} sizes="330px" loading={content.index < 6 ? "eager" : "lazy"} decoding={content.index < 3 ? "sync" : "async"}  />
+  <Picture src={content.cover} alt={content.cover_alt} widths={[330, 480, 640]} aspectRatio={"4:3"} sizes="330px" loading={content.index && content.index < 6 ? "eager" : "lazy"} decoding={content.index && content.index < 3 ? "sync" : "async"}  />
   <p>{content.excerpt}</p>
   <p>
-    <a class="button" href={content.slug}>
+    <a class="button button--with-icon" href={content.slug}>
       <span>Voir l'étude de cas</span>
       <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
         <use xlink:href="/images/icons.svg#icon-arrow-right"></use>

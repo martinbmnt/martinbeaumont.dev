@@ -3,5 +3,5 @@ export function getCanonicalURL(host: string, path: string): string {
 }
 
 export function getCurrentPageSlug(currentPage: string): string {
-  return currentPage.slice(1).split('/')[0];
+  return currentPage.slice(1).split('/')[0].replace(/\.html/, '');
 }
