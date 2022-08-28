@@ -1,13 +1,65 @@
 ---
+import ProjectCard from '~components/Project/ProjectCard.astro';
 import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'Restaurants Boosh-B',
+    excerpt: "Intégration des maquettes réalisées par l'agence ZeAstronaut pour les restaurants Boosh-B.",
+    slug: '/projet/boosh-b',
+    cover: (await import('~images/project/boosh-b-cover.jpg')).default,
+    cover_alt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
+    resume: 'Astro, Intégrations des maquettes',
+  },
+  {
+    title: 'Patrimoine La Mayenne',
+    excerpt: "Amélioration de l'accessibilité et de la navigation des sites du patrimoine de la Mayenne.",
+    slug: '/projet/patrimoine-mayenne',
+    cover: (await import('~images/project/patrimoine-mayenne-cover.jpg')).default,
+    cover_alt: "Page d'accueil des sites du patrimoine de la Mayenne, visible sur patrimoine.lamayenne.fr",
+    resume: 'WordPress, Accessibilité',
+  },
+  {
+    title: 'Portfolio de Thurb',
+    excerpt: 'Création du site internet / portfolio de Thurb, un graphiste, illustrateur et artiste free-lance.',
+    slug: '/projet/portfolio-thurb',
+    cover: (await import('~images/project/portfolio-thurb-cover.jpg')).default,
+    cover_alt: "Page d'accueil du portfolio de Thurb, visible sur thurbwork.com",
+    resume: 'WordPress, Développement du thème',
+  }
+];
 ---
 
 <Layout title="Développeur Web Free-lance à Laval">
   <main class="page_home">
-    <h1><span class="visually-hidden">Martin Beaumont,&nbsp;</span>Développeur Web <span>Free-lance</span>.</h1>
+    <header>
+      <h1>Je suis <strong>Martin Beaumont</strong>, <br>développeur Web <span>free-lance</span>.</h1>
+    </header>
     <section>
-      <h2 class="visually-hidden">En quelques mots ...</h2>
-      <p>Bientôt, un texte de présentation 😊</p>
+      <h2 data-subtitle="À propos">Besoin d'un site Web ?</h2>
+      <p>Depuis plus de cinq ans, j'accompagne mes clients pour la <strong>création ou la refonte de leur site internet</strong>, et la diffusion de leur projet, leur marque et leur image sur internet.</p>
+      <p>De la <em lang="en">landing-page</em> pour <strong>convertir des prospects</strong>, au <strong>site vitrine pour présenter leur activité</strong>, en passant par les applications de gestion client (CRM) et les <strong>sites de vente en ligne (e-commerce)</strong>.</p>
+      <p>Pour mener à bien votre projet, je m'appuie sur mes compétences de <strong>développeur Web full-stack</strong>, et mes années d'expérience en entreprise et en free-lance.</p>
+      <p>Tous les projets sont réalisables, <a href="/contact">parlez-moi du vôtre</a>&nbsp;!</p>
+    </section>
+    <section class="page_home__portfolio">
+      <h2 data-subtitle="Portfolio">Quelques-uns des projets où je suis intervenu</h2>
+      <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
+      <ul class="bloc_portfolio__grid">
+        {projects.map((content) => (
+          <li>
+            <ProjectCard {...content} />
+          </li>
+        ))}
+      </ul>
+      <p>
+        <a class="button button--with-icon" href="/portfolio">
+          <span>Afficher plus de réalisations</span>
+          <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
+            <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+      </p>
     </section>
   </main>
 </Layout>
