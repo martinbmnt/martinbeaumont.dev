@@ -9,6 +9,11 @@
   border: 2px solid var(--color-dark);
 }
 
+.button--with-icon {
+  gap: 0.25rem;
+  text-transform: lowercase;
+}
+
 .button--backtotop {
   position: sticky;
   bottom: var(--content-space-around);
@@ -18,7 +23,6 @@
   -webkit-tap-highlight-color: var(--color-gray-light);
   font-weight: bold;
   font-size: var(--font-size-small);
-  text-transform: lowercase;
 
   @media (any-hover: hover) {
     &:hover {

@@ -21,7 +21,7 @@ const content = Astro.props as Props;
   <Picture src={content.cover} alt={content.cover_alt} widths={[330, 480, 640]} aspectRatio={"4:3"} sizes="330px" loading={content.index && content.index < 6 ? "eager" : "lazy"} decoding={content.index && content.index < 3 ? "sync" : "async"}  />
   <p>{content.excerpt}</p>
   <p>
-    <a class="button" href={content.slug}>
+    <a class="button button--with-icon" href={content.slug}>
       <span>Voir l'étude de cas</span>
       <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
         <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
