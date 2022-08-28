@@ -37,19 +37,11 @@ main[class*='page'] {
   }
 }
 
-.page_portfolio header p {
-  max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.page_portfolio__grid {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, min(100%, 37ch));
-    justify-content: center;
-    gap: 2rem;
-  }
+.bloc_portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(100%, 37ch));
+  justify-content: center;
+  gap: 2rem;
 
   article {
     position: relative;
@@ -105,7 +97,6 @@ main[class*='page'] {
     a {
       text-transform: lowercase;
       font-size: var(--font-size-small);
-      gap: .25rem;
       margin-left: auto;
 
       &:before {
