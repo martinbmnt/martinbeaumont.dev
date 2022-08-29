@@ -16,12 +16,13 @@ export interface Props {
   services: string[];
   cover: string;
   coverAlt: string;
+  coverSEO: string;
 }
 
 const content = Astro.props as Props;
 ---
 
-<BaseLayout title={`${content.title} – Portfolio`} description={content.excerpt} image={({src: content.cover, alt: content.coverAlt})}
+<BaseLayout title={`${content.title} – Portfolio`} description={content.excerpt} image={({src: content.coverSEO, alt: content.coverAlt})}
   articleSection="Portfolio" publishDate={content.publishDate} updateDate={content.updateDate ?? null}>
   <article class="portfolio_item" aria-labelledby="article-title">
     <Breadcrumb page={{path: '/portfolio' , name: 'Portfolio' }} article={content.title} />
