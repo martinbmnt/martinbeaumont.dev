@@ -1,5 +1,7 @@
 ErrorDocument 404 /404.html
 
+Redirect 301 /projets https://www.martinbeaumont.dev/portfolio
+
 # Remove trailing .html
 
 RewriteEngine on
@@ -12,6 +14,13 @@ RewriteRule ^(.*)/$ /$1 [L,R=302]
 # Return content without .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule (.*)/?$ /$1.html [L]
+
+Header set X-Frame-Options "deny"
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+# Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'; connect-src 'self' https://api.martinbeaumont.dev"
+Header set Permissions-Policy "geolocation=() microphone=()"
 
 # Disable directory indexes
 
@@ -39,6 +48,7 @@ FileETag none
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     AddType image/avif .avif
+    ExpiresByType image/avif "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType video/mp4 "access plus 1 year"
