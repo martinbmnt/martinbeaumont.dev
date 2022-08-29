@@ -15,6 +15,13 @@ RewriteRule ^(.*)/$ /$1 [L,R=302]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule (.*)/?$ /$1.html [L]
 
+Header set X-Frame-Options "deny"
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+# Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'; connect-src 'self' https://api.martinbeaumont.dev"
+Header set Permissions-Policy "geolocation=() microphone=()"
+
 # Disable directory indexes
 
 Options -Indexes
