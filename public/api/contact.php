@@ -23,7 +23,7 @@ function success(): void
             'status' => 'success',
         ]);
     } else {
-        header("Location: https://martinbeaumont.dev/contact?contact_sent=true");
+        header("Location: https://www.martinbeaumont.dev/contact?contact_sent=true");
     }
 
     exit;
