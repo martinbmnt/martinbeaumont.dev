@@ -41,6 +41,7 @@ FileETag none
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     AddType image/avif .avif
+    ExpiresByType image/avif "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType video/mp4 "access plus 1 year"
