@@ -1,5 +1,7 @@
 ErrorDocument 404 /404.html
 
+Redirect 301 /projets https://www.martinbeaumont.dev/portfolio
+
 # Remove trailing .html
 
 RewriteEngine on
