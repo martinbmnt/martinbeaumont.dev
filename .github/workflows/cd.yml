@@ -30,5 +30,6 @@ jobs:
           cd dist
           rsync -chaqz --delete \
             -e 'ssh -p ${{ env.host_port }} -i ../deploy_key -o StrictHostKeyChecking=no' \
+            --exclude ".htaccess" \
             ./ ${{ env.host }}:${{ env.path }}
           ssh -p ${{ env.host_port }} -i ../deploy_key -o StrictHostKeyChecking=no ${{ env.host }} 'echo -e "\nHeader set X-Robots-Tag \"noindex, noarchive\"" >> .htaccess'

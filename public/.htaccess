@@ -5,6 +5,9 @@ Redirect 301 /projets https://www.martinbeaumont.dev/portfolio
 # Remove trailing .html
 
 RewriteEngine on
+# Redirect to force www
+RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
 # Redirect to remove trailing .html
 RewriteCond %{THE_REQUEST} /([^.]+).html [NC]
 RewriteRule .+ /%1 [L,R=301]
