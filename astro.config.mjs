@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://martinbeaumont.dev',
+  site: 'https://www.martinbeaumont.dev',
   trailingSlash: 'never',
   build: {
     format: 'file'
