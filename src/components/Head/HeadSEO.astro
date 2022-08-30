@@ -19,7 +19,6 @@ const content = Astro.props as Props;
 
 const formattedContentTitle = content.title ? `${content.title} – ${SITE.title}` : SITE.title;
 const imageSrc = content?.image?.src ?? OPEN_GRAPH.image.src;
-console.log(imageSrc);
 const canonicalImageSrc = imageSrc ? new URL(imageSrc, Astro.site) : null;
 const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 ---
@@ -47,7 +46,7 @@ const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
 <meta property="og:description" content={content.description ? content.description : SITE.description} />
 <meta property="og:site_name" content={OPEN_GRAPH.site_name} />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content={content.articleSection ? 'summary_large_image' : 'summary'} />
 <meta name="twitter:title" content={formattedContentTitle} />
 <meta name="twitter:description" content={content.description ? content.description : SITE.description} />
 <meta name="twitter:site" content={OPEN_GRAPH.twitter} />
