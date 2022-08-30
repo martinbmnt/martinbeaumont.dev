@@ -16,7 +16,9 @@ aside {
     color: var(--color-accent);
   }
 
-  p {
+  p,
+  ul,
+  ol {
     margin: 1rem 0 2rem;
   }
 }
@@ -251,7 +253,9 @@ main.page_about header {
       white-space: nowrap;
     }
 
-    p {
+    p,
+    ul,
+    ol {
       display: inline;
     }
   }

@@ -2,25 +2,17 @@
 
 .portfolio_item {
   --content-max-width: 56rem;
-  display: grid;
-  gap: 1rem;
 
   h3 {
     color: var(--color-text);
   }
 
-  > p {
-    margin-bottom: 0;
-  }
-
-  > ul {
+  > .list {
     list-style: square;
-    padding-left: 1rem;
-    margin-top: 1rem;
   }
 
-  > li + li {
-    margin-top: 0.5rem;
+  > p + .list {
+    margin-top: unset;
   }
 
   figure > p {
@@ -54,6 +46,7 @@
   display: flex;
   gap: 0 1rem;
   flex-direction: column;
+  margin: 1rem 0 0;
 
   @include responsive(tablet) {
     flex-direction: row;

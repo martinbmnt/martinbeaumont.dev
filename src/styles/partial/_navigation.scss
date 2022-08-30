@@ -96,6 +96,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     gap: 0 0.5rem;
+    margin: unset;
   }
 
   li:not(:last-child):after {
