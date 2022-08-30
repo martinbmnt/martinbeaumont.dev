@@ -19,6 +19,7 @@ const content = Astro.props as Props;
 
 const formattedContentTitle = content.title ? `${content.title} – ${SITE.title}` : SITE.title;
 const imageSrc = content?.image?.src ?? OPEN_GRAPH.image.src;
+console.log(imageSrc);
 const canonicalImageSrc = imageSrc ? new URL(imageSrc, Astro.site) : null;
 const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 ---
@@ -29,7 +30,7 @@ const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="robots" content="follow, index, max-snippet:-1, max-image-preview:large" />
 <meta property="og:title" content={formattedContentTitle} />
-<meta property="og:type" content="article" />
+<meta property="og:type" content={content.articleSection ? 'article' : 'website'} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={SITE.language} />
 {(typeof content.articleSection === 'string') && (
@@ -40,8 +41,8 @@ const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 {content.articleSection && content.updateDate && (<meta property="article:modified_time" content={content.updateDate} />)}
 {canonicalImageSrc && (
   <meta property="og:image" content={canonicalImageSrc} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="600" />
+  <meta property="og:image:width" content={content.image ? '1200' : '800'} />
+  <meta property="og:image:height" content={content.image ? '600' : '800'} />
 )}
 {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
 <meta property="og:description" content={content.description ? content.description : SITE.description} />
