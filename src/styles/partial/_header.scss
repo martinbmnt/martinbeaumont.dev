@@ -11,12 +11,12 @@
 
   strong {
     font-size: var(--font-size-h5);
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
     text-transform: lowercase;
     font-weight: 400;
 
     @include responsive(laptop) {
-      letter-spacing: 1.75px;
+      letter-spacing: 2px;
       font-size: var(--font-size-h4);
     }
 
@@ -27,7 +27,7 @@
 
   small {
     font-size: var(--font-size-xsmall);
-    letter-spacing: 0.8px;
+    letter-spacing: 0.75px;
 
     &::first-letter {
       text-transform: lowercase;
@@ -44,7 +44,7 @@
 
     @include responsive(desktop) {
       font-size: var(--font-size-normal);
-      letter-spacing: 0.45px;
+      letter-spacing: 0.15px;
     }
   }
 }
