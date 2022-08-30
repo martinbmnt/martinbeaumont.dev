@@ -26,6 +26,10 @@ Header set Referrer-Policy "strict-origin-when-cross-origin"
 # Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'; connect-src 'self' https://api.martinbeaumont.dev"
 Header set Permissions-Policy "geolocation=() microphone=()"
 
+# Disable ModPageSpeed beacon
+
+ModPagespeedCriticalImagesBeaconEnabled false
+
 # Disable directory indexes
 
 Options -Indexes
