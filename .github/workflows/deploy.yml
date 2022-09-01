@@ -3,6 +3,8 @@ name: Deploy
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "2 0 1 1 *" # rebuild and deploy every 1st january for footer year 😎
 
 jobs:
   deploy:
