@@ -9,9 +9,36 @@
   border: 2px solid var(--color-dark);
 }
 
+.button[data-encoded] {
+  text-transform: lowercase;
+}
+
 .button--with-icon {
   gap: 0.25rem;
   text-transform: lowercase;
+  transition: gap .025s;
+
+  @media (any-hover: hover) {
+    &:not(:hover) {
+      gap: 0;
+      
+      svg {
+        width: 0;
+      }
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+
+      svg {
+        fill: var(--color-accent);
+      }
+    }
+
+    svg {
+      transition: width .2s;
+    }
+  }
 }
 
 .button--backtotop {
