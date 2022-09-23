@@ -1,5 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  '@context': 'http://schema.org',
+  '@type': 'Person',
+  name: 'Martin Beaumont',
+  jobTitle: 'Développeur Web free-lance',
+  description: 'Développeur Web free-lance à Laval, Martin Beaumont est spécialisé dans la Création de site internet : Intégration Web, Site Responsive, Développement Mobile First, conformité RGPD, et SEO (Optimisation pour les Moteurs de Recherche). Grâce à des technologies reconnues comme Symfony et WordPress, il réalise des sites institutionnels et des sites vitrine, ainsi que des Web Logiciel et des Web Applications.',
+  url: 'https://www.martinbeaumont.dev',
+  sameAs: [
+    'https://twitter.com/martinbmnt',
+    'https://github.com/martinbmnt'
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Laval, Pays de la Loire, France',
+    addressCountry: 'FR',
+    postalCode: '53000',
+  },
+  alumniOf: [
+    {
+      '@type': 'Organization',
+      name: 'Jouve',
+      url: 'https://www.luminess.eu/',
+      location: 'Mayenne, Pays de la Loire, France',
+      member: {
+        '@type': 'OrganizationRole',
+        description: "Alternance durant ma Licence Professionnelle, au sein de l'équipe de développement Web de Jouve. Avec Symfony et Drupal, j'ai travaillé sur plusieurs projets de sites institutionnels et des Web-services.",
+        startDate: '2019-09',
+        endDate: '2020-09',
+      },
+    },
+    {
+      '@type': 'Organization',
+      name: 'Maine Image Santé',
+      location: 'Le Mans, Pays de la Loire, France',
+      member: {
+        '@type': 'OrganizationRole',
+        description: "Alternance durant ma seconde année de DUT MMI. Ma mission principale était de créer le nouveau site web du groupe Maine Image Santé, de l'écriture du cahier des charges à la mise en ligne du site et à l'optimisation du référencement.",
+        startDate: '2018-08',
+        endDate: '2019-08',
+      },
+    },
+    {
+      '@type': 'EducationalOrganization',
+      name: 'IUT de Laval',
+      url: 'https://iut-laval.univ-lemans.fr',
+      member: {
+        '@type': 'OrganizationRole',
+        description: "Formation à l'IUT de Laval en DUT Métiers du Multimédia et de l'Internet, suivi d'une Licence Professionnelle Développeur et Intégrateur de Web Applications.",
+        startDate: '2017-09',
+        endDate: '2020-09',
+      },
+    },
+  ],
+};
 ---
 
 <Layout title="Présentation" description="Après un DUT, une licence pro, et deux ans en alternance, j'ai choisi de continuer la création de site internet en free-lance.">
@@ -105,4 +160,5 @@ import Layout from '../layouts/Layout.astro';
       </ol>
     </section>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}/>
 </Layout>
