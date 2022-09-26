@@ -5,13 +5,51 @@ export interface Props {
 }
 
 const nav = Astro.props as Props;
+
+let schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Martin Beaumont',
+      item: Astro.site.href,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: nav.page.name,
+      item: `${Astro.site.href.slice(0, -1)}${nav.page.path}`,
+    },
+  ],
+};
+
+if (nav.article) {
+  schema.itemListElement.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: nav.article,
+      item: Astro.url.toString().replace(/\.html/, ''),
+  });
+}
+
 ---
 
 <nav class="breadcrumb" aria-label="Fil d'Ariane">
   <p>Vous êtes ici :</p>
   <ol>
-    <li><a href="/">Martin Beaumont</a></li>
-    <li><a href={`${nav.page.path}`} aria-current={nav.article ? 'false' : 'page'}>{nav.page.name}</a></li>
-    {nav.article && (<li><a href={`${Astro.url}`} aria-current="page">{nav.article}</a></li>)}
+    <li>
+      <a href="/">Martin Beaumont</a>
+    </li>
+    <li>
+      <a href={`${nav.page.path}`} aria-current={nav.article ? 'false' : 'page'}>{nav.page.name}</a>
+    </li>
+    {nav.article && (
+      <li>
+        <a href={`${Astro.url}`} aria-current="page">{nav.article}</a>
+      </li>
+    )}
   </ol>
 </nav>
+<script type="application/ld+json" set:html={JSON.stringify(schema)}/>
