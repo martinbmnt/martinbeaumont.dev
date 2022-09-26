@@ -1,0 +1,30 @@
+---
+const socials = [
+  {
+    name: 'GitHub',
+    link: 'https://github.com/martinbmnt',
+    logo: 'github',
+  },
+  {
+    name: 'Twitter',
+    link: 'https://twitter.com/martinbmnt',
+    logo: 'twitter',
+  },
+];
+---
+
+<aside class="social_networks" aria-labelledby="aside-social">
+  <h2 id="aside-social" data-subtitle="Réseaux sociaux">Me retrouver<span class="visually-hidden"> sur les réseaux sociaux</span></h2>
+  <ul>
+    {socials.map((social) => (
+      <li>
+        <a href={social.link} target="_blank" rel="nofollow noopener">
+          <h3 data-link={social.link.replace(/http(s)?:(\/)+/, '')}>{social.name}</h3>
+          <svg focusable="false" aria-hidden="true">
+            <use xlink:href={`/images/icons.svg#icon-social-${social.logo}`}></use>  
+          </svg>
+        </a>
+      </li>
+    ))}
+  </ul>
+</aside>
