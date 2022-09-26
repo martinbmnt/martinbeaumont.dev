@@ -7,6 +7,7 @@
   text-decoration: none;
   border-radius: 5px;
   border: 2px solid var(--color-dark);
+  -webkit-tap-highlight-color: var(--color-tap);
 }
 
 .button[data-encoded] {
@@ -47,7 +48,6 @@
   place-self: end;
   margin-top: calc(100vh + 200px);
   background-color: var(--color-light);
-  -webkit-tap-highlight-color: var(--color-gray-light);
   font-weight: bold;
   font-size: var(--font-size-small);
 
