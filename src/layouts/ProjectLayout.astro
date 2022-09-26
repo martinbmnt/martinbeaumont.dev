@@ -31,13 +31,9 @@ const schema = {
   ],
   datePublished: content.publishDate,
   dateModified: content.updateDate,
-  author: [
-    {
-      '@type': 'Person',
-      name: 'Martin Beaumont',
-      url: 'https://www.martinbeaumont.dev',
-    },
-  ],
+  author: {
+    '@id': `${Astro.site}#author`,
+  },
 };
 ---
 
