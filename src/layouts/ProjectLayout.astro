@@ -39,7 +39,7 @@ const schema = {
 
 <BaseLayout title={`${content.title} – Portfolio`} description={content.excerpt} image={({src: content.coverSEO, alt: content.coverAlt})}
   articleSection="Portfolio" publishDate={content.publishDate} updateDate={content.updateDate ?? null}>
-  <article class="portfolio_item" aria-labelledby="article-title">
+  <article id="content" class="portfolio_item" aria-labelledby="article-title">
     <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={content.title} />
     <header>
       <h1 id="article-title">{content.title}</h1>
