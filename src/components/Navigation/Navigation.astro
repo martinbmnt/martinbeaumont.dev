@@ -5,11 +5,11 @@ import { getCurrentPageSlug } from '../../util';
 const currentPageSlug = getCurrentPageSlug(new URL(Astro.request.url).pathname);
 ---
 
-<nav class="navigation">
+<nav class="navigation" aria-label="Principale" role="navigation">
   <ul>
     {NAVIGATION.map((element) => (
       <li>
-        <a aria-current={currentPageSlug === element.link ? 'page' : 'false'} href={`${Astro.site.pathname}${element.link}`}>
+        <a aria-current={currentPageSlug === element.link ? 'page' : 'false'} aria-label={`Page ${element.name}`} href={`${Astro.site.pathname}${element.link}`}>
           {element.name}
         </a>
       </li>
