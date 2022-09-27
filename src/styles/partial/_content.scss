@@ -72,6 +72,7 @@ main[class*='page'] {
     h3 {
       margin: 2rem 1rem 0;
       font-size: var(--font-size-h5);
+      order: 1;
     }
 
     p {
@@ -79,21 +80,24 @@ main[class*='page'] {
     }
 
     p:first-of-type {
-      margin: 0 1rem;
-      color: var(--color-accent);
+      margin: 0.5rem 1rem;
+      order: 3;
     }
 
     p:nth-of-type(n+2) {
-      margin: 0.5rem 1rem;
+      margin: 0 1rem;
+      color: var(--color-accent);
+      order: 2;
     }
 
     p:last-of-type {
       margin-top: 1rem;
+      order: 10;
     }
 
     picture {
       display: flex;
-      order: -1;
+      order: 0;
     }
 
     a {

@@ -32,7 +32,7 @@ const projects = [
 ---
 
 <Layout title="Développeur Web Free-lance à Laval, Mayenne">
-  <main class="page_home">
+  <main id="content" class="page_home">
     <header>
       <h1>Je suis <strong>Martin Beaumont</strong>, <br>développeur Web <span>free-lance</span> à Laval.</h1>
     </header>
@@ -52,14 +52,14 @@ const projects = [
       </p>
       <p>
         Je travaille pour des administrations, des entreprises, des artistes (et même des particuliers !) principalement
-        <strong>à Laval, en Mayenne</strong> et en région parisienne, mais plus généralement dans toute la France selon les projets de mes clients.
+        <strong>à Laval, en Mayenne</strong>, et en région parisienne, mais plus généralement dans toute la France selon les projets de mes clients.
       </p>
-      <p>Tous les projets sont réalisables, <a href="/contact">parlez-moi du vôtre</a>&nbsp;!</p>
+      <p>Tous les projets sont réalisables, <a href="/contact" aria-label="Envoyez-moi un message via la page de contact">parlez-moi du vôtre</a>&nbsp;!</p>
     </section>
     <section class="page_home__portfolio">
-      <h2 data-subtitle="Portfolio">Des projets où je suis intervenu</h2>
+      <h2 id="home-portfolio-label" data-subtitle="Portfolio">Des projets où je suis intervenu</h2>
       <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
-      <ul class="bloc_portfolio__grid">
+      <ul class="bloc_portfolio__grid" aria-labelledby="home-portfolio-label">
         {projects.map((content) => (
           <li>
             <ProjectCard {...content} />
