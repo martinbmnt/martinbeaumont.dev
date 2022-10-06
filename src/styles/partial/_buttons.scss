@@ -7,11 +7,39 @@
   text-decoration: none;
   border-radius: 5px;
   border: 2px solid var(--color-dark);
+  -webkit-tap-highlight-color: var(--color-tap);
+}
+
+.button[data-encoded] {
+  text-transform: lowercase;
 }
 
 .button--with-icon {
   gap: 0.25rem;
   text-transform: lowercase;
+  transition: gap .025s;
+
+  @media (any-hover: hover) {
+    &:not(:hover) {
+      gap: 0;
+      
+      svg {
+        width: 0;
+      }
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+
+      svg {
+        fill: var(--color-accent);
+      }
+    }
+
+    svg {
+      transition: width .2s;
+    }
+  }
 }
 
 .button--backtotop {
@@ -20,7 +48,6 @@
   place-self: end;
   margin-top: calc(100vh + 200px);
   background-color: var(--color-light);
-  -webkit-tap-highlight-color: var(--color-gray-light);
   font-weight: bold;
   font-size: var(--font-size-small);
 

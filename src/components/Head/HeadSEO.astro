@@ -14,13 +14,135 @@ export interface Props {
   updateDate?: string | false;
 }
 
-const canonicalURL = getCanonicalURL(Astro.site.host, Astro.url.pathname);
+const canonicalURL = getCanonicalURL(Astro.site.host, Astro.url.pathname.replace(/\.html/, ''));
 const content = Astro.props as Props;
 
 const formattedContentTitle = content.title ? `${content.title} – ${SITE.title}` : SITE.title;
 const imageSrc = content?.image?.src ?? OPEN_GRAPH.image.src;
 const canonicalImageSrc = imageSrc ? new URL(imageSrc, Astro.site) : null;
 const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${Astro.site}#website`,
+      url: Astro.site,
+      name: OPEN_GRAPH.site_name,
+      description: SITE.description,
+      publisher: {
+        '@id': `${Astro.site}#author`,
+      },
+      inLanguage: 'fr-FR',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${Astro.site}#page`,
+      url: canonicalURL,
+      name: formattedContentTitle,
+      description: content.description,
+      isPartOf: {
+        '@id': `${Astro.site}#website`
+      },
+      author: {
+        '@id': `${Astro.site}#author`,
+      },
+      datePublished: content.publishDate,
+      dateModified: content.updateDate ? content.updateDate : null,
+      inLanguage: 'fr-FR',
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${Astro.site}#business`,
+      name: 'Martin Beaumont – Développeur Web free-lance',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Laval, Pays de la Loire, France',
+        addressCountry: 'FR',
+        postalCode: '53000',
+      },
+      geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 48.071480,
+          longitude: -0.769069
+      },
+      url: Astro.site,
+      openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday'
+          ],
+          opens: '08:00',
+          closes: '19:00'
+      },
+      telephone: '+33648837841',
+      priceRange: '$',
+      image: `${Astro.site}/images/icon-512.png`,
+    },
+    {
+      '@type': 'Person',
+      '@id': `${Astro.site}#author`,
+      name: 'Martin Beaumont',
+      jobTitle: 'Développeur Web free-lance',
+      description: 'Développeur Web free-lance à Laval, Martin Beaumont est spécialisé dans la Création de site internet : Intégration Web, Site Responsive, Développement Mobile First, conformité RGPD, et SEO (Optimisation pour les Moteurs de Recherche). Grâce à des technologies reconnues comme Symfony et WordPress, il réalise des sites institutionnels et des sites vitrine, ainsi que des Web Logiciel et des Web Applications.',
+      url: 'https://www.martinbeaumont.dev',
+      sameAs: [
+        'https://twitter.com/martinbmnt',
+        'https://github.com/martinbmnt'
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Laval, Pays de la Loire, France',
+        addressCountry: 'FR',
+        postalCode: '53000',
+      },
+      worksFor: {
+        '@id': `${Astro.site}#business`
+      },
+      alumniOf: [
+        {
+          '@type': 'Organization',
+          name: 'Jouve',
+          url: 'https://www.luminess.eu/',
+          location: 'Mayenne, Pays de la Loire, France',
+          member: {
+            '@type': 'OrganizationRole',
+            description: "Alternance durant ma Licence Professionnelle, au sein de l'équipe de développement Web de Jouve. Avec Symfony et Drupal, j'ai travaillé sur plusieurs projets de sites institutionnels et des Web-services.",
+            startDate: '2019-09',
+            endDate: '2020-09',
+          },
+        },
+        {
+          '@type': 'Organization',
+          name: 'Maine Image Santé',
+          location: 'Le Mans, Pays de la Loire, France',
+          member: {
+            '@type': 'OrganizationRole',
+            description: "Alternance durant ma seconde année de DUT MMI. Ma mission principale était de créer le nouveau site web du groupe Maine Image Santé, de l'écriture du cahier des charges à la mise en ligne du site et à l'optimisation du référencement.",
+            startDate: '2018-08',
+            endDate: '2019-08',
+          },
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'IUT de Laval',
+          url: 'https://iut-laval.univ-lemans.fr',
+          member: {
+            '@type': 'OrganizationRole',
+            description: "Formation à l'IUT de Laval en DUT Métiers du Multimédia et de l'Internet, suivi d'une Licence Professionnelle Développeur et Intégrateur de Web Applications.",
+            startDate: '2017-09',
+            endDate: '2020-09',
+          },
+        },
+      ],
+    }
+  ]
+};
 ---
 
 <title>{formattedContentTitle}</title>
@@ -29,7 +151,7 @@ const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="robots" content="follow, index, max-snippet:-1, max-image-preview:large" />
 <meta property="og:title" content={formattedContentTitle} />
-<meta property="og:type" content="article" />
+<meta property="og:type" content={content.articleSection ? 'article' : 'website'} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={SITE.language} />
 {(typeof content.articleSection === 'string') && (
@@ -38,14 +160,19 @@ const imageAlt = content?.image?.alt ?? OPEN_GRAPH.image.alt;
 )}
 {content.articleSection && content.publishDate && (<meta property="article:published_time" content={content.publishDate} />)}
 {content.articleSection && content.updateDate && (<meta property="article:modified_time" content={content.updateDate} />)}
-{canonicalImageSrc && <meta property="og:image" content={canonicalImageSrc} />}
+{canonicalImageSrc && (
+  <meta property="og:image" content={canonicalImageSrc} />
+  <meta property="og:image:width" content={content.image ? '1200' : '800'} />
+  <meta property="og:image:height" content={content.image ? '600' : '800'} />
+)}
 {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
 <meta property="og:description" content={content.description ? content.description : SITE.description} />
 <meta property="og:site_name" content={OPEN_GRAPH.site_name} />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content={content.articleSection ? 'summary_large_image' : 'summary'} />
 <meta name="twitter:title" content={formattedContentTitle} />
 <meta name="twitter:description" content={content.description ? content.description : SITE.description} />
 <meta name="twitter:site" content={OPEN_GRAPH.twitter} />
 <meta name="twitter:creator" content={OPEN_GRAPH.twitter} />
 {canonicalImageSrc && <meta name="twitter:image" content={canonicalImageSrc} />}
 {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
+<script type="application/ld+json" set:html={JSON.stringify(schema)}/>

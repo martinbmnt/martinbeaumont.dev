@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="😢 Page introuvable" description={SITE.description}>
-  <main>
+  <main id="content">
     <h1>Page introuvable</h1>
     <p>Désolé, la page <code data-path>{Astro.url.pathname.replace(/\/$/, '')}</code> n'existe pas (ou plus).</p>
     <p><a href="/">Retour à l'accueil</a></p>

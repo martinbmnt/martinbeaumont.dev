@@ -23,7 +23,7 @@ function success(): void
             'status' => 'success',
         ]);
     } else {
-        header("Location: https://martinbeaumont.dev/contact?contact_sent=true");
+        header("Location: https://www.martinbeaumont.dev/contact?contact_sent=true");
     }
 
     exit;
@@ -53,7 +53,7 @@ if (empty($data) || !empty($missingFields)) {
     error('Les informations requises sont manquantes.');
 }
 
-$to = "hello@martinbeaumont.dev";
+$to = "contact@martinbeaumont.fr";
 $sender = "=?UTF-8?B?".base64_encode($data['name'])."?=";
 
 $headers[] = 'MIME-Version: 1.0';

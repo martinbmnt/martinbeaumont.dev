@@ -13,7 +13,7 @@
     "types": ["@astrojs/image/client"],
     "baseUrl": ".",
     "paths": {
-      "~images/*": ["src/assets/images/*"],
+      "~images/*": ["public/images/*"],
       "~components/*": ["src/components/*"],
       "~layouts/*": ["src/layouts/*"],
       "~styles/*": ["src/styles/*"],

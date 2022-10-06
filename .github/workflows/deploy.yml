@@ -1,10 +1,10 @@
-name: CD
+name: Deploy
 
 on:
   push:
     branches: [main]
-
-  workflow_dispatch:
+  schedule:
+    - cron: "2 0 1 1 *" # rebuild and deploy every 1st january for footer year 😎
 
 jobs:
   deploy:
@@ -21,14 +21,13 @@ jobs:
         
       - name: Deploy
         env:
-          host: ${{ secrets.DEPLOY_HOST_DEV }}
-          host_port: ${{ secrets.DEPLOY_HOST_PORT_DEV || 22 }}
-          path: ${{ secrets.DEPLOY_PATH_DEV }}
+          host: ${{ secrets.DEPLOY_HOST }}
+          host_port: ${{ secrets.DEPLOY_PORT || 22 }}
+          path: ${{ secrets.DEPLOY_PATH }}
         run: |
-          echo "${{ secrets.DEPLOY_KEY_DEV }}" > deploy_key
+          echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
           chmod 600 ./deploy_key
           cd dist
           rsync -chaqz --delete \
             -e 'ssh -p ${{ env.host_port }} -i ../deploy_key -o StrictHostKeyChecking=no' \
-            --exclude ".htaccess" \
             ./ ${{ env.host }}:${{ env.path }}

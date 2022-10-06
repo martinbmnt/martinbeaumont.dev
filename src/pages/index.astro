@@ -1,4 +1,5 @@
 ---
+import SocialNetworks from '~components/Content/SocialNetworks.astro';
 import ProjectCard from '~components/Project/ProjectCard.astro';
 import Layout from '../layouts/Layout.astro';
 
@@ -31,22 +32,35 @@ const projects = [
 ];
 ---
 
-<Layout title="Développeur Web Free-lance à Laval">
-  <main class="page_home">
+<Layout title="Développeur Web Free-lance à Laval, Mayenne">
+  <main id="content" class="page_home">
     <header>
-      <h1>Je suis <strong>Martin Beaumont</strong>, <br>développeur Web <span>free-lance</span>.</h1>
+      <h1>Je suis <strong>Martin Beaumont</strong>, <br>développeur Web <span>free-lance</span> à Laval.</h1>
     </header>
     <section>
       <h2 data-subtitle="À propos">Besoin d'un site Web ?</h2>
-      <p>Depuis plus de cinq ans, j'accompagne mes clients pour la <strong>création ou la refonte de leur site internet</strong>, et la diffusion de leur projet, leur marque et leur image sur internet.</p>
-      <p>De la <em lang="en">landing-page</em> pour <strong>convertir des prospects</strong>, au <strong>site vitrine pour présenter leur activité</strong>, en passant par les applications de gestion client (CRM) et les <strong>sites de vente en ligne (e-commerce)</strong>.</p>
-      <p>Pour mener à bien votre projet, je m'appuie sur mes compétences de <strong>développeur Web full-stack</strong>, et mes années d'expérience en entreprise et en free-lance.</p>
-      <p>Tous les projets sont réalisables, <a href="/contact">parlez-moi du vôtre</a>&nbsp;!</p>
+      <p>
+        Depuis plus de cinq ans, j'accompagne mes clients pour la <strong>création ou la refonte de leur site internet</strong>,
+        et la diffusion de leur projet, leur marque et leur image sur internet.
+      </p>
+      <p>
+        De la <em lang="en">landing-page</em> pour <strong>convertir des prospects</strong>, au <strong>site vitrine pour présenter leur activité</strong>,
+        en passant par les applications de gestion client (CRM) et les <strong>sites de vente en ligne (e-commerce)</strong>.
+      </p>
+      <p>
+        Pour mener à bien votre projet, je m'appuie sur mes compétences de <strong>développeur Web full-stack</strong>,
+        et mes années d'expérience en entreprise et en free-lance.
+      </p>
+      <p>
+        Je travaille pour des administrations, des entreprises, des artistes (et même des particuliers !) principalement
+        <strong>à Laval, en Mayenne</strong>, et en région parisienne, mais plus généralement dans toute la France selon les projets de mes clients.
+      </p>
+      <p>Tous les projets sont réalisables, <a href="/contact" aria-label="Envoyez-moi un message via la page de contact">parlez-moi du vôtre</a>&nbsp;!</p>
     </section>
     <section class="page_home__portfolio">
-      <h2 data-subtitle="Portfolio">Quelques-uns des projets où je suis intervenu</h2>
+      <h2 id="home-portfolio-label" data-subtitle="Portfolio">Des projets où je suis intervenu</h2>
       <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
-      <ul class="bloc_portfolio__grid">
+      <ul class="bloc_portfolio__grid" aria-labelledby="home-portfolio-label">
         {projects.map((content) => (
           <li>
             <ProjectCard {...content} />
@@ -62,5 +76,6 @@ const projects = [
         </a>
       </p>
     </section>
+    <SocialNetworks/>
   </main>
 </Layout>

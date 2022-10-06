@@ -16,7 +16,9 @@ aside {
     color: var(--color-accent);
   }
 
-  p {
+  p,
+  ul,
+  ol {
     margin: 1rem 0 2rem;
   }
 }
@@ -70,6 +72,7 @@ main[class*='page'] {
     h3 {
       margin: 2rem 1rem 0;
       font-size: var(--font-size-h5);
+      order: 1;
     }
 
     p {
@@ -77,21 +80,24 @@ main[class*='page'] {
     }
 
     p:first-of-type {
-      margin: 0 1rem;
-      color: var(--color-accent);
+      margin: 0.5rem 1rem;
+      order: 3;
     }
 
     p:nth-of-type(n+2) {
-      margin: 0.5rem 1rem;
+      margin: 0 1rem;
+      color: var(--color-accent);
+      order: 2;
     }
 
     p:last-of-type {
-      align-self: flex-end;
+      margin-top: 1rem;
+      order: 10;
     }
 
     picture {
       display: flex;
-      order: -1;
+      order: 0;
     }
 
     a {
@@ -104,6 +110,88 @@ main[class*='page'] {
         position: absolute;
         inset: 0;
       }
+    }
+  }
+}
+
+.social_networks {
+  ul {
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+
+    @include responsive(tablet) {
+      padding: .5rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(laptop) {
+      padding: .5rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  li {
+    max-width: 37ch;
+
+    &:hover {
+      svg {
+        color: var(--color-gray-dark);
+      }
+    }
+
+    &:focus-within {
+      svg {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  a {
+    border: 2px solid var(--color-dark);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    text-decoration: unset;
+    outline-offset: 2px;
+    -webkit-tap-highlight-color: var(--color-tap);
+
+    &:focus {
+      border-color: var(--color-accent);
+    }
+  }
+
+  h3 {
+    margin: unset;
+    place-self: center;
+
+    @include responsive(laptop) {
+      font-size: var(--font-size-h3);
+    }
+    
+    &:after {
+      content: attr(data-link);
+      display: block;
+      font-size: var(--font-size-xsmall);
+      color: var(--color-accent);
+
+      @include responsive(tablet) {
+        font-size: var(--font-size-small);
+      }
+    }
+  }
+
+  svg {
+    width: 50%;
+    max-width: 7rem;
+    margin: 2rem;
+    aspect-ratio: 1 / 1;
+    place-self: center;
+    color: var(--color-gray-medium);
+    transition: color .15s ease-out;
+
+    &:not(:hover) {
+      transition-duration: 0;
     }
   }
 }
@@ -251,7 +339,9 @@ main.page_about header {
       white-space: nowrap;
     }
 
-    p {
+    p,
+    ul,
+    ol {
       display: inline;
     }
   }

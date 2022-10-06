@@ -34,6 +34,13 @@ const content = Astro.props as Props;
   </head>
 
   <body id="top">
+    <nav class="skip" aria-label="Accès rapide">
+      <ul class="skip-list">
+        <li class="skip-list__item">
+          <a href="#content" class="skip-list__link">Aller au contenu</a>
+        </li>
+      </ul>
+    </nav>
     <Header />
     <Navigation />
     <slot />

@@ -2,9 +2,20 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="footer">
-  <div class="footer__legal">
-    <p>{Astro.site.host} {year} &ndash; Tous droits réservés.</p>
-    <p><a href="/mentions-legales">Mentions légales</a></p>
+<footer class="footer" aria-label="À propos de ce site" role="region">
+  <div>
+    <p id="footer-informations-label">Informations :</p>
+    <ul aria-labelledby="footer-informations-label">
+      <li><a aria-label="Afficher les mentions légales" href="/mentions-legales">Mentions légales</a></li>
+      <li><a aria-label="Afficher la politique de confidentialité" href="/politique-confidentialite">Politique de confidentialité</a></li>
+      <li><a aria-label="Consulter le code source (s'ouvre dans un nouvel onglet)" href="https://github.com/martinbmnt/martinbeaumont.dev" target="_blank" rel="nofollow noopener">Code source</a></li>
+    </ul>
+  </div>
+  <div class="footer__resume">
+    <p>
+      Martin Beaumont
+      <br />Développeur Web free-lance
+    </p>
+    <p>Fait avec ❤️ à Laval &ndash; {year}</p>
   </div>
 </footer>

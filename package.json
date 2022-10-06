@@ -2,7 +2,7 @@
   "author": {
     "name": "Martin Beaumont",
     "email": "hello@martinbeaumont.dev",
-    "url": "https://martinbeaumont.dev"
+    "url": "https://www.martinbeaumont.dev"
   },
   "name": "@martinbmnt/martinbeaumont.dev",
   "version": "0.0.1",
@@ -13,16 +13,16 @@
     "preview": "astro preview",
     "format": "prettier -w .",
     "lint:a11y": "start-test 3000 lint:a11y:local",
-    "lint:a11y:local": "pa11y-ci --sitemap http://localhost:3000/sitemap-0.xml --sitemap-find https://martinbeaumont.dev --sitemap-replace http://localhost:3000",
-    "lint:a11y:remote": "pa11y-ci --sitemap 'https://martinbeaumont.dev/sitemap-index.xml'",
+    "lint:a11y:local": "pa11y-ci --sitemap http://localhost:3000/sitemap-0.xml --sitemap-find https://www.martinbeaumont.dev --sitemap-replace http://localhost:3000",
+    "lint:a11y:remote": "pa11y-ci --sitemap 'https://www.martinbeaumont.dev/sitemap-index.xml'",
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.3.4",
+    "@astrojs/image": "^0.7.0",
     "@astrojs/sitemap": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
-    "astro": "^1.0.0",
+    "astro": "^1.2.0",
     "eslint": "^8.20.0",
     "eslint-plugin-astro": "^0.15.0",
     "pa11y-ci": "^3.0.1",
@@ -33,5 +33,7 @@
     "start-server-and-test": "^1.14.0",
     "the-new-css-reset": "^1.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@astrojs/rss": "^1.0.2"
+  }
 }

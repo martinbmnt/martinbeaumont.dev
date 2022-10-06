@@ -12,16 +12,16 @@ const content = Astro.props as Props;
   <h2 class="visually-hidden">Présentation du projet</h2>
   <slot />
   <div>
-    <h3>Technologies</h3>
-    <ul>
+    <h3 id="project-summary-technologies-label">Technologies</h3>
+    <ul aria-labelledby="project-summary-technologies-label">
       {content.technologies.map(technologie => (
         <li>{technologie}</li>
       ))}
     </ul>
   </div>
   <div>
-    <h3>Services</h3>
-    <ul>
+    <h3 id="project-summary-services-label">Services</h3>
+    <ul aria-labelledby="project-summary-services-label">
       {content.services.map(service => (
         <li>{service}</li>
       ))}

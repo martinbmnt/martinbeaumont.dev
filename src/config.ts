@@ -7,8 +7,8 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
   image: {
-    src: null,
-    alt: null,
+    src: '/images/placeholder-social.png',
+    alt: 'Martin Beaumont – Développeur Web Free-lance',
   },
   site_name: 'Martin Beaumont – Développeur Web Free-lance',
   twitter: '@martinbmnt',

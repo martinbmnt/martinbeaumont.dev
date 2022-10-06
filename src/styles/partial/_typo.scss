@@ -162,3 +162,13 @@ hr {
   width: 100%;
   max-width: 60ch;
 }
+
+ul.list,
+ol.list {
+  list-style: disc;
+  padding-left: 1rem;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}

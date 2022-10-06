@@ -16,15 +16,31 @@ export interface Props {
   services: string[];
   cover: string;
   coverAlt: string;
+  coverSEO: string;
 }
 
 const content = Astro.props as Props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${content.title} – Portfolio – Martin Beaumont`,
+  image: [
+    // @ts-ignore
+    `${Astro.site.href}${content.cover.src.replace(/^\/(public\/)?/, '')}`,
+  ],
+  datePublished: content.publishDate,
+  dateModified: content.updateDate,
+  author: {
+    '@id': `${Astro.site}#author`,
+  },
+};
 ---
 
-<BaseLayout title={`${content.title} – Portfolio`} description={content.excerpt} image={({src: content.cover, alt: content.coverAlt})}
+<BaseLayout title={`${content.title} – Portfolio`} description={content.excerpt} image={({src: content.coverSEO, alt: content.coverAlt})}
   articleSection="Portfolio" publishDate={content.publishDate} updateDate={content.updateDate ?? null}>
-  <article class="portfolio_item" aria-labelledby="article-title">
-    <Breadcrumb page={{path: '/portfolio' , name: 'Portfolio' }} article={content.title} />
+  <article id="content" class="portfolio_item" aria-labelledby="article-title">
+    <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={content.title} />
     <header>
       <h1 id="article-title">{content.title}</h1>
       <p>{content.excerpt}</p>
@@ -46,4 +62,5 @@ const content = Astro.props as Props;
       </p>
     </footer>
   </article>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}/>
 </BaseLayout>

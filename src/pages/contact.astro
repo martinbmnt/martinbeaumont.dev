@@ -1,12 +1,13 @@
 ---
 import Layout from "~layouts/Layout.astro";
+import SocialNetworks from "~components/Content/SocialNetworks.astro";
 
 ---
 
 <Layout title="Contact et demande de devis">
-  <main class="page_contact">
+  <main id="content" class="page_contact">
     <header>
-      <h1>Contact & demande de devis</h1>
+      <h1>Contact et demande de devis</h1>
       <p><strong>Un projet à réaliser ?</strong> Vous êtes intéressé par l'une de mes prestations ? Ou bien vous avez tout simplement une question ? Contactez-moi via le formulaire ci-dessous et je vous répondrai dans les plus brefs délais !</p>
     </header>
     <section>
@@ -37,6 +38,7 @@ import Layout from "~layouts/Layout.astro";
       <hr>
       <p><small>Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées par ce formulaire, veuillez consulter la <a href="/politique-confidentialite">politique de confidentialité</a>.</small></p>
     </section>
+    <SocialNetworks/>
   </main>
 </Layout>
 
