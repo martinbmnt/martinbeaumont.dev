@@ -34,5 +34,4 @@ export const get = () => rss({
   site: import.meta.env.SITE,
   items: projects,
   customData: '<language>fr-fr</language>',
-  stylesheet: '/pretty-feed-v3.xsl'
 });
