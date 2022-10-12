@@ -7,11 +7,11 @@ export interface Props {
   datetime: string;
 }
 
-const { datetime } = Astro.props;
+const { datetime } = Astro.props as Props;
 
 ---
 
-<time {datetime}>{formatDate(new Date(datetime))}</time>
+<time datetime={datetime}>{formatDate(new Date(datetime))}</time>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
