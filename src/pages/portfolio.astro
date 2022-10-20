@@ -26,6 +26,15 @@ async function getProjects() {
 const projects = [
   {
     releaseYear: 2022,
+    title: 'Portfolio de Thommy',
+    excerpt: "Refonte du site internet / portfolio de Thommy, un motion-designer, animateur 3D et artiste free-lance.",
+    slug: '/projet/portfolio-thommy',
+    cover: (await import('~images/project/portfolio-thommy-cover.jpg')).default,
+    cover_alt: "Page d'accueil du portfolio de Thommy, visible sur thommyart.fr",
+    resume: 'Symfony, Création d\'un CMS sur mesure',
+  },
+  {
+    releaseYear: 2022,
     title: 'Restaurants Boosh-B',
     excerpt: "Intégration des maquettes réalisées par l'agence ZeAstronaut pour les restaurants Boosh-B.",
     slug: '/projet/boosh-b',
