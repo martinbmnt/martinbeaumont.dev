@@ -1,8 +1,4 @@
 .header {
-  @include responsive(laptop) {
-    padding: 1.25rem 4rem 0;
-  }
-
   a {
     display: inline-flex;
     flex-direction: column;
@@ -14,35 +10,50 @@
     letter-spacing: 1.7px;
     text-transform: lowercase;
     font-weight: 400;
-
-    @include responsive(laptop) {
-      letter-spacing: 2px;
-      font-size: var(--font-size-h4);
-    }
-
-    @include responsive(desktop) {
-      letter-spacing: 1.2px;
-    }
   }
 
   small {
     font-size: var(--font-size-xsmall);
     letter-spacing: 0.75px;
+    white-space: nowrap;
 
     &::first-letter {
       text-transform: lowercase;
     }
+  }
+}
 
-    @include responsive(tablet) {
+@media (min-width: $screen-md) {
+  .header {
+    small {
       letter-spacing: 1.25px;
     }
+  }
+}
 
-    @include responsive(laptop) {
+@media (min-width: $screen-lg) {
+  .header {
+    padding: 1.25rem 4rem 0;
+
+    strong {
+      letter-spacing: 2px;
+      font-size: var(--font-size-h4);
+    }
+
+    small {
       font-size: var(--font-size-normal);
       letter-spacing: 0;
     }
+  }
+}
 
-    @include responsive(desktop) {
+@media (min-width: $screen-xl) {
+  .header {
+    strong {
+      letter-spacing: 1.2px;
+    }
+
+    small {
       font-size: var(--font-size-normal);
       letter-spacing: 0.15px;
     }

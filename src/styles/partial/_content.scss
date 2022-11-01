@@ -53,7 +53,6 @@ main[class*='page'] {
     background-color: var(--color-gray-light);
 
     &[data-year]:not([data-year=""]):after {
-      content: attr(data-year);
       position: absolute;
       background: var(--color-accent);
       color: var(--color-light);
@@ -63,10 +62,6 @@ main[class*='page'] {
       right: 0.75rem;
       top: calc(330px / 3 * 2 + 0.75rem);
       font-family: var(--font-familly-title);
-
-      @media (max-width: 369px) {
-        display: none;
-      }
     }
 
     h3 {
@@ -114,21 +109,25 @@ main[class*='page'] {
   }
 }
 
+@media (min-width: calc($screen-sm / 3 * 2)) { // 24em - 384px
+  .bloc_portfolio__grid {
+    article {
+      &[data-year]:not([data-year=""]):after {
+        content: attr(data-year);
+      }
+    }
+  }
+}
+
+/*
+ * Social networks component
+ */
+
 .social_networks {
   ul {
     display: grid;
     gap: 2rem;
     justify-items: center;
-
-    @include responsive(tablet) {
-      padding: .5rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include responsive(laptop) {
-      padding: .5rem;
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
   li {
@@ -164,20 +163,12 @@ main[class*='page'] {
   h3 {
     margin: unset;
     place-self: center;
-
-    @include responsive(laptop) {
-      font-size: var(--font-size-h3);
-    }
     
     &:after {
       content: attr(data-link);
       display: block;
       font-size: var(--font-size-xsmall);
       color: var(--color-accent);
-
-      @include responsive(tablet) {
-        font-size: var(--font-size-small);
-      }
     }
   }
 
@@ -196,19 +187,40 @@ main[class*='page'] {
   }
 }
 
+@media (min-width: $screen-md) {
+  .social_networks {
+    ul {
+      padding: .5rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h3 {
+      &:after {
+        font-size: var(--font-size-small);
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .social_networks {
+    ul {
+      padding: .5rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    h3 {
+      font-size: var(--font-size-h3);
+    }
+  }
+}
+
+/*
+ * Page home
+ */
 .page_home {
   h1 {
     margin-top: 2rem;
-
-    @include responsive(tablet) {
-      &:before {
-        content: '👋 ';
-      }
-    }
-
-    @include responsive(laptop) {
-      margin-top: 4rem;
-    }
   }
 
   h2 {
@@ -220,99 +232,143 @@ main[class*='page'] {
       color: var(--color-accent);
       text-transform: lowercase;
       font-size: var(--font-size-small);
+    }
+  }
+  .page_home__portfolio {
+    & > p:last-child {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+}
 
-      @include responsive(laptop) {
+@media (min-width: $screen-md) {
+  .page_home {
+    h1 {
+      &:before {
+        content: '👋 ';
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .page_home {
+    h1 {
+      margin-top: 4rem;
+    }
+    
+    h2 {
+      &:before {
         font-size: var(--font-size-h5);
       }
     }
   }
 }
 
-.page_home__portfolio {
-  & > p:last-child {
-    margin-top: 2rem;
-    text-align: center;
-  }
-}
+/*
+ * Page portfolio
+ */
 
 .page_portfolio header p {
-  max-width: 70ch;
+  max-width: $text-max-width;
   margin-left: auto;
   margin-right: auto;
 }
 
-main.page_about header {
-  h1 {
-    margin-bottom: 1rem;
-  }
+/*
+ * Page about
+ */
 
-  p {
-    max-width: 70ch;
-    margin: auto;
-    position: relative;
-    line-height: 1.25rem;
-
-    &:before {
-      content: '[n. m.]';
-      font: var(--font-code);
-      background-color: var(--color-gray-light);
-      padding: 0.125rem 0.25rem;
-      margin-right: 0.25rem;
-      vertical-align: text-bottom;
-      line-height: 1.5rem;
+.page_about {
+  header {
+    h1 {
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      max-width: $text-max-width;
+      margin: auto;
+      position: relative;
+      line-height: 1.25rem;
+  
+      &:before {
+        content: '[n. m.]';
+        font: var(--font-code);
+        background-color: var(--color-gray-light);
+        padding: 0.125rem 0.25rem;
+        margin-right: 0.25rem;
+        vertical-align: text-bottom;
+        line-height: 1.5rem;
+      }
     }
   }
-}
-
-.page_about__presentation p {
-  max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
-
-  &:first-of-type:before {
-    content: '👋';
-    font: var(--font-text);
+  
+  .page_about__presentation p {
+    max-width: $text-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  
+    &:first-of-type:before {
+      content: '👋';
+      font: var(--font-text);
+    }
   }
-}
-
-.page_about__work,
-.page_about__training {
-  ol {
-    @include responsive(laptop) {
+  
+  .page_about__work,
+  .page_about__training {
+    ol {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
     }
-  }
 
-  li {
-    border-bottom: 1px solid var(--color-gray-medium);
-  }
-
-  li h3 {
-    margin-bottom: 0;
-
-    @include responsive(laptop) {
-      margin-top: 1rem;
+    li {
+      border-bottom: 1px solid var(--color-gray-medium);
     }
-  }
 
-  li p:first-of-type {
-    margin: unset;
-    color: var(--color-accent);
-    text-transform: lowercase;
-  }
+    h3 {
+      margin-bottom: 0;
+    }
 
-  li p:not(:first-of-type) {
-    margin: 0.5rem 0 1rem;
+    p {
+      &:first-of-type {
+        margin: unset;
+        color: var(--color-accent);
+        text-transform: lowercase;
+      }
+
+      &:not(:first-of-type) {
+        margin: 0.5rem 0 1rem;
+      }
+    }
   }
 }
+
+@media (min-width: $screen-lg) {
+  .page_about {
+    :where(.page_about__work, .page_about__training) {
+      ol {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      h3 {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+/*
+ * Page contact
+ */
 
 .page_contact__form {
   display: grid;
   gap: 2rem;
+}
 
-  @include responsive(laptop) {
+@media (min-width: $screen-lg) {
+  .page_contact {
     grid-template-columns: repeat(2, 1fr);
 
     .form_row:nth-child(n+3),
@@ -323,6 +379,10 @@ main.page_about header {
   }
 }
 
+/*
+ * Page legal
+ */
+
 .page_legal {
   header p {
     text-align: center;
@@ -331,12 +391,14 @@ main.page_about header {
   li {
     line-height: 2.5rem;
 
-    span:nth-of-type(odd) {
-      font-weight: bold;
-    }
+    span {
+      &:nth-of-type(odd) {
+        font-weight: bold;
+      }
 
-    span:nth-of-type(even) {
-      white-space: nowrap;
+      &:nth-of-type(even) {
+        white-space: nowrap;
+      }
     }
 
     p,

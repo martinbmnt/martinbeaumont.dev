@@ -18,28 +18,6 @@
   gap: 0.25rem;
   text-transform: lowercase;
   transition: gap .025s;
-
-  @media (any-hover: hover) {
-    &:not(:hover) {
-      gap: 0;
-      
-      svg {
-        width: 0;
-      }
-    }
-
-    &:focus {
-      border-color: var(--color-accent);
-
-      svg {
-        fill: var(--color-accent);
-      }
-    }
-
-    svg {
-      transition: width .2s;
-    }
-  }
 }
 
 .button--backtotop {
@@ -50,8 +28,32 @@
   background-color: var(--color-light);
   font-weight: bold;
   font-size: var(--font-size-small);
+}
 
-  @media (any-hover: hover) {
+@media (any-hover: hover) {
+  .button--with-icon {
+    &:not(:hover) {
+      gap: 0;
+      
+      svg {
+        width: 0;
+      }
+    }
+  
+    &:focus {
+      border-color: var(--color-accent);
+  
+      svg {
+        fill: var(--color-accent);
+      }
+    }
+  
+    svg {
+      transition: width .2s;
+    }
+  }
+
+  .button--backtotop {
     &:hover {
       background-color: var(--color-gray-light);
     }
@@ -60,8 +62,10 @@
       border-color: var(--color-accent);
     }
   }
+}
 
-  @include responsive(laptop) {
+@media (min-width: $screen-lg) {
+  .button--backtotop {
     margin-right: 4rem;
   }
 }
