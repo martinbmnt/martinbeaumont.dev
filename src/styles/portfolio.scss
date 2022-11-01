@@ -23,10 +23,6 @@
 .portfolio_item header {
   padding: 4rem 0;
 
-  @include responsive(laptop) {
-    padding-bottom: 6rem;
-  }
-
   h1 {
     text-align: center;
     margin-bottom: unset;
@@ -47,11 +43,6 @@
   gap: 0 1rem;
   flex-direction: column;
   margin: 1rem 0 0;
-
-  @include responsive(tablet) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 
   & > div {
     min-width: 20ch;
@@ -90,18 +81,6 @@
   display: flex;
   flex-direction: column-reverse;
 
-  figcaption {
-    @include responsive(laptop) {
-      text-align: left;
-      padding-left: 1ch;
-
-      &:before {
-        content: '–';
-        margin-right: 0.25rem;
-      }
-    }
-  }
-
   blockquote {
     margin-bottom: 1rem;
 
@@ -118,5 +97,30 @@
 .portfolio_item__footnotes {
   :target {
     outline: 2px dashed var(--color-accent);
+  }
+}
+
+@media (min-width: $screen-md) {
+  .portfolio_item__summary {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .portfolio_item header {
+    padding-bottom: 6rem;
+  }
+
+  .portfolio_item__review {
+    figcaption {
+      text-align: left;
+      padding-left: 1ch;
+
+      &:before {
+        content: '–';
+        margin-right: 0.25rem;
+      }
+    }
   }
 }

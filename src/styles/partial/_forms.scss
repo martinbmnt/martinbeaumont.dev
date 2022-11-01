@@ -40,12 +40,8 @@ form {
 
   &.form_row--checkbox {
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
-
-    @include responsive(mobile-only) {
-      align-items: flex-start;
-    }
     
     label {
       margin-right: auto;
@@ -60,6 +56,12 @@ form {
 
   small {
     line-height: 1;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .form_row.form_row--checkbox {
+    align-items: center;
   }
 }
 
