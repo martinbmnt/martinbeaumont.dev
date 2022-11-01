@@ -9,5 +9,10 @@ export default defineConfig({
   build: {
     format: 'file'
   },
-  integrations: [sitemap(), image()]
+  integrations: [
+    sitemap(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    })
+  ]
 });
