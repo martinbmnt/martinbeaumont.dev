@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { getPicture } from "@astrojs/image";
 
 export interface Props {
   cover: string;
@@ -7,6 +7,16 @@ export interface Props {
 }
 
 const content = Astro.props as Props;
+
+const { image, sources } = await getPicture({
+  src: content.cover,
+  widths: [420, 640, 860, 1280],
+  formats: ['avif', 'webp'],
+  aspectRatio: '4:3'
+});
 ---
 
-<Picture class="portfolio_item__cover" src={content.cover} alt={content.cover_alt} widths={[480, 640, 896, 1280]} aspectRatio="4:3" sizes="(max-width: 950px) 100vw, 896px" loading="eager" decoding="sync" />
+<picture class="portfolio_item__cover">
+	{sources.map((attrs) => <source {...attrs} sizes="(min-width: 58.5em) 56em, 100vw" />)}
+  <img alt={content.cover_alt} {...image} width="1280" height="960" loading="eager" decoding="sync" fetchpriority="high"/>
+</picture>
