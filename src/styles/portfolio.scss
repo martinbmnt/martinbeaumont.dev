@@ -1,7 +1,7 @@
 @import 'partial/mixin';
 
 .portfolio_item {
-  --content-max-width: 56rem;
+  --content-max-width: #{$portfolio-max-width};
 
   h3 {
     color: var(--color-text);
