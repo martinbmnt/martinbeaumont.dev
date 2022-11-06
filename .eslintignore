@@ -1,3 +1,4 @@
 dist
 node_modules
 .github
+src/custom-attributes.d.ts

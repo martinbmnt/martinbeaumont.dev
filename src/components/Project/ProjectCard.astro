@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { getPicture } from "@astrojs/image";
 
 export interface Props {
   cover: string;
@@ -13,6 +13,13 @@ export interface Props {
 }
 
 const content = Astro.props as Props;
+
+const { image, sources } = await getPicture({
+  src: content.cover,
+  widths: [330, 480],
+  formats: ['avif', 'webp'],
+  aspectRatio: '4:3'
+});
 ---
 
 <article data-year={content.releaseYear}>
@@ -22,7 +29,10 @@ const content = Astro.props as Props;
     <span class="visually-hidden">Technologie principale et service réalisé :</span>
     <small>{content.resume}</small>
   </p>
-  <Picture src={content.cover} alt={content.cover_alt} widths={[330, 480, 640]} aspectRatio={"4:3"} sizes="330px" loading={content.index && content.index < 6 ? "eager" : "lazy"} decoding={content.index && content.index < 3 ? "sync" : "async"}  />
+  <picture>
+    {sources.map((attrs) => <source {...attrs} sizes="330px" />)}
+    <img alt={content.cover_alt} {...image} loading={content.index && content.index < 3 ? "eager" : "lazy"} decoding={content.index && content.index < 3 ? "sync" : "async"} />
+  </picture>
   <p>
     <a class="button button--with-icon" href={content.slug}>
       <span>Voir l'étude de cas</span>
