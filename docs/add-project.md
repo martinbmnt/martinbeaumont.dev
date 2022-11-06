@@ -17,6 +17,12 @@ Duplicate `content` definition from a previous project, and update it with the n
 
 Write project's story, add images, code blocks, review, footnotes ...
 
+For images, use this following implementation :
+
+```jsx
+<Picture alt="..." src={...} widths={[420, 840, 1280]} aspectRatio="width:height" sizes="(min-width: 58.5em) 56em, 100vw" />
+```
+
 ## Linking to other pages
 
 In file `src/pages/portfolio.astro`, update `projects` definition by adding the new project as first one.
