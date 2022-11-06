@@ -18,5 +18,5 @@ const { image, sources } = await getPicture({
 
 <picture class="portfolio_item__cover">
 	{sources.map((attrs) => <source {...attrs} sizes="(min-width: 58.5em) 56em, 100vw" />)}
-  <img alt={content.cover_alt} {...image} width="1280" height="960" loading="eager" decoding="sync" fetchpriority="high"/>
+  <img alt={content.cover_alt} {...image} loading="eager" decoding="sync" fetchpriority="high" />
 </picture>
