@@ -26,6 +26,15 @@ async function getProjects() {
 const projects = [
   {
     releaseYear: 2022,
+    title: 'Agence Ze Astronaut',
+    excerpt: "Intégration des maquettes pour la création du site internet de l'agence Ze Astronaut.",
+    slug: '/projet/agence-ze-astronaut',
+    cover: (await import('~images/project/ze-astronaut-cover.jpg')).default,
+    cover_alt: "Page d'accueil du site Web de l'agence Ze Astronaut, visible sur zeastronaut.com",
+    resume: 'Astro, Intégration des maquettes',
+  },
+  {
+    releaseYear: 2022,
     title: 'Portfolio de Thommy',
     excerpt: "Refonte du site internet / portfolio de Thommy, un motion-designer, animateur 3D et artiste free-lance.",
     slug: '/projet/portfolio-thommy',

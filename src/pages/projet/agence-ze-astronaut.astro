@@ -1,0 +1,21 @@
+---
+import ProjectLayout from "~layouts/ProjectLayout.astro";
+
+import cover from '~images/project/ze-astronaut-cover.jpg';
+
+const content = {
+  title: 'Agence Ze Astronaut',
+  excerpt: "Intégration des maquettes pour la création du site internet de l'agence Ze Astronaut",
+  site: 'https://zeastronaut.com',
+  technologies: ["Astro", "TypeScript", "Sass", "Git", "GitHub Actions", "Adobe XD"],
+  services: ["Intégrations des maquettes", "Référencement", "Intégration et déploiement continus", "Gestion de l'hébergement"],
+  publishDate: '2022-11-20T14:00:00',
+  updateDate: null,
+  cover: cover,
+  coverAlt: "Page d'accueil du site Web de l'agence Ze Astronaut, visible sur zeastronaut.com",
+  coverSEO: '/images/project/portfolio-thurb-social.png',
+};
+---
+
+<ProjectLayout {...content}>
+</ProjectLayout>

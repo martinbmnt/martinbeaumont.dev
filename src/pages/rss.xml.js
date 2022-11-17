@@ -3,6 +3,12 @@ import { OPEN_GRAPH, SITE } from '../config';
 
 const projects = [
   {
+    title: "Site internet de l'agence Ze Astronaut - Portfolio",
+    description: "Intégration des maquettes pour la création du site internet de l'agence Ze Astronaut",
+    pubDate: '2022-11-18T14:00:00',
+    link: '/projet/agence-ze-astronaut',
+  },
+  {
     title: 'Portfolio de Thommy - Portfolio',
     description: "Refonte du site internet / portfolio de Thommy, un motion-designer, animateur 3D et artiste free-lance.",
     pubDate: '2022-08-31T14:00:00',
