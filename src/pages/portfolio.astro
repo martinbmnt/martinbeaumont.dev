@@ -78,8 +78,8 @@ const projects = [
       <h1>Projets et réalisations</h1>
       <p>Entreprises, administrations, artistes … Mes clients ont tous des profils et des besoins différents, et chaque projet est unique. Découvrez un aperçu de mes services et compétences de création de sites internet sur mesure.</p>
     </header>
-    <section>
-      <h2>Derniers projets</h2>
+    <section aria-labelledby="portfolio-lastest-title">
+      <h2 id="portfolio-lastest-title">Derniers projets</h2>
       <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
       <ul class="bloc_portfolio__grid">
         {projects.map((content, index) => (

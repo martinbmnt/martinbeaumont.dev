@@ -36,8 +36,8 @@ const projects = [
     <header>
       <h1>Je suis <strong>Martin Beaumont</strong>, <br>développeur Web <span>free-lance</span> à Laval.</h1>
     </header>
-    <section>
-      <h2 data-subtitle="À propos">Besoin d'un site Web ?</h2>
+    <section aria-labelledby="home-about-title">
+      <h2 id="home-about-title" data-subtitle="À propos">Besoin d'un site Web ?</h2>
       <p>
         Depuis plus de cinq ans, j'accompagne mes clients pour la <strong>création ou la refonte de leur site internet</strong>,
         et la diffusion de leur projet, leur marque et leur image sur internet.
@@ -56,10 +56,10 @@ const projects = [
       </p>
       <p>Tous les projets sont réalisables, <a href="/contact" aria-label="Envoyez-moi un message via la page de contact">parlez-moi du vôtre</a>&nbsp;!</p>
     </section>
-    <section class="page_home__portfolio">
-      <h2 id="home-portfolio-label" data-subtitle="Portfolio">Des projets où je suis intervenu</h2>
+    <section aria-labelledby="home-portfolio-title" class="page_home__portfolio">
+      <h2 id="home-portfolio-title" data-subtitle="Portfolio">Des projets où je suis intervenu</h2>
       <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
-      <ul class="bloc_portfolio__grid" aria-labelledby="home-portfolio-label">
+      <ul class="bloc_portfolio__grid" aria-labelledby="home-portfolio-title">
         {projects.map((content) => (
           <li>
             <ProjectCard {...content} />

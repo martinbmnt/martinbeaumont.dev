@@ -10,8 +10,8 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
       <h1>Contact et demande de devis</h1>
       <p><strong>Un projet à réaliser ?</strong> Vous êtes intéressé par l'une de mes prestations ? Ou bien vous avez tout simplement une question ? Contactez-moi via le formulaire ci-dessous et je vous répondrai dans les plus brefs délais !</p>
     </header>
-    <section>
-      <h2>Formulaire de contact</h2>
+    <section aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Formulaire de contact</h2>
       <p id="form-contact-info">Tous les champs du formulaire sont obligatoires.</p>
       <form aria-live="polite" aria-busy="false" aria-describedby="form-contact-info" class="page_contact__form" action="/api/contact.php" method="post" id="form-contact">
         <div class="form_row">
