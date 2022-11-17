@@ -10,7 +10,7 @@ const projects = [
   },
   {
     title: 'Restaurants Boosh-B - Portfolio',
-    description: "Intégration des maquettes réalisées par l'agence ZeAstronaut pour les restaurants Boosh-B.",
+    description: "Intégration des maquettes réalisées par l'agence Ze Astronaut pour les restaurants Boosh-B.",
     pubDate: '2022-08-22T14:00:00',
     link: '/projet/boosh-b',
   },
