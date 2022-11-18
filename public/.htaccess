@@ -1,34 +1,64 @@
 ErrorDocument 404 /404.html
 
+AddDefaultCharset UTF-8
+
+# BEGIN Redirect
+
 Redirect 301 /projets https://www.martinbeaumont.dev/portfolio
 
-# Remove trailing .html
-
 RewriteEngine on
+
 # Redirect to force www
 RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
 # Redirect to remove trailing .html
 RewriteCond %{THE_REQUEST} /([^.]+).html [NC]
 RewriteRule .+ /%1 [L,R=301]
+
 # Redirect to remove trailing slash
 RewriteCond %{REQUEST_FILENAME} !-d [NC]
 RewriteRule ^(.*)/$ /$1 [L,R=302]
+
 # Return content without .html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule (.*)/?$ /$1.html [L]
 
-Header set X-Frame-Options "deny"
+# END Redirect
+
+# BEGIN Security Headers
+
 Header set X-Content-Type-Options "nosniff"
 Header set X-XSS-Protection "1"
 Header set X-Robots-Tag "index, follow"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
-# Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'; connect-src 'self' https://api.martinbeaumont.dev"
+Header set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'"
 Header set Permissions-Policy "geolocation=(), microphone=()"
 
-# Disable ModPageSpeed beacon
+# END Security Headers
+
+# BEGIN ContentType fixes
+
+<FilesMatch "\.avif$">
+  Header set Content-Type "image/avif"
+</FilesMatch>
+<FilesMatch "\.svg$">
+  Header set Content-Type "image/svg+xml; charset=utf-8"
+</FilesMatch>
+<FilesMatch "\.css$">
+  Header set Content-Type "text/css; charset=utf-8"
+</FilesMatch>
+<FilesMatch "\.webmanifest$">
+  Header set Content-Type "application/manifest+json; charset=utf-8"
+</FilesMatch>
+
+# END ContentType fixes
+
+# Configure ModPagespeed
 
 ModPagespeedCriticalImagesBeaconEnabled false
+ModPagespeedModifyCachingHeaders off
+ModPagespeedXHeaderValue "Configured for martinbeaumont.dev"
 
 # Disable directory indexes
 
@@ -46,27 +76,31 @@ Header append Vary User-Agent env=!dont-vary
 Header unset ETag
 FileETag none
 
-# Expire headers
+# BEGIN Cache-Control Headers
 
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresDefault "access plus 1 hour"
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    AddType image/avif .avif
-    ExpiresByType image/avif "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType video/mp4 "access plus 1 year"
-    AddType image/x-icon .ico
-    ExpiresByType image/ico "access plus 1 year"
-    ExpiresByType image/icon "access plus 1 year"
-    ExpiresByType image/x-icon "access plus 1 year"
-    ExpiresByType text/css "access plus 1 year"
-    AddType text/javascript .js
-    ExpiresByType text/javascript "access plus 1 year"
-    AddType application/font-woff2 .woff2
-    ExpiresByType application/font-woff2 "access plus 1 year"
-</IfModule>
+# Images and videos
+<FilesMatch "\.(ico|jpe?g|png|gif|webp|avif|svg|mp4)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+# Style, fonts and compressed assets
+<FilesMatch "\.(css|woff|woff2|gz)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+# JavaScript
+<FilesMatch "\.(js)$">
+  Header set Cache-Control "max-age=2592000, private"
+</FilesMatch>
+# HTML
+<FilesMatch "\.(html|htm)$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>
+# WebManifest
+<FilesMatch "\.webmanifest$">
+  Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+# Disable caching for scripts and other dynamic files
+<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+  Header unset Cache-Control
+</FilesMatch>
+
+# END Cache-Control Header
