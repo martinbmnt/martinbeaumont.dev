@@ -4,6 +4,7 @@ export enum HiddenTypes {
   mail = 'mail',
   phone = 'phone',
   text = 'text',
+  address = 'address',
 }
 /* eslint-enable no-unused-vars */
 
@@ -25,6 +26,9 @@ switch (content.type) {
   case HiddenTypes.phone:
     title = 'le numéro de téléphone';
     break;
+  case HiddenTypes.address:
+    title = "l'adresse";
+    break;
   default:
     title = 'le contenu';
 }
@@ -36,6 +40,8 @@ switch (content.type) {
 </button>
 
 <script>
+import { HiddenTypes } from "./HiddenLink.astro";
+
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = Array.from(document.querySelectorAll('button[data-encoded]')) as HTMLButtonElement[];
 
@@ -44,19 +50,25 @@ switch (content.type) {
       const decodedContent = atob(button.dataset.encoded);
 
       let linkURL: string | null;
+      let element: HTMLElement;
       
       switch (type) {
-        case 'mail':
+        case HiddenTypes.mail:
           linkURL = `mailto:${decodedContent}`;
+          element = document.createElement('a');
           break;
-        case 'phone':
+        case HiddenTypes.phone:
           linkURL = `tel:+33${decodedContent.replace(/(\s|\.|^0)/g, '')}`;
+          element = document.createElement('a');
+          break;
+        case HiddenTypes.address:
+          linkURL = null;
+          element = document.createElement('address');
           break;
         default:
           linkURL = null;
+          element = document.createElement('p');
       }
-
-      const element = (type === 'text') ? document.createElement('p') : document.createElement('a');
 
       if (element instanceof HTMLAnchorElement) {
         element.href = linkURL;
