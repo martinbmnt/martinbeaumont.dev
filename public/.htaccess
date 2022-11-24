@@ -80,15 +80,15 @@ FileETag none
 
 # Images and videos
 <FilesMatch "\.(ico|jpe?g|png|gif|webp|avif|svg|mp4)$">
-  Header set Cache-Control "max-age=2592000, public"
+  Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 # Style, fonts and compressed assets
 <FilesMatch "\.(css|woff|woff2|gz)$">
-  Header set Cache-Control "max-age=2592000, public"
+  Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 # JavaScript
 <FilesMatch "\.(js)$">
-  Header set Cache-Control "max-age=2592000, private"
+  Header set Cache-Control "max-age=31536000, private"
 </FilesMatch>
 # HTML
 <FilesMatch "\.(html|htm)$">
