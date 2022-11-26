@@ -7,7 +7,7 @@ Two images are required :
 * **Cover illustration** : JPG file, 1280×960 pixels
 * **Social card** : PNG file, 1200×600 pixels
 
-Other content images must be 1280 pixels wide, and JPG encoding.
+Other content images must be 896 pixels wide, and JPG encoding.
 
 ## Content
 
