@@ -35,7 +35,6 @@
 
 .portfolio_item__cover {
   border: 2px solid var(--color-accent);
-  display: flex;
 }
 
 .portfolio_item__summary {
@@ -92,6 +91,18 @@
       color: var(--color-accent);
     }
   }
+
+  figcaption {
+    max-width: unset;
+    margin: unset;
+    text-align: left;
+    padding-left: 1ch;
+
+    &:before {
+      content: '–';
+      margin-right: 0.25rem;
+    }
+  }
 }
 
 .portfolio_item__footnotes {
@@ -110,17 +121,5 @@
 @media (min-width: $screen-lg) {
   .portfolio_item header {
     padding-bottom: 6rem;
-  }
-
-  .portfolio_item__review {
-    figcaption {
-      text-align: left;
-      padding-left: 1ch;
-
-      &:before {
-        content: '–';
-        margin-right: 0.25rem;
-      }
-    }
   }
 }

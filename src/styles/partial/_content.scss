@@ -27,6 +27,10 @@ img {
   height: auto;
 }
 
+picture {
+  display: flex;
+}
+
 main[class*='page'] {
   padding-block-end: calc(4px + 0.8rem + calc(1.4 * var(--font-size-small))); // Height of back to top button
 
@@ -91,7 +95,6 @@ main[class*='page'] {
     }
 
     picture {
-      display: flex;
       order: 0;
     }
 

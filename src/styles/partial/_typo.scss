@@ -99,11 +99,14 @@ blockquote {
 }
 
 figcaption {
+  max-width: 52ch;
+  margin: 0.5rem auto;
   font: var(--font-text);
   font-size: var(--font-size-small);
   color: var(--color-text);
   font-style: italic;
   text-align: center;
+  line-height: 1.5;
 }
 
 .visually-hidden {
