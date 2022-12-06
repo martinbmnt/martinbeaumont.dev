@@ -17,8 +17,7 @@ RewriteCond %{THE_REQUEST} /([^.]+).html [NC]
 RewriteRule .+ /%1 [L,R=301]
 
 # Redirect to remove trailing slash
-RewriteCond %{REQUEST_FILENAME} !-d [NC]
-RewriteRule ^(.*)/$ /$1 [L,R=302]
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
 # Return content without .html
 RewriteCond %{REQUEST_FILENAME}.html -f
