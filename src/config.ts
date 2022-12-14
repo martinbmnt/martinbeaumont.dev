@@ -1,6 +1,6 @@
 export const SITE = {
   title: 'Martin Beaumont',
-  description: 'Je créé des sites Web rapides, adaptés à tous les écrans (responsive), au référencement optimisé (SEO) et accessibles (a11y). Tout ça à Laval (53) !',
+  description: "Développeur Web Free-lance basé à Laval (Mayenne 53), spécialisé dans le développement d'applications web et la création de sites internet sur-mesure.",
   language: 'fr_FR',
   color: '#5e1177',
 };
