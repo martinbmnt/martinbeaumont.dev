@@ -18,7 +18,8 @@ const { image, sources } = await getPicture({
   src: content.cover,
   widths: [330, 480],
   formats: ['avif', 'webp'],
-  aspectRatio: '4:3'
+  aspectRatio: '4:3',
+  alt: content.cover_alt
 });
 ---
 
