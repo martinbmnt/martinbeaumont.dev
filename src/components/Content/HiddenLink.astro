@@ -1,12 +1,5 @@
 ---
-/* eslint-disable no-unused-vars */
-export enum HiddenTypes {
-  mail = 'mail',
-  phone = 'phone',
-  text = 'text',
-  address = 'address',
-}
-/* eslint-enable no-unused-vars */
+import { HiddenTypes } from 'src/util';
 
 export interface Props {
   value: string;
@@ -40,8 +33,8 @@ switch (content.type) {
 </button>
 
 <script>
-import { HiddenTypes } from "./HiddenLink.astro";
-
+  import { HiddenTypes } from "src/util";
+  
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = Array.from(document.querySelectorAll('button[data-encoded]')) as HTMLButtonElement[];
 
