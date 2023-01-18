@@ -12,5 +12,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
-  ]
+  ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///c%3A/workspace/martinbeaumont.dev/.github/workflows/deploy.yml"
+  }
 }

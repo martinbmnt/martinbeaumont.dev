@@ -14,5 +14,14 @@ export default defineConfig({
     image({
       serviceEntryPoint: '@astrojs/image/sharp'
     })
-  ]
+  ],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'parts/part.[hash].js',
+        },
+      },
+    },
+  },
 });
