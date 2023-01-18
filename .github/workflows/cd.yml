@@ -28,7 +28,7 @@ jobs:
           echo "${{ secrets.DEPLOY_KEY_DEV }}" > deploy_key
           chmod 600 ./deploy_key
           cd dist
-          rsync -chaqz --delete \
+          rsync -chaz --verbose --delete \
             -e 'ssh -p ${{ env.host_port }} -i ../deploy_key -o StrictHostKeyChecking=no' \
             --exclude ".htaccess" \
             ./ ${{ env.host }}:${{ env.path }}
