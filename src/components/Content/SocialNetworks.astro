@@ -19,7 +19,11 @@ const socials = [
     {socials.map((social) => (
       <li>
         <a href={social.link} target="_blank" rel="nofollow noopener">
-          <h3 data-link={social.link.replace(/http(s)?:(\/)+/, '')}>{social.name}</h3>
+          <h3 data-link={social.link.replace(/http(s)?:(\/)+/, '')}>
+            <span class="visually-hidden">Profil</span>
+            <span lang="en">{social.name}</span>
+            <span class="visually-hidden">de Martin Beaumont</span>
+          </h3>
           <svg focusable="false" aria-hidden="true">
             <use xlink:href={`/images/icons.svg#icon-social-${social.logo}`}></use>  
           </svg>

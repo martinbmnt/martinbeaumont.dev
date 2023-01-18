@@ -37,6 +37,7 @@ const { image, sources } = await getPicture({
   <p>
     <a class="button button--with-icon" href={content.slug}>
       <span>Voir l'étude de cas</span>
+      <span class="visually-hidden"> du projet {content.title}</span>
       <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
         <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
       </svg>
