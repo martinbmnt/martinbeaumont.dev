@@ -19,7 +19,7 @@ const content = Astro.props as Props;
 
 const formattedContentTitle =
   content.title
-    ? (Astro.url.pathname === '/' ? content.title : `${content.title} – ${SITE.title}`)
+    ? (Astro.url.pathname === '/' ? `${SITE.title} – ${content.title}` : `${content.title} – ${SITE.title}`)
     : SITE.title;
 const formattedContentTitleForMeta = content.title ? `${content.title} – ${SITE.title}` : SITE.title;
 const imageSrc = content?.image?.src ?? OPEN_GRAPH.image.src;
