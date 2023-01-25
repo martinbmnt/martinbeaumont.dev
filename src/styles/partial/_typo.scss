@@ -98,7 +98,10 @@ blockquote {
   color: var(--color-text);
 }
 
-figcaption {
+figcaption,
+img + em,
+pre + p em {
+  display: block;
   max-width: 52ch;
   margin: 0.5rem auto;
   font: var(--font-text);
@@ -174,6 +177,10 @@ ul.list,
 ol.list {
   list-style: disc;
   padding-left: 1rem;
+
+  ::marker {
+    content: unset;
+  }
 
   li + li {
     margin-top: 0.5rem;
