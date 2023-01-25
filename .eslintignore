@@ -3,3 +3,4 @@ node_modules
 .github
 src/custom-attributes.d.ts
 src/content/**/*.md
+env.d.ts

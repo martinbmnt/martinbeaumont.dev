@@ -11,7 +11,7 @@ import ProjectReview from "~components/Project/ProjectReview.astro";
 
 interface Props {
   project: CollectionEntry<'project'>;
-};
+}
 
 export async function getStaticPaths() {
   const projects = await getCollection('project');
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { data } = Astro.props.project;
+const { project: { data } } = Astro.props as Props;
 const { Content } = await Astro.props.project.render();
 
 const schema = {
