@@ -1,12 +1,12 @@
 ---
-import Layout from "~layouts/Layout.astro";
+import BaseLayout from "~layouts/BaseLayout.astro";
 import HiddenLink from "~components/Content/HiddenLink.astro";
 import Date from "~components/Content/Date.astro";
 import { HiddenTypes } from "src/util";
 
 ---
 
-<Layout title="Mentions légales" description="Mentions légales du site martinbeaumont.dev">
+<BaseLayout title="Mentions légales" description="Mentions légales du site martinbeaumont.dev">
   <main id="content" class="page_legal">
     <header>
       <h1>Mentions légales</h1>
@@ -39,4 +39,4 @@ import { HiddenTypes } from "src/util";
       <li><span>Site internet</span> : <a href="https://infomaniak.com" rel="nofollow noreferrer noopener" target="_blank">www.infomaniak.com</a></li>
     </ul>
   </main>
-</Layout>
+</BaseLayout>

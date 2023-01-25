@@ -1,11 +1,11 @@
 ---
-import Layout from '~layouts/Layout.astro';
+import BaseLayout from '~layouts/BaseLayout.astro';
 import HiddenLink from '~components/Content/HiddenLink.astro';
 import Date from '~components/Content/Date.astro';
 import { HiddenTypes } from 'src/util';
 ---
 
-<Layout title="Politique de confidentialité" description="Politique de confidentialité du site martinbeaumont.dev">
+<BaseLayout title="Politique de confidentialité" description="Politique de confidentialité du site martinbeaumont.dev">
   <main id="content" class="page_legal">
     <header>
       <h1>Politique de confidentialité</h1>
@@ -46,4 +46,4 @@ import { HiddenTypes } from 'src/util';
       <li><a href="http://help.opera.com/Windows/10.20/fr/cookies.html" title="Opera - Lien externe" target="_blank" rel="noopener noreferer nofollow">Opera</a></li>
     </ul>
   </main>
-</Layout>
+</BaseLayout>

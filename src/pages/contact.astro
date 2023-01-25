@@ -1,10 +1,10 @@
 ---
-import Layout from "~layouts/Layout.astro";
+import BaseLayout from "~layouts/BaseLayout.astro";
 import SocialNetworks from "~components/Content/SocialNetworks.astro";
 
 ---
 
-<Layout title="Contact et devis pour la création de site web" description="Un problème sur votre site internet ? Besoin d'un devis pour la création d'un site Web ? Contactez un développeur Web free-lance basé à Laval (Mayenne 53) !">
+<BaseLayout title="Contact et devis pour la création de site web" description="Un problème sur votre site internet ? Besoin d'un devis pour la création d'un site Web ? Contactez un développeur Web free-lance basé à Laval (Mayenne 53) !">
   <main id="content" class="page_contact">
     <header>
       <h1>Contact et demande de devis</h1>
@@ -40,7 +40,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
     </section>
     <SocialNetworks/>
   </main>
-</Layout>
+</BaseLayout>
 
 <script>
   const contactForm = document.getElementById('form-contact') as HTMLFormElement;
