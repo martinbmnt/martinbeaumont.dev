@@ -1,6 +1,6 @@
 {
     "defaults": {
-        "hideElements": "pre > code",
+        "hideElements": "pre > code, #top > link",
         "standard": "WCAG2AAA"
     }
 }
