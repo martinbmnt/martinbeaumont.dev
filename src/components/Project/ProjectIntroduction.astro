@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+
 export interface Props {
   technologies: string[];
   services: string[];
@@ -6,6 +8,12 @@ export interface Props {
 }
 
 const content = Astro.props as Props;
+
+const technologies = (await getCollection('technology', (technology) => content.technologies.includes(technology.data.title)))
+  .reduce((acum, technology) => {
+    acum[technology.data.title] = technology.slug;
+    return acum;
+  }, {} as Record<string, string>);
 ---
 
 <section class="portfolio_item__summary">
@@ -14,9 +22,17 @@ const content = Astro.props as Props;
   <div>
     <h3 id="project-summary-technologies-label">Technologies</h3>
     <ul aria-labelledby="project-summary-technologies-label">
-      {content.technologies.map(technologie => (
-        <li>{technologie}</li>
-      ))}
+      {content.technologies.map(projectTechnology => {
+        if (technologies[projectTechnology]) {
+          return (
+            <li>
+              <a href={`/technologie/${technologies[projectTechnology]}`} title={`Voir tous les projets utilisant ${projectTechnology}`}>{projectTechnology}</a>
+            </li>
+            )
+        } else {
+          return (<li>{projectTechnology}</li>)
+        }
+      })}
     </ul>
   </div>
   <div>
