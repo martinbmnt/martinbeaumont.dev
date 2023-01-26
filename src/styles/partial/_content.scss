@@ -362,6 +362,26 @@ main[class*='page'] {
 }
 
 /*
+ * Page technologie
+ */
+.page_technologie {
+  header {
+    padding-top: 2rem;
+
+    img {
+      max-width: 16rem;
+      width: 80%;
+    }
+
+    p {
+      max-width: $text-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+/*
  * Page contact
  */
 
