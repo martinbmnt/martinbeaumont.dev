@@ -1,87 +1,14 @@
 ---
-import Layout from '~layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '~layouts/BaseLayout.astro';
 import ProjectCard from '~components/Project/ProjectCard.astro';
 
-/*
-async function getProjects() {
-  let projects = await Astro.glob('./projet/*.mdx');
-
-  return projects
-    .filter(project => !project.frontmatter.draft)
-    .sort((a, b) => new Date(b.frontmatter.releaseDate).valueOf() - new Date(a.frontmatter.releaseDate).valueOf())
-    .map(project => ({
-      cover_alt: project.frontmatter.cover_alt,
-      releaseDate: project.frontmatter.releaseDate,
-      title: project.frontmatter.title,
-      excerpt: project.frontmatter.excerpt,
-      resume: [project.frontmatter.technologies[0], project.frontmatter.services[0]],
-      slug: project.url,
-    }));
-}
-*/
-
-/**
- * @todo: find a better way to do this. Sadly, I can't figure out how to use MDX and Picture astro element
- */
-const projects = [
-  {
-    releaseYear: 2022,
-    title: 'Agence Ze Astronaut',
-    excerpt: "Intégration des maquettes pour la création du site internet de l'agence Ze Astronaut.",
-    slug: '/projet/agence-ze-astronaut',
-    cover: (await import('~images/project/ze-astronaut-cover.jpg')).default,
-    cover_alt: "Page d'accueil du site Web de l'agence Ze Astronaut, visible sur zeastronaut.com",
-    resume: 'Astro, Intégration des maquettes',
-  },
-  {
-    releaseYear: 2022,
-    title: 'Portfolio de Thommy',
-    excerpt: "Refonte du site internet / portfolio de Thommy, un motion-designer, animateur 3D et artiste free-lance.",
-    slug: '/projet/portfolio-thommy',
-    cover: (await import('~images/project/portfolio-thommy-cover.jpg')).default,
-    cover_alt: "Page d'accueil du portfolio de Thommy, visible sur thommyart.fr",
-    resume: 'Symfony, Création d\'un CMS sur mesure',
-  },
-  {
-    releaseYear: 2022,
-    title: 'Restaurants Boosh-B',
-    excerpt: "Intégration des maquettes réalisées par l'agence Ze Astronaut pour les restaurants Boosh-B.",
-    slug: '/projet/boosh-b',
-    cover: (await import('~images/project/boosh-b-cover.jpg')).default,
-    cover_alt: "Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com",
-    resume: 'Astro, Intégrations des maquettes',
-  },
-  {
-    releaseYear: 2022,
-    title: 'Patrimoine La Mayenne',
-    excerpt: "Amélioration de l'accessibilité et de la navigation des sites du patrimoine de la Mayenne.",
-    slug: '/projet/patrimoine-mayenne',
-    cover: (await import('~images/project/patrimoine-mayenne-cover.jpg')).default,
-    cover_alt: "Page d'accueil des sites du patrimoine de la Mayenne, visible sur patrimoine.lamayenne.fr",
-    resume: 'WordPress, Accessibilité',
-  },
-  {
-    releaseYear: 2021,
-    title: 'Portfolio de Thurb',
-    excerpt: 'Création du site internet / portfolio de Thurb, un graphiste, illustrateur et artiste free-lance.',
-    slug: '/projet/portfolio-thurb',
-    cover: (await import('~images/project/portfolio-thurb-cover.jpg')).default,
-    cover_alt: "Page d'accueil du portfolio de Thurb, visible sur thurbwork.com",
-    resume: 'WordPress, Développement de thème',
-  },
-  {
-    releaseYear: 2019,
-    title: 'Maine Image Santé',
-    excerpt: "Refonte du site institutionnel du groupe d'imagerie médicale sarthois Maine Image Santé.",
-    slug: '/projet/maine-image-sante',
-    cover: (await import('~images/project/maine-image-sante-cover.jpg')).default,
-    cover_alt: "Page d'accueil du site de Maine Image Santé, visible sur 72mis.fr",
-    resume: 'WordPress, Développement de thème',
-  },
-];
+const projects = (await getCollection('project', ({ data }) => data.draft !== true))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
-<Layout title="Projets et réalisations" description="Découvrez mes dernières réalisations et mes compétences de création de sites internet ou autres projets d'applications Web">
+<BaseLayout title="Projets et réalisations" description="Découvrez mes dernières réalisations et mes compétences de création de sites internet ou autres projets d'applications Web">
   <main id="content" class="page_portfolio">
     <header>
       <h1>Projets et réalisations</h1>
@@ -91,12 +18,12 @@ const projects = [
       <h2 id="portfolio-lastest-title">Derniers projets</h2>
       <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
       <ul class="bloc_portfolio__grid">
-        {projects.map((content, index) => (
+        {projects.map((project, index) => (
           <li>
-            <ProjectCard {...content} index={index} />
+            <ProjectCard project={project} index={index} />
           </li>
         ))}
       </ul>
     </section>
   </main>
-</Layout>
+</BaseLayout>

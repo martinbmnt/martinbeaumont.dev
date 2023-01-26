@@ -1,43 +1,38 @@
 ---
+import { CollectionEntry } from "astro:content";
 import { getPicture } from "@astrojs/image";
 
-export interface Props {
-  cover: string;
-  cover_alt: string;
-  releaseYear?: number;
-  title: string;
-  excerpt: string;
-  resume: string;
-  slug: string;
+interface Props {
+  project: CollectionEntry<'project'>;
   index?: number;
 }
 
-const content = Astro.props as Props;
+const { project: { data, slug }, index } = Astro.props as Props;
 
 const { image, sources } = await getPicture({
-  src: content.cover,
+  src: data.cover.src,
   widths: [330, 480],
   formats: ['avif', 'webp'],
   aspectRatio: '4:3',
-  alt: content.cover_alt
+  alt: data.cover.alt,
 });
 ---
 
-<article data-year={content.releaseYear}>
-  <h3>{content.title}</h3>
-  <p>{content.excerpt}</p>
+<article data-year={data.releaseYear}>
+  <h3>{data.title}</h3>
+  <p>{data.excerpt}</p>
   <p>
     <span class="visually-hidden">Technologie principale et service réalisé :</span>
-    <small>{content.resume}</small>
+    <small>{data.technologies.slice(0, 1)}, {data.services.slice(0, 1)}</small>
   </p>
   <picture>
     {sources.map((attrs) => <source {...attrs} sizes="330px" />)}
-    <img alt={content.cover_alt} {...image} loading={content.index && content.index < 3 ? "eager" : "lazy"} decoding={content.index && content.index < 3 ? "sync" : "async"} />
+    <img alt={data.cover.alt} {...image} loading={index && index < 3 ? "eager" : "lazy"} decoding={index &&index < 3 ? "sync" : "async"} />
   </picture>
   <p>
-    <a class="button button--with-icon" href={content.slug}>
+    <a class="button button--with-icon" href={`/projet/${slug}`}>
       <span>Voir l'étude de cas</span>
-      <span class="visually-hidden"> du projet {content.title}</span>
+      <span class="visually-hidden"> du projet {data.title}</span>
       <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
         <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
       </svg>

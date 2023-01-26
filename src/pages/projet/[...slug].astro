@@ -1,0 +1,83 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+
+import '~styles/portfolio.scss';
+import BaseLayout from "~layouts/BaseLayout.astro";
+import Breadcrumb from '~components/Content/Breadcrumb.astro';
+import Date from '~components/Content/Date.astro';
+import ProjectIntroduction from '~components/Project/ProjectIntroduction.astro';
+import ProjectCover from '~components/Project/ProjectCover.astro';
+import ProjectReview from "~components/Project/ProjectReview.astro";
+
+interface Props {
+  project: CollectionEntry<'project'>;
+}
+
+export async function getStaticPaths() {
+  const projects = await getCollection('project');
+
+  return projects.map((project) => ({
+    params: {
+      slug: project.slug
+    },
+    props: {
+      project
+    }
+  }));
+}
+
+const { project: { data } } = Astro.props as Props;
+const { Content } = await Astro.props.project.render();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${data.title} – Portfolio – Martin Beaumont`,
+  image: [
+    `${Astro.site.href}${data.cover.src}`,
+  ],
+  datePublished: data.publishDate,
+  dateModified: data.updateDate,
+  author: {
+    '@id': `${Astro.site}#author`,
+  },
+};
+---
+
+<BaseLayout
+  title={`${data.title} – Portfolio`}
+  description={data.excerpt}
+  image={({src: data.cover.seo, alt: data.cover.alt})}
+  articleSection="Portfolio"
+  publishDate={data.publishDate.toString()}
+  updateDate={data.updateDate?.toString()}>
+  <article id="content" class="portfolio_item" aria-labelledby="article-title">
+    <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={data.title} />
+    <header>
+      <h1 id="article-title">{data.title}</h1>
+      <p>{data.excerpt}</p>
+    </header>
+    <ProjectCover cover={data.cover.src} cover_alt={data.cover.alt} />
+    <ProjectIntroduction technologies={data.technologies} services={data.services} site={data.site} />
+    <Content />
+    {data.review && 
+      <ProjectReview author={data.review.author} link={data.review.link}>
+        {data.review.content}
+      </ProjectReview>
+    }
+    <footer>
+      <p>
+        <small>Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site <a href={data.site} rel="noopener" target="_blank">{data.site.replace(/https:\/\//, '')}</a>.</small>
+      </p>
+      <p>
+        <small>
+          Publié le
+          <Date datetime={data.publishDate.toString()} />{data.updateDate && <>, mis à jour le
+            <Date datetime={data.updateDate?.toString()} />
+          </>}
+        </small>
+      </p>
+    </footer>
+  </article>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}/>
+</BaseLayout>

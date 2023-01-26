@@ -7,16 +7,43 @@
     color: var(--color-text);
   }
 
-  > .list {
+  > ul {
     list-style: square;
   }
 
-  > p + .list {
+  > p + ul {
     margin-top: unset;
   }
 
   figure > p {
     margin-bottom: 0.5rem;
+  }
+
+  .footnotes ol,
+  > ul {
+    padding-left: 1rem;
+
+    ::marker {
+      content: unset;
+    }
+
+    li + li {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .footnotes {
+    :target {
+      outline: 2px dashed var(--color-accent);
+    }
+
+    ol {
+      list-style: disc;
+
+      p {
+        margin: unset;
+      }
+    }
   }
 }
 
@@ -102,12 +129,6 @@
       content: '–';
       margin-right: 0.25rem;
     }
-  }
-}
-
-.portfolio_item__footnotes {
-  :target {
-    outline: 2px dashed var(--color-accent);
   }
 }
 
