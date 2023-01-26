@@ -5,9 +5,10 @@ import { getPicture } from "@astrojs/image";
 interface Props {
   project: CollectionEntry<'project'>;
   index?: number;
+  showReleaseYear?: boolean;
 }
 
-const { project: { data, slug }, index } = Astro.props as Props;
+const { project: { data, slug }, index, showReleaseYear = true } = Astro.props as Props;
 
 const { image, sources } = await getPicture({
   src: data.cover.src,
@@ -18,7 +19,7 @@ const { image, sources } = await getPicture({
 });
 ---
 
-<article data-year={data.releaseYear}>
+<article data-year={showReleaseYear ? data.releaseYear : null}>
   <h3>{data.title}</h3>
   <p>{data.excerpt}</p>
   <p>

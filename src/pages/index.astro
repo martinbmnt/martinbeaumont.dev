@@ -41,7 +41,7 @@ const projects = (await getCollection('project', ({ data }) => data.draft !== tr
       <ul class="bloc_portfolio__grid" aria-labelledby="home-portfolio-title">
         {projects.map((project) => (
           <li>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} showReleaseYear={false} />
           </li>
         ))}
       </ul>
