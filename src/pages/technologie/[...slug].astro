@@ -40,7 +40,7 @@ const hasUpdateDate = projects[0].data.publishDate > data.publishDate;
     <Breadcrumb page={{ path: '/technologies', name: 'Technologies' }} article={data.title} />
     <header>
       <h1>
-        <img src={data.logo} alt={data.title}>
+        <img src={data.logo.src} alt={data.title} width={data.logo.width} height={data.logo.height}>
       </h1>
       <p>{data.description}</p>
       <p>

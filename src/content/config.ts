@@ -28,7 +28,11 @@ export const collections = {
   technology: defineCollection({
     schema: z.object({
       title: z.string(),
-      logo: z.string(),
+      logo: z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+      }),
       description: z.string(),
       site: z.string(),
       publishDate: z.date(),
