@@ -8,7 +8,7 @@ publishDate: 2023-01-26 14:00:00
 
 ## Qu'est-ce que Symfony ?
 
-Symfony est un ensemble de librairies PHP ainsi qu'un *framework* pour créer des applications Web. Il est écrit en PHP et est composé de plusieurs librairies qui permettent de gérer les requêtes HTTP, les sessions, les formulaires, les bases de données, les *templates* des pages ...
+Symfony est un ensemble de librairies PHP ainsi qu'un *framework* pour créer des applications Web. Il est écrit en [PHP](/technologie/php) et est composé de plusieurs librairies qui permettent de gérer les requêtes HTTP, les sessions, les formulaires, les bases de données, les *templates* des pages ...
 
 ### Et à quoi sert un *framework* ?
 
