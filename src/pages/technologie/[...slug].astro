@@ -1,5 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
+import { SITE } from "src/config";
 
 import BaseLayout from "~layouts/BaseLayout.astro";
 import Breadcrumb from '~components/Content/Breadcrumb.astro';
@@ -34,7 +35,7 @@ const hasUpdateDate = projects[0].data.publishDate > data.publishDate;
 
 <BaseLayout
   title={`${data.title} – Technologie`}
-  description={data.description}>
+  description={`${data.description} – Technologie – ${SITE.title}`}>
   <main id="content" class="page_technologie">
     <Breadcrumb page={{ path: '/technologies', name: 'Technologies' }} article={data.title} />
     <header>
