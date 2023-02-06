@@ -122,6 +122,81 @@ main[class*='page'] {
   }
 }
 
+.bloc_technology__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(100%, 37ch));
+  justify-content: center;
+  gap: 2rem;
+
+  div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    position: relative;
+    outline: 1px solid var(--color-accent);
+    border-radius: .5rem;
+
+    &:hover,
+    &:focus-within {
+      h3:after {
+        opacity: .05;
+      }
+    }
+
+    h3 {
+      position: relative;
+      padding: 2rem 1rem 0;
+      margin: unset;
+      font-size: var(--font-size-h5);
+      text-align: center;
+
+      &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-accent);
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+      }
+    }
+
+    img {
+      aspect-ratio: 5/3;
+      object-fit: contain;
+      width: 80%;
+      object-position: center;
+      text-align: center;
+    }
+
+    p:first-of-type {
+      margin: 0.5rem 1rem;
+      color: var(--color-accent);
+    }
+    
+    p:nth-of-type(n+2) {
+      margin: 0 1rem;
+    }
+    
+    p:last-of-type {
+      margin-top: 1rem;
+    }
+
+    a {
+      text-transform: lowercase;
+      font-size: var(--font-size-small);
+      margin-left: auto;
+
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}
+
 /*
  * Social networks component
  */
