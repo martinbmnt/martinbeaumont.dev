@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import { SITE } from "src/config";
+
+import TechnologyCard from '~components/Content/TechnologyCard.astro';
+import BaseLayout from "~layouts/BaseLayout.astro";
+
+const technologies = (await getCollection("technology", ({ data }) => data.draft !== true))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title={`Technologies, CMS et langages utilisés – ${SITE.title}`} description="Liste des technologies, CMS et langages utilisés pour la création de sites Web.">
+  <main id="content" class="page_technology">
+    <header class="container">
+      <h1>Technologies, CMS et langages utilisés</h1>
+      <p>Voici la liste des technologies, CMS et langages que j'utilise pour créer des sites internet et des applications Web. Cette liste n'est pas exhaustive, mais résume une bonne partie de mes outils.</p>
+    </header>
+    <section aria-labelledby="technology-technologies-title" class="page_about__presentation">
+      <h2 id="technology-technologies-title" class="visually-hidden">Technologies</h2>
+      <ul class="bloc_technology__grid">
+        {technologies.map((technology) => (
+          <li>
+            <TechnologyCard technology={technology} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</BaseLayout>

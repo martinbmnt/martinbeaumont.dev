@@ -24,5 +24,19 @@ export const collections = {
       draft: z.boolean().default(false),
       featured: z.boolean().default(false),
     })
-  })
+  }),
+  technology: defineCollection({
+    schema: z.object({
+      title: z.string(),
+      logo: z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+      }),
+      description: z.string(),
+      site: z.string(),
+      publishDate: z.date(),
+      draft: z.boolean().default(false),
+    })
+  }),
 }

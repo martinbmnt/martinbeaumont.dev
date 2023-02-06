@@ -1,0 +1,80 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import { SITE } from "src/config";
+
+import BaseLayout from "~layouts/BaseLayout.astro";
+import Breadcrumb from '~components/Content/Breadcrumb.astro';
+import ProjectCard from "~components/Project/ProjectCard.astro";
+import Date from "~components/Content/Date.astro";
+
+interface Props {
+  technology: CollectionEntry<'technology'>;
+}
+
+export async function getStaticPaths() {
+  const technologies = await getCollection('technology');
+
+  return technologies.map((technology) => ({
+    params: {
+      slug: technology.slug
+    },
+    props: {
+      technology
+    }
+  }));
+}
+
+const { technology: { data } } = Astro.props as Props;
+const { Content } = await Astro.props.technology.render();
+
+const projects = (await getCollection('project', (project) => project.data.technologies.includes(data.title)))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const hasUpdateDate = projects[0].data.publishDate > data.publishDate;
+---
+
+<BaseLayout
+  title={`${data.title} – Technologie`}
+  description={`${data.description} – Technologie – ${SITE.title}`}>
+  <main id="content" class="page_technologie">
+    <Breadcrumb page={{ path: '/technologies', name: 'Technologies' }} article={data.title} />
+    <header>
+      <h1>
+        <img src={data.logo.src} alt={data.title} width={data.logo.width} height={data.logo.height}>
+      </h1>
+      <p>{data.description}</p>
+      <p>
+        <a aria-label="Lien vers le site officiel (s'ouvre dans un nouvel onglet)" class="button button--with-icon" href={data.site} target="_blank" rel="nofollow noopener">
+          <span>Consulter le site officiel</span>
+          <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
+            <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+      </p>
+    </header>
+    <section aria-label={`Plus d'informations sur ${data.title}`}>
+      <Content />
+    </section>
+    <section aria-labelledby="technolgy-portfolio-title">
+      <h2 id="technolgy-portfolio-title">Des projets utilisants {data.title}</h2>
+      <p>Quelques projets de création de sites Web que j'ai réalisé qui fonctionnent avec {data.title}.</p>
+      <ul class="bloc_portfolio__grid" aria-labelledby="technolgy-portfolio-title">
+        {projects.map((project) => (
+          <li>
+            <ProjectCard project={project} />
+          </li>
+        ))}
+      </ul>
+    </section>
+    <footer>
+      <p>
+        <small>
+          Publié le
+          <Date datetime={data.publishDate.toString()} />{hasUpdateDate && <>, mis à jour le
+            <Date datetime={projects[0].data.publishDate?.toString()} />
+          </>}
+        </small>
+      </p>
+    </footer>
+  </main>
+</BaseLayout>
