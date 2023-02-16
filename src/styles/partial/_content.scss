@@ -135,7 +135,7 @@ main[class*='page'] {
     justify-content: flex-end;
     padding-bottom: 1rem;
     position: relative;
-    outline: 1px solid var(--color-accent);
+    border: 1px solid var(--color-accent);
     border-radius: .5rem;
 
     &:hover,
@@ -147,7 +147,7 @@ main[class*='page'] {
 
     h3 {
       position: relative;
-      padding: 2rem 1rem 0;
+      padding: 2rem 1rem;
       margin: unset;
       font-size: var(--font-size-h5);
       text-align: center;
@@ -163,7 +163,7 @@ main[class*='page'] {
     }
 
     img {
-      aspect-ratio: 5/3;
+      aspect-ratio: 5/2;
       object-fit: contain;
       width: 80%;
       object-position: center;
