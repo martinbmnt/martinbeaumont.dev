@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import { SITE } from "src/config";
+import { SITE } from 'src/config';
 
 import TechnologyCard from '~components/Content/TechnologyCard.astro';
-import BaseLayout from "~layouts/BaseLayout.astro";
+import BaseLayout from '~layouts/BaseLayout.astro';
 
 const technologies = (await getCollection("technology", ({ data }) => data.draft !== true))
   .sort((a, b) => a.data.title.localeCompare(b.data.title));

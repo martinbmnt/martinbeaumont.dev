@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 import SocialNetworks from '~components/Content/SocialNetworks.astro';
 import ProjectCard from '~components/Project/ProjectCard.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '~layouts/BaseLayout.astro';
 
 const projects = (await getCollection('project', ({ data }) => data.draft !== true && data.featured === true))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())

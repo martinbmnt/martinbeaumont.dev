@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
-import { OPEN_GRAPH, SITE } from '../config';
+import { OPEN_GRAPH, SITE } from 'src/config';
 
 export async function get(context) {
   const projects = (await getCollection('project', ({ data }) => data.draft !== true))
