@@ -1,10 +1,15 @@
 ---
+import Navigation from '~components/Navigation/Navigation.astro';
+import { getCurrentPageSlug } from 'src/util';
 import { SITE } from '../../config';
+
+const currentPageSlug = getCurrentPageSlug(new URL(Astro.request.url).pathname);
 ---
 
 <header class="header">
-  <a href={Astro.site.pathname}>
+  <a aria-current={currentPageSlug === '' ? 'page' : 'false'} class="header__title" href={Astro.site.pathname}>
     <strong>{SITE.title}</strong>
     <small>Développeur Web free-lance.</small>
   </a>
+  <Navigation />
 </header>
