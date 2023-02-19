@@ -29,6 +29,13 @@ html {
   font-family: sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--content-space-around) + 7rem);
+}
+
+@media (min-width: $screen-lg) {
+  html {
+    scroll-padding-top: calc(var(--content-space-around) + 5rem);
+  }
 }
 
 body {
