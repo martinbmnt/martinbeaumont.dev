@@ -1,61 +1,111 @@
 .header {
-  a {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: space-between;
+  margin: calc(-1 * var(--content-space-around));
+  margin-block-end: .5rem;
+  padding: var(--content-space-around) var(--content-space-around) 0;
+  -webkit-backdrop-filter: blur(.2rem);
+  backdrop-filter: blur(.2rem);
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: .95;
+    background-color: var(--color-light);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0.5px;
+    left: var(--content-space-around);
+    right: var(--content-space-around);
+    border-bottom: 1px solid var(--color-dark);
+  }
+
+  .header__title {
     display: inline-flex;
     flex-direction: column;
     font-family: var(--font-familly-title);
-  }
-
-  strong {
-    font-size: var(--font-size-h5);
-    letter-spacing: 1.7px;
-    text-transform: lowercase;
-    font-weight: 400;
-  }
-
-  small {
-    font-size: var(--font-size-xsmall);
-    letter-spacing: 0.75px;
-    white-space: nowrap;
-
-    &::first-letter {
+  
+    strong {
+      font-size: var(--font-size-h5);
+      letter-spacing: 1.7px;
       text-transform: lowercase;
+      font-weight: 400;
+    }
+  
+    small {
+      font-size: var(--font-size-xsmall);
+      letter-spacing: 0.75px;
+      white-space: nowrap;
+  
+      &::first-letter {
+        text-transform: lowercase;
+      }
     }
   }
 }
 
 @media (min-width: $screen-md) {
   .header {
-    small {
-      letter-spacing: 1.25px;
+    .header__title {
+      padding-bottom: calc(1rem - 5px);
+
+      small {
+        letter-spacing: 1.25px;
+      }
     }
   }
 }
 
 @media (min-width: $screen-lg) {
   .header {
-    padding: 1.25rem 4rem 0;
-
-    strong {
-      letter-spacing: 2px;
-      font-size: var(--font-size-h4);
+    width: 100%;
+    max-width: $screen-2xl;
+    padding: var(--content-space-around) 0 0;
+    margin: calc(-1 * var(--content-space-around)) auto 2rem;
+    
+    &:after {
+      left: 0;
+      right: 0;
     }
 
-    small {
-      font-size: var(--font-size-normal);
-      letter-spacing: 0;
+    .header__title {
+      padding-bottom: calc(1.5rem - 5px);
+
+      strong {
+        letter-spacing: 2px;
+        font-size: var(--font-size-h4);
+      }
+  
+      small {
+        font-size: var(--font-size-normal);
+        letter-spacing: 0;
+      }
     }
   }
 }
 
 @media (min-width: $screen-xl) {
   .header {
-    strong {
-      letter-spacing: 1.2px;
-    }
-
-    small {
-      font-size: var(--font-size-normal);
-      letter-spacing: 0.15px;
+    .header__title {
+      strong {
+        letter-spacing: 1.2px;
+      }
+  
+      small {
+        font-size: var(--font-size-normal);
+        letter-spacing: 0.15px;
+      }
     }
   }
 }

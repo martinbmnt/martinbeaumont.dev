@@ -29,19 +29,32 @@ html {
   font-family: sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--content-space-around) + 7rem);
+}
+
+@media (min-width: $screen-lg) {
+  html {
+    scroll-padding-top: calc(var(--content-space-around) + 5rem);
+  }
 }
 
 body {
   min-height: 100vh;
   display: grid;
-  gap: 1rem;
-  grid-template-rows: auto auto 1fr 0 auto; // header nav main back-to-top footer
+  gap: 1rem 0;
+  grid-template-rows: auto 1fr 0 auto; // header main back-to-top footer
   background-color: var(--color-light);
   color: var(--color-dark);
   padding: var(--content-space-around);
 
   &.no-scroll {
     overflow: hidden;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  body {
+    padding: var(--content-space-around) 4rem;
   }
 }
 
