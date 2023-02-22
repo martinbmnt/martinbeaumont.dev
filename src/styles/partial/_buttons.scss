@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-2xl) {
   .button--backtotop {
     margin-right: calc(50% - ($screen-2xl / 1em * 1rem) / 2); // a barbaric method to cast em to rem
   }
