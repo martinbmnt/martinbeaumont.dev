@@ -67,7 +67,10 @@ const schema = {
     }
     <footer>
       <p>
-        <small>Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site <a href={data.site} rel="noopener" target="_blank">{data.site.replace(/https:\/\//, '')}</a>.</small>
+        <small>
+          Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site
+          {data.site ? <a href={data.site} rel="noopener" target="_blank">{data.site.replace(/https:\/\//, '')}</a> : <>de {data.title}</>}.
+        </small>
       </p>
       <p>
         <small>
