@@ -10,7 +10,7 @@ export const collections = {
       services: z.array(z.string()),
       publishDate: z.date(),
       updateDate: z.date().optional(),
-      releaseYear: z.number(),
+      releaseYear: z.number().or(z.string()),
       cover: z.object({
         src: z.string(),
         alt: z.string(),
