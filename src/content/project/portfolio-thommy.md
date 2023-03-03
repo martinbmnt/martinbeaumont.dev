@@ -30,7 +30,6 @@ review:
     Et surtout la réactivité et les délais de réalisation en font un professionnel excellent.
     Merci Martin !
   link: https://goo.gl/maps/4j1bSkYfGbggaWn2A
-featured: true
 ---
 
 ## Le projet
