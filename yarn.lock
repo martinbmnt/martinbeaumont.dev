@@ -92,18 +92,18 @@
   dependencies:
     prismjs "^1.28.0"
 
-"@astrojs/rss@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/rss/-/rss-2.1.0.tgz#fb50909a8a57134243a21ed91f8e842877f10cc3"
-  integrity sha512-PrqtIDDAyu4MyIvhBZEQhftui5fqyO9JPvOe4QnVDhErMIYWXd0pVPpqdnE0SKZ5xykMkphYPAQdWDr7VeCzBg==
+"@astrojs/rss@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/rss/-/rss-2.1.1.tgz#0f51d380f780b8d86677769e07fdf036bb6f7671"
+  integrity sha512-3BpCqyCmVWfrGqyc1YXUQf7O3QjORYNmvxzeKvp0E+7KGiKj8ckRzwj90xGYjbKcb/BwKfzYgek4+BrZ1aqQtA==
   dependencies:
     fast-xml-parser "^4.0.8"
     kleur "^4.1.5"
 
-"@astrojs/sitemap@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-1.0.0.tgz#d5e7360e08f8f3b17bb1b8faa4c882aa39d18c25"
-  integrity sha512-42GxuF5FP7RaKXZrwGLBLOX3hPv+Wl7ExJC43O0J5e34ojJkLeKf7QfwN1UwrJlqH0Ywi0Fm4/xGe482G09+wg==
+"@astrojs/sitemap@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-1.1.0.tgz#fc4df42879f20642a5b758a94ad7610050b3e11a"
+  integrity sha512-JnKZcbD0WdFxw2VAj3qXb0cYKuvk6nwBYPfUy+plSa9TC9hikQrDFpd7yapOPTRf3AdmUittzFckoTw/nUilCw==
   dependencies:
     sitemap "^7.1.1"
     zod "^3.17.3"
@@ -881,6 +881,11 @@ ansi-regex@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-6.0.1.tgz#3183e38fae9a65d7cb5e53945cd5897d0260a06a"
   integrity sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==
+
+ansi-sequence-parser@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ansi-sequence-parser/-/ansi-sequence-parser-1.1.0.tgz#4d790f31236ac20366b23b3916b789e1bde39aed"
+  integrity sha512-lEm8mt52to2fT8GhciPCGeCXACSz2UwIN4X2e2LJSnZ5uAbn2/dsYdOmUXq0AtWS5cpAupysIneExOgH0Vd2TQ==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -2502,7 +2507,7 @@ jsonc-parser@^2.3.0:
   resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-2.3.1.tgz#59549150b133f2efacca48fe9ce1ec0659af2342"
   integrity sha512-H8jvkz1O50L3dMZCsLqiuB2tA7muqbSg1AtGEkN0leAqGjsUzDJir3Zwr02BhqdcITPg3ei3mZ+HjMocAknhhg==
 
-jsonc-parser@^3.0.0:
+jsonc-parser@^3.0.0, jsonc-parser@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-3.2.0.tgz#31ff3f4c2b9793f89c67212627c51c6394f88e76"
   integrity sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==
@@ -3517,10 +3522,10 @@ prettier-plugin-astro@^0.7.0:
     sass-formatter "^0.7.5"
     synckit "^0.8.4"
 
-prettier@^2.7.1:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
-  integrity sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==
+prettier@^2.7.1, prettier@^2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.4.tgz#34dd2595629bfbb79d344ac4a91ff948694463c3"
+  integrity sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==
 
 prismjs@^1.28.0:
   version "1.29.0"
@@ -3833,10 +3838,10 @@ sass-formatter@^0.7.2, sass-formatter@^0.7.5:
   dependencies:
     suf-log "^2.5.3"
 
-sass@^1.53.0:
-  version "1.57.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.57.1.tgz#dfafd46eb3ab94817145e8825208ecf7281119b5"
-  integrity sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==
+sass@^1.58.3:
+  version "1.58.3"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.3.tgz#2348cc052061ba4f00243a208b09c40e031f270d"
+  integrity sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -3906,6 +3911,16 @@ shiki@^0.11.1:
     jsonc-parser "^3.0.0"
     vscode-oniguruma "^1.6.1"
     vscode-textmate "^6.0.0"
+
+shiki@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.1.tgz#9fbe082d0a8aa2ad63df4fbf2ee11ec924aa7ee1"
+  integrity sha512-+Jz4nBkCBe0mEDqo1eKRcCdjRtrCjozmcbTUjbPTX7OOJfEbTZzlUWlZtGe3Gb5oV1/jnojhG//YZc3rs9zSEw==
+  dependencies:
+    ansi-sequence-parser "^1.1.0"
+    jsonc-parser "^3.2.0"
+    vscode-oniguruma "^1.7.0"
+    vscode-textmate "^8.0.0"
 
 signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
@@ -4510,7 +4525,7 @@ vscode-languageserver@^8.0.1:
   dependencies:
     vscode-languageserver-protocol "3.17.2"
 
-vscode-oniguruma@^1.6.1:
+vscode-oniguruma@^1.6.1, vscode-oniguruma@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/vscode-oniguruma/-/vscode-oniguruma-1.7.0.tgz#439bfad8fe71abd7798338d1cd3dc53a8beea94b"
   integrity sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==
@@ -4519,6 +4534,11 @@ vscode-textmate@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/vscode-textmate/-/vscode-textmate-6.0.0.tgz#a3777197235036814ac9a92451492f2748589210"
   integrity sha512-gu73tuZfJgu+mvCSy4UZwd2JXykjK9zAZsfmDeut5dx/1a7FeTk0XwJsSuqQn+cuMCGVbIBfl+s53X4T19DnzQ==
+
+vscode-textmate@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/vscode-textmate/-/vscode-textmate-8.0.0.tgz#2c7a3b1163ef0441097e0b5d6389cd5504b59e5d"
+  integrity sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==
 
 vscode-uri@^2.1.2:
   version "2.1.2"
