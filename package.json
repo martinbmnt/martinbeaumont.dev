@@ -14,7 +14,7 @@
     "preview": "astro preview",
     "format": "prettier -w .",
     "lint:a11y": "start-test 3000 lint:a11y:local",
-    "lint:a11y:local": "pa11y-ci --sitemap http://localhost:3000/sitemap-0.xml --sitemap-find https://www.martinbeaumont.dev --sitemap-replace http://localhost:3000",
+    "lint:a11y:local": "pa11y-ci --sitemap http://127.0.0.1:3000/sitemap-0.xml --sitemap-find https://www.martinbeaumont.dev --sitemap-replace http://127.0.0.1:3000",
     "lint:a11y:remote": "pa11y-ci --sitemap 'https://www.martinbeaumont.dev/sitemap-index.xml'",
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
@@ -24,7 +24,7 @@
     "@astrojs/sitemap": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
-    "astro": "^2.0.18",
+    "astro": "^2.1",
     "eslint": "^8.20.0",
     "eslint-plugin-astro": "^0.15.0",
     "pa11y-ci": "^3.0.1",
