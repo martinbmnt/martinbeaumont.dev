@@ -19,7 +19,7 @@
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.13.0",
+    "@astrojs/image": "^0.16.0",
     "@astrojs/rss": "^2.1.1",
     "@astrojs/sitemap": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
