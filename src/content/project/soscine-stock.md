@@ -13,7 +13,7 @@ services:
   - Gestion de l'hébergement
   - Gestion de projet
   - Formation
-publishDate: 2023-03-01 14:00:00
+publishDate: 2023-04-23 14:00:00
 releaseYear: 2020 - 2023
 cover:
   src: /images/project/soscine-stock-cover.jpg
@@ -33,19 +33,19 @@ En 2020, le gérant de SosCine m'a contacté pour m'expliquer les problèmes qu'
 
 ### Pitch de la première version de l'application
 
-L'objectif principal de l'application est de gérer les stocks de matériel, les clients et les réservations. Elle fonctionne depuis un navigateur Web, et est utilisée par les employés de SosCine uniquement.
+L'objectif principal de l'application est de **gérer les stocks de matériel, les clients et les réservations**. Elle fonctionne depuis un navigateur Web, et est utilisée par les employés de SosCine uniquement.
 
 Un site Web est également disponible pour les clients de SosCine. Il permet de consulter le catalogue de matériel et d'émettre des demandes de réservations. Les demandes sont envoyées vers l'application de stock, et sont ensuite traitées par les employés de SosCine.
 
 ## Liste des domaines
 
-L'application est composée de 4 grands domaines d'activité :
+L'application est composée de **4 grands domaines d'activité** :
 
 ### Gestion des stocks
 
 La gestion des stocks permet d'enregistrer des références de produits, puis d'ajouter la quantité disponible en stock, ainsi que le prix de location.
 
-Il est également possible de consulter la disponibilité des équipements sur une période donnée grâce à un système de stock flottant, qui calcul la quantité disponible des produits en fonction des réservations en cours, et des produits en S.A.V.
+Il est également possible de **consulter la disponibilité des équipements** sur une période donnée grâce à un système de stock flottant, qui calcul la quantité disponible des produits en fonction des réservations en cours, et des produits en S.A.V.
 
 ### Gestion des réservations
 
@@ -57,7 +57,7 @@ Le fonctionnement des réservations est régi par [un système d'états machine]
 
 ### Gestion du service après-vente
 
-Au retour d'une réservation, tous les produits sont testés afin de vérifier leur bon fonctionnement. En cas de problème, les produits sont mis en S.A.V., et un ticket est créé pour suivre la résolution du problème.
+Au retour d'une réservation, **tous les produits sont testés** afin de vérifier leur bon fonctionnement. En cas de problème, les produits sont mis en S.A.V., et un ticket est créé pour suivre la résolution du problème.
 
 Le ticket est ensuite traité par les techniciens, qui peuvent soit réparer le produit, soit le remplacer par un produit neuf. Une fois le produit réparé, il est remis en stock, la réservation est clôturée, et les réparations peuvent être facturées.
 
@@ -71,13 +71,13 @@ Les encaissements sont saisis et rattachés aux factures, puis envoyés au logic
 
 ### Gestion de la disponibilité des produits
 
-La disponibilité des produits est calculée en temps réel, en fonction des réservations en cours, des produits en S.A.V., et de la quantité disponible en stock. Ce système de stock flottant permet de gérer les réservations de manière plus efficace, et de limiter les erreurs.
+**La disponibilité des produits est calculée en temps réel**, en fonction des réservations en cours, des produits en S.A.V., et de la quantité disponible en stock. Ce système de stock flottant permet de gérer les réservations de manière plus efficace, et de limiter les erreurs.
 
 Dans l'éventualité d'ouvrir une seconde boutique, le calcul est réalisé pour chaque boutique, et chaque boutique peut avoir des stocks différents.
 
 ### Traitement automatisé des réservations
 
-Lors de la création d'une réservation depuis le site Web [soscine.fr](https://soscine.fr), la disponibilité des produits est vérifiée en temps réel. Si les produits sont disponibles, le client peut choisir de confirmer directement sa réservation, et ainsi bloquer les produits pour les dates de la location.
+Lors de la création d'une réservation depuis le site Web [soscine.fr](https://soscine.fr), si les produits sont disponibles, le client peut choisir de confirmer directement sa réservation, et ainsi bloquer les produits pour les dates de la location.
 
 Si les produits ne sont pas disponibles, le client est informé par mail, et les opérateurs prennent le relai pour proposer des alternatives au client. Sans confirmation du client, la réservation est automatiquement relancée après 24 heures.
 
@@ -85,11 +85,11 @@ Lorsqu'une réservation n'est pas confirmée et que le créneau de départ est p
 
 ### Enregistrement des opérations effectuées
 
-Afin de tracer les modifications réalisées sur certains contenus, chaque opération est enregistrée dans l'application. Il est ainsi possible de consulter l'historique des opérations effectuées sur une réservation, une facture, un ticket de S.A.V.&nbsp;...
+Afin de **tracer les modifications réalisées sur certains contenus**, chaque opération est enregistrée dans l'application. Il est ainsi possible de consulter l'historique des opérations effectuées sur une réservation, une facture, un ticket de S.A.V.&nbsp;...
 
 ### Bons de départ et de retour saisis avec le client
 
-Le bon de départ est saisi avec le client, chaque produit est vérifié puis photographié. Après l'avoir lu, le client confirme les informations saisies en signant le bon de départ.
+Le bon de départ est saisi avec le client, **chaque produit est vérifié et pris en photo**. Après l'avoir lu, le client confirme les informations saisies en signant le bon de départ.
 
 ![Bon de retour d'une réservation. La page comporte les informations sur la réservation et sur le client. En dessous, un formulaire avec la liste des produits loués, le statut de chaque exemplaire de produit, puis un espace pour que le client évalue son expérience avec SosCine, et signe pour confirmer le bon de retour.](/images/project/soscine-stock-booking-end.jpg)
 
@@ -99,7 +99,7 @@ Le client peut ensuite évaluer son expérience avec SosCine au moyen d'émotic�
 
 ### Workflows de validation
 
-Grâce au composant Workflow de Symfony &mdash; un système de gestion d'états machine, il est possible de définir des étapes, des transitions et des conditions, afin de valider une réservation, une facture, un ticket de S.A.V.&nbsp;...
+Grâce au composant Workflow de Symfony &mdash; un **système de gestion d'états machine**, il est possible de définir des étapes, des transitions et des conditions, afin de valider une réservation, une facture, un ticket de S.A.V.&nbsp;...
 
 ![Représentation graphique du workflow de traitement des factures, avec quatre états et quatre actions possibles.](/images/project/soscine-stock-workflow-invoice.jpg)
 *Workflow du traitement des factures*
@@ -111,7 +111,7 @@ Pour la facturation, le workflow est le suivant :
 - Lorsque les paiements sont enregistrés, la facture peut être envoyée au logiciel de comptabilité. Elle passe alors au statut "Clôturée".
 - Si le client ne règle pas sa facture, elle peut tout de même être envoyée au logiciel de compta, afin de demander un recouvrement. Elle passe alors au statut "Clôturée".
 
-Le workflow de facturation est le plus simple, par exemple celui des réservations est bien plus complexe, avec 14 étapes et 16 transitions possibles.
+Le workflow de facturation est le plus simple, par exemple celui des réservations est bien plus complexe &mdash; avec 14 étapes et 16 transitions possibles.
 
 ### Gestion des retards au retour
 
@@ -124,15 +124,15 @@ Ces deux types de retards peuvent être cumulés, par exemple si une réservatio
 
 ### Facturation internalisée
 
-La facturation est réalisée par l'application de stock. Elle est mise à jour tant que la réservation est en cours, et est clôturée lors du retour du matériel &mdash; ou de la résolution des tickets de S.A.V. Les paiements sont également enregistrés dans l'application.
+**La facturation est réalisée par l'application de stock**, elle est mise à jour tant que la réservation est en cours, et est clôturée lors du retour du matériel &mdash; ou de la résolution des tickets de S.A.V. Les paiements sont également enregistrés dans l'application.
 
 Une fois la facturation clôturée, elle est envoyée au logiciel de comptabilité de la société, avec les paiements effectués. Il est possible de générer un PDF de la facture, et de l'envoyer au client.
 
 ## Bilan d'utilisation
 
-Depuis la mise en production de l'application &mdash; en août 2020, plus de 28.000 demandes de réservation ont été saisies à ce jour &mdash; avril 2023, en augmentation de plus de 25% par an.
+Depuis la mise en production de l'application &mdash; en août 2020, **plus de 28.000 demandes de réservation** ont été saisies à ce jour &mdash; avril 2023, en augmentation de plus de 25% par an.
 
-L'automatisation du traitement des devis et des réservations, le calcul de la disponibilité des produits, et l'intégration de la facturation dans l'application ont permis de gagner du temps, et de réduire les erreurs.
+L'automatisation du traitement des devis et des réservations, le calcul de la disponibilité des produits, et l'intégration de la facturation dans l'application ont permis de gagner du temps &mdash; de 30 minutes à 1h par réservation, et de réduire les erreurs.
 
 Lors de la publication de la première version &mdash; il y a maintenant 3 ans, les seules fonctionnalités présentes étaient l'inventaire des produits, la liste et la saisie des réservations, ainsi que l'annuaire client. Depuis, de nombreuses fonctionnalités ont été ajoutées, comme la facturation, la gestion des retards, la gestion des tickets de S.A.V.&nbsp;... Et d'autres sont en cours de développement.
 
