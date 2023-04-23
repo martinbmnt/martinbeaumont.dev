@@ -5,12 +5,12 @@ export const collections = {
     schema: z.object({
       title: z.string(),
       excerpt: z.string(),
-      site: z.string(),
+      site: z.string().optional(),
       technologies: z.array(z.string()),
       services: z.array(z.string()),
       publishDate: z.date(),
       updateDate: z.date().optional(),
-      releaseYear: z.number(),
+      releaseYear: z.number().or(z.string()),
       cover: z.object({
         src: z.string(),
         alt: z.string(),
