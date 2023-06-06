@@ -27,7 +27,7 @@ const content = Astro.props as Props;
 
 <html dir="ltr" lang={SITE.language.slice(0, 2)} prefix="og: https://ogp.me/ns#">
   <head>
-    <HeadCommon />
+    <HeadCommon title={content.title} />
     <HeadFont />
     <HeadSEO {...content} />
   </head>

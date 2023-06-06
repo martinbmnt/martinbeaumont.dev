@@ -1,9 +1,21 @@
 ---
 import { SITE } from '../../config';
+
+export interface Props {
+  title: string;
+}
+
+const content = Astro.props as Props;
+
+const formattedContentTitle =
+  content.title
+    ? (Astro.url.pathname === '/' ? `${SITE.title} – ${content.title}` : `${content.title} – ${SITE.title}`)
+    : SITE.title;
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{formattedContentTitle}</title>
 <link rel="icon" href="/images/icon-48.png"/>
 <link rel="apple-touch-icon" href="/images/icon-192.png"/>
 <link rel="manifest" href="/site.webmanifest" />
