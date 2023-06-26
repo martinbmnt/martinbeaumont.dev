@@ -32,7 +32,7 @@
     "prettier-plugin-astro": "^0.10.0",
     "sass": "^1.63.4",
     "sharp": "^0.32.1",
-    "shiki": "^0.14.2",
+    "shiki": "^0.14.3",
     "start-server-and-test": "^2.0.0",
     "the-new-css-reset": "^1.8.4"
   },
