@@ -10,6 +10,11 @@ const socials = [
     link: 'https://twitter.com/martinbmnt',
     logo: 'twitter',
   },
+  {
+    name: 'Malt',
+    link: 'https://www.malt.fr/profile/martinbmnt',
+    logo: 'malt',
+  },
 ];
 ---
 
@@ -19,7 +24,7 @@ const socials = [
     {socials.map((social) => (
       <li>
         <a href={social.link} target="_blank" rel="nofollow noopener">
-          <h3 data-link={social.link.replace(/http(s)?:(\/)+/, '')}>
+          <h3 data-link={social.link.replace(/http(s)?:(\/)+(www\.)?/, '')}>
             <span class="visually-hidden">Profil</span>
             <span lang="en">{social.name}</span>
             <span class="visually-hidden">de Martin Beaumont</span>

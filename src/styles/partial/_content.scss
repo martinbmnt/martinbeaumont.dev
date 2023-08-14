@@ -205,11 +205,12 @@ main[class*='page'] {
   ul {
     display: grid;
     gap: 2rem;
-    justify-items: center;
+    justify-content: center;
   }
 
   li {
     max-width: 37ch;
+    width: 100%;
 
     &:hover {
       svg {
@@ -228,7 +229,7 @@ main[class*='page'] {
     border: 2px solid var(--color-dark);
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 65% 35%;
     text-decoration: unset;
     outline-offset: 2px;
     -webkit-tap-highlight-color: var(--color-tap);
@@ -253,7 +254,7 @@ main[class*='page'] {
   svg {
     width: 50%;
     max-width: 7rem;
-    margin: 2rem;
+    margin: 2rem 2rem 2rem auto;
     aspect-ratio: 1 / 1;
     place-self: center;
     color: var(--color-gray-medium);
@@ -269,7 +270,7 @@ main[class*='page'] {
   .social_networks {
     ul {
       padding: .5rem;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 37ch);
     }
 
     h3 {
@@ -284,7 +285,17 @@ main[class*='page'] {
   .social_networks {
     ul {
       padding: .5rem;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(37ch, 1fr));
+    }
+
+    li {
+      &:nth-child(odd) {
+        place-self: end;
+      }
+
+      &:nth-child(even) {
+        place-self: start;
+      }
     }
 
     h3 {
