@@ -4,6 +4,7 @@ AddDefaultCharset UTF-8
 
 # BEGIN Redirect
 
+Redirect 301 /projet https://www.martinbeaumont.dev/portfolio
 Redirect 301 /projets https://www.martinbeaumont.dev/portfolio
 
 RewriteEngine on
