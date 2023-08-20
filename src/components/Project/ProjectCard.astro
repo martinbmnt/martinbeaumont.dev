@@ -28,7 +28,7 @@ const { image, sources } = await getPicture({
   </p>
   <picture>
     {sources.map((attrs) => <source {...attrs} sizes="330px" />)}
-    <img alt={data.cover.alt} {...image} loading={index && index < 3 ? "eager" : "lazy"} decoding={index &&index < 3 ? "sync" : "async"} />
+    <img alt={data.cover.alt} {...image} loading={index && index < 3 ? "eager" : "lazy"} decoding={index && index < 3 ? "sync" : "async"} />
   </picture>
   <p>
     <a class="button button--with-icon" href={`/projet/${slug}`}>
