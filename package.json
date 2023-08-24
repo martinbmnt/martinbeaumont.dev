@@ -36,5 +36,8 @@
     "start-server-and-test": "^2.0.0",
     "the-new-css-reset": "^1.9.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "semver": "^7.5.2"
+  }
 }
