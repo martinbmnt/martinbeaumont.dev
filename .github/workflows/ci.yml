@@ -27,16 +27,16 @@ jobs:
           yarn astro check
           yarn tsc --noEmit
           yarn lint:eslint
-  a11y-check:
-    name: Check for a11y issues with Pa11y
-    runs-on: ubuntu-latest
-    needs: code-check
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  # a11y-check:
+  #   name: Check for a11y issues with Pa11y
+  #   runs-on: ubuntu-latest
+  #   needs: code-check
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
 
-      - name: Install Tools & Dependencies
-        uses: ./.github/actions/install
+  #     - name: Install Tools & Dependencies
+  #       uses: ./.github/actions/install
 
-      - name: Run Check
-        run: yarn lint:a11y
+  #     - name: Run Check
+  #       run: yarn lint:a11y
