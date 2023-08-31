@@ -114,7 +114,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
     if (typeof trustedTypes !== undefined) {
       // @ts-ignore
       const trustedHTML = trustedTypes.createPolicy('contactFormAlert', {
-        createHTML: (value: string) => value.replace(/>/g, '<'),
+        createHTML: (value: string) => value,
       });
       contactFormAlert.innerHTML = trustedHTML.createHTML(text);
       return;
