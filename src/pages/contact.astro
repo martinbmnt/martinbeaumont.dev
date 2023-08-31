@@ -111,7 +111,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
 
   function setContactFormAlertText(text: string): void {
     // @ts-ignore
-    if (typeof trustedTypes !== undefined) {
+    if (typeof trustedTypes !== "undefined") {
       // @ts-ignore
       const trustedHTML = trustedTypes.createPolicy('contactFormAlert', {
         createHTML: (value: string) => value,
