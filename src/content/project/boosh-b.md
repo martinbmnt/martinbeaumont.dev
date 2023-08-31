@@ -18,10 +18,10 @@ services:
 publishDate: 2022-08-22 14:00:00
 releaseYear: 2022
 cover:
-  src: /images/project/boosh-b-cover.jpg
+  src: ../../assets/images/project/boosh-b-cover.jpg
   alt: |
     Page d'accueil du site des restaurants Boosh-B, visible sur booshb.com
-  seo: /images/project/boosh-b-social.png
+  seo: ../../assets/images/project/boosh-b-social.png
 ---
 
 ## Le projet

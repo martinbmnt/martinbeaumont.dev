@@ -16,10 +16,10 @@ services:
 publishDate: 2023-04-23 14:00:00
 releaseYear: 2020 - 2023
 cover:
-  src: /images/project/soscine-stock-cover.jpg
+  src: ../../assets/images/project/soscine-stock-cover.jpg
   alt: |
     Tableau de bord de l'application de gestion des stocks de SosCine
-  seo: /images/project/soscine-stock-social.png
+  seo: ../../assets/images/project/soscine-stock-social.png
 featured: true
 ---
 
@@ -49,9 +49,9 @@ Il est également possible de **consulter la disponibilité des équipements** s
 
 ### Gestion des réservations
 
-La gestion des réservations permet de gérer les demandes de réservation des clients. Les demandes sont envoyées par le site Web [soscine.fr](https://soscine.fr), et sont [traitées automatiquement](#traitement-automatisé-des-réservations) le plus souvent, ou bien par les techniciens en cas d'indisponibilité de produits.
+La gestion des réservations permet de gérer les demandes de réservation des clients. Les demandes sont envoyées par le site Web [soscine.fr](https://soscine.fr), et sont [traitées automatiquement](#traitement-automatique-des-demandes) le plus souvent, ou bien par les techniciens en cas d'indisponibilité de produits.
 
-![Page des réservations de l'application de gestion des stocks de SosCine. Les réservations sont listées, avec pour chacune le nom du client, les dates de début et de fin, le statut de la réservation, et des boutons pour imprimer ou afficher la réservation.](/images/project/soscine-stock-booking.jpg)
+![Page des réservations de l'application de gestion des stocks de SosCine. Les réservations sont listées, avec pour chacune le nom du client, les dates de début et de fin, le statut de la réservation, et des boutons pour imprimer ou afficher la réservation.](../../assets/images/project/soscine-stock-booking.jpg)
 
 Le fonctionnement des réservations est régi par [un système d'états machine](#workflows-de-validation), qui empêche les erreurs et permet de suivre l'avancement des réservations. Un historique des opérations effectuées est également disponible.
 
@@ -75,7 +75,7 @@ Les encaissements sont saisis et rattachés aux factures, puis envoyés au logic
 
 Dans l'éventualité d'ouvrir une seconde boutique, le calcul est réalisé pour chaque boutique, et chaque boutique peut avoir des stocks différents.
 
-### Traitement automatisé des réservations
+### Traitement automatique des demandes
 
 Lors de la création d'une réservation depuis le site Web [soscine.fr](https://soscine.fr), si les produits sont disponibles, le client peut choisir de confirmer directement sa réservation, et ainsi bloquer les produits pour les dates de la location.
 
@@ -91,7 +91,7 @@ Afin de **tracer les modifications réalisées sur certains contenus**, chaque o
 
 Le bon de départ est saisi avec le client, **chaque produit est vérifié et pris en photo**. Après l'avoir lu, le client confirme les informations saisies en signant le bon de départ.
 
-![Bon de retour d'une réservation. La page comporte les informations sur la réservation et sur le client. En dessous, un formulaire avec la liste des produits loués, le statut de chaque exemplaire de produit, puis un espace pour que le client évalue son expérience avec SosCine, et signe pour confirmer le bon de retour.](/images/project/soscine-stock-booking-end.jpg)
+![Bon de retour d'une réservation. La page comporte les informations sur la réservation et sur le client. En dessous, un formulaire avec la liste des produits loués, le statut de chaque exemplaire de produit, puis un espace pour que le client évalue son expérience avec SosCine, et signe pour confirmer le bon de retour.](../../assets/images/project/soscine-stock-booking-end.jpg)
 
 Le bon de retour affiche les commentaires et les photographies saisis lors du départ, et permet à l'opérateur d'indiquer si le produit est retourné ou manquant, ou bien si un accessoire n'est pas présent. Si plusieurs exemplaires d'un produit sont loués, chaque exemplaire est saisi séparément.
 
@@ -101,7 +101,7 @@ Le client peut ensuite évaluer son expérience avec SosCine au moyen d'émotic�
 
 Grâce au composant Workflow de Symfony &mdash; un **système de gestion d'états machine**, il est possible de définir des étapes, des transitions et des conditions, afin de valider une réservation, une facture, un ticket de S.A.V.&nbsp;...
 
-![Représentation graphique du workflow de traitement des factures, avec quatre états et quatre actions possibles.](/images/project/soscine-stock-workflow-invoice.jpg)
+![Représentation graphique du workflow de traitement des factures, avec quatre états et quatre actions possibles.](../../assets/images/project/soscine-stock-workflow-invoice.jpg)
 *Workflow du traitement des factures*
 
 Pour la facturation, le workflow est le suivant :

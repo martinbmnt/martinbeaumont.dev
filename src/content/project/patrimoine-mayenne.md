@@ -18,10 +18,10 @@ services:
 publishDate: 2022-08-21 14:00:00
 releaseYear: 2022
 cover:
-  src: /images/project/patrimoine-mayenne-cover.jpg
+  src: ../../assets/images/project/patrimoine-mayenne-cover.jpg
   alt: |
     Page d'accueil des sites du patrimoine de la Mayenne, visible sur patrimoine.lamayenne.fr
-  seo: /images/project/patrimoine-mayenne-social.png
+  seo: ../../assets/images/project/patrimoine-mayenne-social.png
 featured: true
 ---
 
@@ -59,7 +59,7 @@ Sur les navigateurs les plus récents, des "requêtes média" (ou *media queries
 
 L'**accentuation du contraste rend le texte plus lisible**, notamment en remplaçant la couleur principale par du noir, et en retirant les nuances de gris sur les textes.
 
-![Exemple du mode contraste accentué sur une page du site patrimoine.lamayenne.fr](/images/project/patrimoine-mayenne-accentued-contrast.jpg)
+![Exemple du mode contraste accentué sur une page du site patrimoine.lamayenne.fr](../../assets/images/project/patrimoine-mayenne-accentued-contrast.jpg)
 *Affichage par défaut à gauche, et avec contraste accentué à droite.*
 
 Ainsi, tous les contenus ont un ratio de contraste d'au moins 7:1, ce qui est supérieur aux critères `3.2` et `3.3` du **Référentiel Général d'Amélioration de l'Accessibilité (RGAA)**.

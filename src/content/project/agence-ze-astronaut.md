@@ -18,10 +18,10 @@ services:
 publishDate: 2022-11-26 14:00:00
 releaseYear: 2022
 cover:
-  src: /images/project/ze-astronaut-cover.jpg
+  src: ../../assets/images/project/ze-astronaut-cover.jpg
   alt: |
     Page d'accueil du site Web de l'agence Ze Astronaut, visible sur zeastronaut.com
-  seo: /images/project/ze-astronaut-social.png
+  seo: ../../assets/images/project/ze-astronaut-social.png
 featured: true
 ---
 
@@ -41,7 +41,7 @@ La charte graphique de l'agence Ze&nbsp;Astronaut est orientée sur l'espace, av
 
 L'agence souhaite dynamiser visuellement son site Web avec des animations d'apparitions du contenu sur la quasi-totalité des pages, ainsi que de l'interactivité sur un élément de la page d'accueil.
 
-![Aperçu du bloc des expertises présent sur la page d'accueil, où la galaxie et l'astronaute tournent selon l'expertise sélectionée.](/images/project/ze-astronaut-galaxy.jpg)
+![Aperçu du bloc des expertises présent sur la page d'accueil, où la galaxie et l'astronaute tournent selon l'expertise sélectionée.](../../assets/images/project/ze-astronaut-galaxy.jpg)
 *Sur la page d'accueil du site, le bloc des expertises comporte quatre onglets, faisant tourner la galaxie et l'astronaute lors du clic sur un pôle d'expertise.*
 
 L'animation principale est sur la présentation des pôles d'expertises de la page d'accueil. Une galaxie réalisée en SVG (un format d'image vectoriel) s'anime lorsque l'utilisateur sélectionne un pôle différent, en tournant l'astronaute et les planètes autour.
