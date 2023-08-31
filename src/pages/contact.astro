@@ -108,4 +108,18 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
     contactForm.ariaBusy = 'false';
     contactForm.setAttribute('aria-busy', 'false');
   }
+
+  function setContactFormAlertText(text: string): void {
+    // @ts-ignore
+    if (typeof trustedTypes !== undefined) {
+      // @ts-ignore
+      const trustedHTML = trustedTypes.createPolicy('contactFormAlert', {
+        createHTML: (value: string) => value.replace(/>/g, '<'),
+      });
+      contactFormAlert.innerHTML = trustedHTML.createHTML(`<p>${text}</p>`);
+      return;
+    }
+
+    contactFormAlert.innerHTML = `<p>${text}</p>`;
+  }
 </script>
