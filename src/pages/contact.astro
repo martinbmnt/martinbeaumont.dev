@@ -110,6 +110,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
   }
 
   function setContactFormAlertText(text: string): void {
+    /* global trustedTypes */
     if ('trustedTypes' in window) {
       // @ts-ignore
       const trustedHTML = trustedTypes.createPolicy('contactFormAlert', {
