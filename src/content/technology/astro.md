@@ -1,7 +1,7 @@
 ---
 title: Astro
 logo:
-  src: /images/technology/astro.svg
+  src: ../../assets/images/technology/astro.svg
   width: 300
   height: 100
 description: Astro est un générateur de site statique, permettant de créer des sites web performants.

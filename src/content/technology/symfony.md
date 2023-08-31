@@ -1,7 +1,7 @@
 ---
 title: Symfony
 logo:
-  src: /images/technology/symfony.svg
+  src: ../../assets/images/technology/symfony.svg
   width: 260
   height: 66
 description: Symfony est un ensemble de librairies PHP ainsi qu'un framework pour créer des applications Web.

@@ -32,10 +32,10 @@ export const collections = {
   }),
   technology: defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
       title: z.string(),
       logo: z.object({
-        src: z.string(),
+        src: image(),
         width: z.number(),
         height: z.number(),
       }),

@@ -1,7 +1,7 @@
 ---
 title: PHP
 logo:
-  src: /images/technology/php.svg
+  src: ../../assets/images/technology/php.svg
   width: 100
   height: 50
 description: PHP est un langage de programmation populaire, particulièrement adapté pour le développement Web.
