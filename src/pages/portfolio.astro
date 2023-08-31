@@ -8,22 +8,20 @@ const projects = (await getCollection('project', ({ data }) => data.draft !== tr
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
-<BaseLayout title="Projets et réalisations" description="Découvrez mes dernières réalisations et mes compétences de création de sites internet ou autres projets d'applications Web">
-  <main id="content" class="page_portfolio">
-    <header>
-      <h1>Projets et réalisations</h1>
-      <p>Entreprises, administrations, artistes … Mes clients ont tous des profils et des besoins différents, et chaque projet est unique. Découvrez un aperçu de mes services et compétences de création de sites internet sur mesure.</p>
-    </header>
-    <section aria-labelledby="portfolio-lastest-title">
-      <h2 id="portfolio-lastest-title">Derniers projets</h2>
-      <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
-      <ul class="bloc_portfolio__grid">
-        {projects.map((project, index) => (
-          <li>
-            <ProjectCard project={project} index={index} />
-          </li>
-        ))}
-      </ul>
-    </section>
-  </main>
+<BaseLayout title="Projets et réalisations" description="Découvrez mes dernières réalisations et mes compétences de création de sites internet ou autres projets d'applications Web" class="page_portfolio">
+  <header>
+    <h1>Projets et réalisations</h1>
+    <p>Entreprises, administrations, artistes … Mes clients ont tous des profils et des besoins différents, et chaque projet est unique. Découvrez un aperçu de mes services et compétences de création de sites internet sur mesure.</p>
+  </header>
+  <section aria-labelledby="portfolio-lastest-title">
+    <h2 id="portfolio-lastest-title">Derniers projets</h2>
+    <p>Voici une sélection de mes derniers projets de création de sites Web.</p>
+    <ul class="bloc_portfolio__grid">
+      {projects.map((project, index) => (
+        <li>
+          <ProjectCard project={project} index={index} />
+        </li>
+      ))}
+    </ul>
+  </section>
 </BaseLayout>

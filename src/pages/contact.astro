@@ -4,42 +4,40 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
 
 ---
 
-<BaseLayout title="Contact et devis pour la création de site web" description="Un problème sur votre site internet ? Besoin d'un devis pour la création d'un site Web ? Contactez un développeur Web free-lance basé à Laval (Mayenne 53) !">
-  <main id="content" class="page_contact">
-    <header>
-      <h1>Contact et demande de devis</h1>
-      <p><strong>Un projet à réaliser ?</strong> Vous êtes intéressé par l'une de mes prestations ? Ou bien vous avez tout simplement une question ? Contactez-moi via le formulaire ci-dessous et je vous répondrai dans les plus brefs délais !</p>
-    </header>
-    <section aria-labelledby="contact-form-title">
-      <h2 id="contact-form-title">Formulaire de contact</h2>
-      <p id="form-contact-info">Tous les champs du formulaire sont obligatoires.</p>
-      <form aria-live="polite" aria-busy="false" aria-describedby="form-contact-info" class="page_contact__form" action="/api/contact.php" method="post" id="form-contact">
-        <div class="form_row">
-          <label for="form-contact-name">Votre nom complet</label>
-          <input type="text" id="form-contact-name" name="name" placeholder="Nom Prénom" required />
-        </div>
-        <div class="form_row">
-          <label for="form-contact-mail" aria-describedby="form-contact-mail-help">Votre adresse email</label>
-          <input type="email" id="form-contact-mail" name="mail" placeholder="xxx@xxx.xx" required />
-          <p id="form-contact-mail-help"><small>La forme de votre email doit être de type <em>xxx@xxx.xx</em>.</small></p>
-        </div>
-        <div class="form_row">
-          <label for="form-contact-message" aria-describedby="form-contact-message-help">Quelle est votre demande ?</label>
-          <textarea name="message" id="form-contact-message" cols={30} rows={10} minlength={10} required></textarea>
-          <p id="form-contact-message-help"><small><strong>S'il s'agit d'une demande de devis</strong>, vous pouvez m'expliquer votre projet afin que je me renseigne avant de vous recontacter.</small></p>
-        </div>
-        <div class="form_row form_row--checkbox">
-          <label for="form-contact-privacy">J'accepte que mes données personnelles soient conservées par Martin Beaumont. Elles ne seront pas cédées ou revendues à des tiers.</label>
-          <input type="checkbox" id="form-contact-privacy" name="privacy" required>
-        </div>
-        <div role="alert" aria-hidden="true"></div>
-        <button class="button" type="submit">Envoyer le message</button>
-      </form>
-      <hr>
-      <p><small>Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées par ce formulaire, veuillez consulter la <a href="/politique-confidentialite">politique de confidentialité</a>.</small></p>
-    </section>
-    <SocialNetworks/>
-  </main>
+<BaseLayout title="Contact et devis pour la création de site web" description="Un problème sur votre site internet ? Besoin d'un devis pour la création d'un site Web ? Contactez un développeur Web free-lance basé à Laval (Mayenne 53) !" class="page_contact">
+  <header>
+    <h1>Contact et demande de devis</h1>
+    <p><strong>Un projet à réaliser ?</strong> Vous êtes intéressé par l'une de mes prestations ? Ou bien vous avez tout simplement une question ? Contactez-moi via le formulaire ci-dessous et je vous répondrai dans les plus brefs délais !</p>
+  </header>
+  <section aria-labelledby="contact-form-title">
+    <h2 id="contact-form-title">Formulaire de contact</h2>
+    <p id="form-contact-info">Tous les champs du formulaire sont obligatoires.</p>
+    <form aria-live="polite" aria-busy="false" aria-describedby="form-contact-info" class="page_contact__form" action="/api/contact.php" method="post" id="form-contact">
+      <div class="form_row">
+        <label for="form-contact-name">Votre nom complet</label>
+        <input type="text" id="form-contact-name" name="name" placeholder="Nom Prénom" required />
+      </div>
+      <div class="form_row">
+        <label for="form-contact-mail" aria-describedby="form-contact-mail-help">Votre adresse email</label>
+        <input type="email" id="form-contact-mail" name="mail" placeholder="xxx@xxx.xx" required />
+        <p id="form-contact-mail-help"><small>La forme de votre email doit être de type <em>xxx@xxx.xx</em>.</small></p>
+      </div>
+      <div class="form_row">
+        <label for="form-contact-message" aria-describedby="form-contact-message-help">Quelle est votre demande ?</label>
+        <textarea name="message" id="form-contact-message" cols={30} rows={10} minlength={10} required></textarea>
+        <p id="form-contact-message-help"><small><strong>S'il s'agit d'une demande de devis</strong>, vous pouvez m'expliquer votre projet afin que je me renseigne avant de vous recontacter.</small></p>
+      </div>
+      <div class="form_row form_row--checkbox">
+        <label for="form-contact-privacy">J'accepte que mes données personnelles soient conservées par Martin Beaumont. Elles ne seront pas cédées ou revendues à des tiers.</label>
+        <input type="checkbox" id="form-contact-privacy" name="privacy" required>
+      </div>
+      <div role="alert" aria-hidden="true"></div>
+      <button class="button" type="submit">Envoyer le message</button>
+    </form>
+    <hr>
+    <p><small>Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées par ce formulaire, veuillez consulter la <a href="/politique-confidentialite">politique de confidentialité</a>.</small></p>
+  </section>
+  <SocialNetworks/>
 </BaseLayout>
 
 <script>
