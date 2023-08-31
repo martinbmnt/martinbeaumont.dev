@@ -6,12 +6,14 @@ import { Image } from 'astro:assets';
 export interface Props {
   cover: ImageMetadata;
   cover_alt: string;
+  slug: string;
 }
 
 const content = Astro.props as Props;
 ---
 
 <Image
+  transition:name={`project-cover-${content.slug}`}
   class='portfolio_item__cover'
   src={content.cover}
   alt={content.cover_alt}
