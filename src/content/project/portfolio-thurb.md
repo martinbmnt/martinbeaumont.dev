@@ -16,10 +16,10 @@ services:
 publishDate: 2022-08-20 14:00:00
 releaseYear: 2021
 cover:
-  src: /images/project/portfolio-thurb-cover.jpg
+  src: ../../assets/images/project/portfolio-thurb-cover.jpg
   alt: |
     Page d'accueil du portfolio de Thurb, visible sur thurbwork.com
-  seo: /images/project/portfolio-thurb-social.png
+  seo: ../../assets/images/project/portfolio-thurb-social.png
 review:
   author: Thurb
   content: |
@@ -44,7 +44,7 @@ Thurb avait déjà réalisé les maquettes de son portfolio, et je devais réali
 
 Pour répondre aux besoins de Thurb, j'ai développé un thème sur-mesure sous WordPress, enrichi avec des champs personnalisés grâce à l'extension ACF Pro (Advanced Custom Fields Pro).
 
-![Capture d'écran de la page de gestion des clients présents dans le carousel](/images/project/portfolio-thurb-carousel.jpg)
+![Capture d'écran de la page de gestion des clients présents dans le carousel](../../assets/images/project/portfolio-thurb-carousel.jpg)
 *Page de gestion des clients présents dans le carousel*
 
 ### Carrousel de clients

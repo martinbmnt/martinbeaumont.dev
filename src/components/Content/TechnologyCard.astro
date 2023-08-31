@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 interface Props {
   technology: CollectionEntry<'technology'>;
@@ -12,7 +12,7 @@ const projects = (await getCollection('project', (project) => project.data.techn
 
 <div>
   <h3>
-    <img src={data.logo.src} alt={data.title} width={data.logo.width} height={data.logo.height}>
+    <img src={data.logo.src.src} alt={data.title} width={data.logo.width} height={data.logo.height}>
   </h3>
   <p>
     <small>{projects.length} projet{projects.length > 1 && 's'}</small>

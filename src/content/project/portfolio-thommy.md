@@ -18,10 +18,10 @@ services:
 publishDate: 2022-08-31 14:00:00
 releaseYear: 2022
 cover:
-  src: /images/project/portfolio-thommy-cover.jpg
+  src: ../../assets/images/project/portfolio-thommy-cover.jpg
   alt: |
     Page d'accueil du portfolio de Thommy, visible sur thommyart.fr
-  seo: /images/project/portfolio-thommy-social.png
+  seo: ../../assets/images/project/portfolio-thommy-social.png
 review:
   author: Thommy
   content: |
@@ -58,7 +58,7 @@ Pour les projets, Thommy m'a indiqué toutes les informations qu'il souhaitait p
 * Crédits avec compétences et noms des collaborateurs
 * Programmation de la date de publication
 
-![Page d'édition d'un projet, avec la gestion des vidéos, des médias et des crédits](/images/project/portfolio-thommy-cms.jpg)
+![Page d'édition d'un projet, avec la gestion des vidéos, des médias et des crédits](../../assets/images/project/portfolio-thommy-cms.jpg)
 *Gestion des vidéos, des médias et des crédits sur la page d'édition d'un projet.*
 
 D'autres contenus sont gérés via le CMS, tels que les showreels de Thommy, et les pages (mentions légales, politique de confidentialité).
@@ -83,7 +83,7 @@ Les vidéos des projets sont mises en lignes sur Vimeo, un service d'hébergemen
 
 Lors du premier affichage d'une vidéo Vimeo, **l'utilisateur est averti de l'utilisation d'un service tiers**, et son consentement est demandé. Tant que l'utilisateur n'a pas donné son accord, le message sera affiché à la place de toutes les vidéos Vimeo du site.
 
-![Le lecteur Vimeo est remplacé par une demande de consentement explicite de l'utilisateur](/images/project/portfolio-thommy-vimeo-rgpd.jpg)
+![Le lecteur Vimeo est remplacé par une demande de consentement explicite de l'utilisateur](../../assets/images/project/portfolio-thommy-vimeo-rgpd.jpg)
 *Page d'un projet avec une vidéo Vimeo, où l'utilisateur doit donner son consentement pour charger le service tiers*
 
 Enfin, l'intégration du lecteur Vimeo traditionnel a été remplacée par LiteVimeoEmbed[^1], un lecteur qui charge les ressources de Vimeo uniquement si l'utilisateur intéragit avec la vidéo.

@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 import '~styles/portfolio.scss';
 import BaseLayout from "~layouts/BaseLayout.astro";
@@ -8,6 +8,7 @@ import Date from '~components/Content/Date.astro';
 import ProjectIntroduction from '~components/Project/ProjectIntroduction.astro';
 import ProjectCover from '~components/Project/ProjectCover.astro';
 import ProjectReview from "~components/Project/ProjectReview.astro";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   project: CollectionEntry<'project'>;
@@ -47,7 +48,7 @@ const schema = {
 <BaseLayout
   title={`${data.title} – Portfolio`}
   description={data.excerpt}
-  image={({src: data.cover.seo, alt: data.cover.alt})}
+  image={({src: data.cover.seo.src, alt: data.cover.alt})}
   articleSection="Portfolio"
   publishDate={data.publishDate.toString()}
   updateDate={data.updateDate?.toString()}>
@@ -57,7 +58,7 @@ const schema = {
       <h1 id="article-title">{data.title}</h1>
       <p>{data.excerpt}</p>
     </header>
-    <ProjectCover cover={data.cover.src} cover_alt={data.cover.alt} />
+    <ProjectCover cover={data.cover.src as ImageMetadata} cover_alt={data.cover.alt} />
     <ProjectIntroduction technologies={data.technologies} services={data.services} site={data.site} />
     <Content />
     {data.review && 

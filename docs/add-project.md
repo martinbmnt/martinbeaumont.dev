@@ -20,7 +20,7 @@ Write project's story, add images, code blocks, footnotes ...
 For images, use this following implementation :
 
 ```md
-![Image alt text](/images/project/{slug}-{title}.jpg)
+![Image alt text](../../assets/images/project/{slug}-{title}.jpg)
 *Extra image explaination*
 ```
 

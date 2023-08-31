@@ -1,8 +1,8 @@
-export async function get() {
+export async function GET() {
   const updateDate = new Date().toISOString().slice(0, 10).replace(/-/g, "/");
 
-  return {
-    body: `
+  return new Response(
+    `
 /* TEAM */
 
   Web developer: Martin Beaumont
@@ -21,14 +21,18 @@ export async function get() {
     
 
 /* SITE */
+
   Last update: ${updateDate}
   Language: French
   Doctype: HTML5
-  Components: astro, the-new-css-reset, eslint, prettier, pa11y-ci, sharp, shiki
+  Components: astro, typescript, the-new-css-reset, eslint, prettier, pa11y-ci, sharp, shiki
   IDE: VSCode
 `.trim(),
-  headers: {
-      "Content-Type": "text/plain; charset=utf-8",
-    },
-  };
+    {
+      status: 404,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+      },
+    }
+  );
 }

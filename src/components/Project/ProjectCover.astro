@@ -1,23 +1,25 @@
 ---
-import { getPicture } from "@astrojs/image";
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 
 export interface Props {
-  cover: string;
+  cover: ImageMetadata;
   cover_alt: string;
 }
 
 const content = Astro.props as Props;
-
-const { image, sources } = await getPicture({
-  src: content.cover,
-  widths: [420, 640, 860, 1280],
-  formats: ['avif', 'webp'],
-  aspectRatio: '4:3',
-  alt: content.cover_alt
-});
 ---
 
-<picture class="portfolio_item__cover">
-	{sources.map((attrs) => <source {...attrs} sizes="(min-width: 58.5em) 56em, 100vw" />)}
-  <img alt={content.cover_alt} {...image} loading="eager" decoding="sync" fetchpriority="high" draggable="false"/>
-</picture>
+<Image
+  class='portfolio_item__cover'
+  src={content.cover}
+  alt={content.cover_alt}
+  width={1280}
+  height={720}
+  format='webp'
+  fetchpriority='high'
+  loading='eager'
+  draggable={false}
+  decoding='sync'
+/>

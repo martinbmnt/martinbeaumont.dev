@@ -15,10 +15,10 @@ services:
 publishDate: 2022-08-19 14:00:00
 releaseYear: 2019
 cover:
-  src: /images/project/maine-image-sante-cover.jpg
+  src: ../../assets/images/project/maine-image-sante-cover.jpg
   alt: |
     Page d'accueil du site de Maine Image Santé, visible sur 72mis.fr
-  seo: /images/project/maine-image-sante-social.png
+  seo: ../../assets/images/project/maine-image-sante-social.png
 ---
 
 ## Présentation du groupe
@@ -70,7 +70,7 @@ Enfin, l'extension *Multi Step for Contact Form 7* indique au patient sa progres
 
 Pour améliorer le référencement, le thème intègre la **génération automatique de données structurées**, un format de données utilisé par Google Search ou d'autres services pour comprendre le contenu du site, et faire le lien avec des plateformes comme Google Maps.
 
-![Extrait du JSON de donneés structurées et de leur validation via Schema.org sur une page du site 72mis.fr](/images/project/maine-image-sante-structured-data.jpg)
+![Extrait du JSON de donneés structurées et de leur validation via Schema.org sur une page du site 72mis.fr](../../assets/images/project/maine-image-sante-structured-data.jpg)
 *Analyse des données structurées via Schema.org.*
 
 ## Conclusion

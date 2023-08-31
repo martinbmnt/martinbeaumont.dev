@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
 import { OPEN_GRAPH, SITE } from 'src/config';
 
-export async function get(context) {
+export async function GET(context) {
   const projects = (await getCollection('project', ({ data }) => data.draft !== true))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 

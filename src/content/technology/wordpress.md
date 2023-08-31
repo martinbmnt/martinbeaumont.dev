@@ -1,7 +1,7 @@
 ---
 title: WordPress
 logo:
-  src: /images/technology/wordpress.svg
+  src: ../../assets/images/technology/wordpress.svg
   width: 540
   height: 123
 description: WordPress est un CMS open source, utilisé par plus de 60 millions de sites web dans le monde.

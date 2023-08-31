@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import { SITE } from "src/config";
 
 import BaseLayout from "~layouts/BaseLayout.astro";
@@ -40,7 +40,7 @@ const hasUpdateDate = projects[0].data.publishDate > data.publishDate;
     <Breadcrumb page={{ path: '/technologies', name: 'Technologies' }} article={data.title} />
     <header>
       <h1>
-        <img src={data.logo.src} alt={data.title} width={data.logo.width} height={data.logo.height}>
+        <img src={data.logo.src.src} alt={data.title} width={data.logo.width} height={data.logo.height}>
       </h1>
       <p>{data.description}</p>
       <p>

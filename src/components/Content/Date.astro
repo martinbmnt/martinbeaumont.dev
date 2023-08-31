@@ -1,6 +1,7 @@
 ---
-function formatDate(date: Date): string {
-  return date.toLocaleDateString(undefined, { dateStyle: 'medium' });
+function formatDate(datetime: string): string {
+  // @ts-ignore
+  return new Date(datetime).toLocaleDateString(undefined, { dateStyle: 'medium' });
 }
 
 export interface Props {
@@ -11,7 +12,7 @@ const { datetime } = Astro.props as Props;
 
 ---
 
-<time datetime={datetime}>{formatDate(new Date(datetime))}</time>
+<time datetime={datetime}>{formatDate(datetime)}</time>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
