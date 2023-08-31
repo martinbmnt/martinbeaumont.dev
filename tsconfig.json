@@ -6,6 +6,18 @@
       "~layouts/*": ["src/layouts/*"],
       "~styles/*": ["src/styles/*"],
     },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      },
+    ]
   },
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./dist"
+  ]
 }
