@@ -88,7 +88,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
   });
 
   function contactFormSuccess(): void {
-    contactFormAlert.innerHTML = `<p><strong>Votre message a bien été envoyé !</strong> Je vous répond d'ici deux jours ouvrés maximum.</p>`;
+    setContactFormAlertText(`<p><strong>Votre message a bien été envoyé !</strong> Je vous répond d'ici deux jours ouvrés maximum.</p>`);
     contactFormAlert.dataset.success = 'true';
     contactFormAlert.ariaHidden = 'false';
     contactFormAlert.setAttribute('aria-hidden', 'false');
@@ -100,7 +100,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
   }
 
   function contactFormError(message: string): void {
-    contactFormAlert.innerHTML = `<p>${message}</p>`;
+    setContactFormAlertText(`<p>${message}</p>`);
     contactFormAlert.dataset.success = 'false';
     contactFormAlert.ariaHidden = 'false';
     contactFormAlert.setAttribute('aria-hidden', 'false');
@@ -116,7 +116,7 @@ import SocialNetworks from "~components/Content/SocialNetworks.astro";
       const trustedHTML = trustedTypes.createPolicy('contactFormAlert', {
         createHTML: (value: string) => value.replace(/>/g, '<'),
       });
-      contactFormAlert.innerHTML = trustedHTML.createHTML(`<p>${text}</p>`);
+      contactFormAlert.innerHTML = trustedHTML.createHTML(text);
       return;
     }
 
