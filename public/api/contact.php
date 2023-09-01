@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 
 // @todo: move this script to api.martinbeaumont.dev, and create a small API using symfony/mailer for SMTP mail sending.
 
@@ -45,7 +46,7 @@ foreach ($fields as $field) {
         continue;
     }
 
-    $data[$field] = htmlspecialchars(stripslashes(trim($_POST[$field])));
+    $data[$field] = stripslashes(trim($_POST[$field]));
 }
 
 // Some data has been posted, but none of / not all required fields, print generic error.
