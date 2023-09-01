@@ -20,13 +20,4 @@ export default defineConfig({
       footnoteBackLabel: 'Revenir au contenu',
     },
   },
-  vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          chunkFileNames: 'parts/part.[hash].js',
-        },
-      },
-    },
-  },
 });
