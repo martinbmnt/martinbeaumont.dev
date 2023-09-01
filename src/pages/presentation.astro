@@ -2,111 +2,109 @@
 import BaseLayout from '~layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Présentation" description="Après un DUT, une licence pro, et deux ans en alternance, j'ai choisi de continuer la création de site internet en free-lance.">
-  <main id="content" class="page_about">
-    <header>
-      <h1>Développeur Web <span>free-lance</span>.</h1>
-      <p>Entrepreneur individuel qui conçoit des sites internet pour répondre au besoin de ses clients.</p>
-    </header>
-    <hr />
-    <section aria-labelledby="about-introduction-title" class="page_about__presentation">
-      <h2 id="about-introduction-title" class="visually-hidden">Présentation</h2>
-      <p>
-        Bonjour, je m'appelle Martin, et je suis développeur Web (mais également intégrateur, concepteur d'applications Web, ou encore "webmestre").
-        Depuis 2018, je crée des <strong>sites internet performants, sécurisés et adaptatifs</strong> pour répondre aux besoins de mes clients.
-        Selon les projets, j'utilise des systèmes de gestion de contenu (CMS) comme <strong>WordPress</strong>,
-        ou bien des <em lang="en">frameworks</em> tels que <strong>Symfony</strong> pour des projets sur-mesure.
-      </p>
-      <p>
-        Lors de mes formations, j'ai appris à maitriser la sémantique adaptée pour structurer les sites et leurs contenus,
-        afin d'optimiser le <strong>référencement naturel et local (SEO et Local SEO)</strong>.
-        Que ce soit pour la <strong>création ou la refonte d'un site Web</strong>, j'accorde une grande importance
-        à l'<strong>accessibilité des pages et du contenu (a11y)</strong>, ainsi qu'à l'optimisation des ressources, avec des principes d'écoconception.
-      </p>
-    </section>
-    <section aria-labelledby="about-experiences-title" class="page_about__work">
-      <h2 id="about-experiences-title">Expériences</h2>
-      <ol>
-        <li>
-          <h3>Free-lance</h3>
-          <p><small>Depuis septembre 2020</small></p>
-          <p>
-            Après la fin de mes études, j'ai décidé de continuer à travailler dans le développement Web à mon compte.
-            Création de Web applications, intégration de sites internet et de portfolios ...
-            Je rends réels les projets (virtuels) de mes clients.
-          </p>
-          <p>
-            <a class="button button--with-icon" href="/portfolio">
-              <span>Voir mes réalisations</span>
-              <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
-                <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
-              </svg>
-            </a>
-          </p>
-        </li>
-        <li>
-          <h3>Intervenant à l'IUT de Laval</h3>
-          <p><small>Avril et mai 2022, janvier et février 2023</small></p>
-          <p>
-            Avec deux amis développeur Web, nous avons donné des cours de Bases De Données
-            (<abbr title="Modèle Conceptuel de Données et Modèle Logique de Données">MCD et MLD</abbr>, <abbr title="Structured Query Language" lang="en">SQL</abbr>)
-            à des étudiants de première année de BUT MMI, en remplacement d'un professeur.
-          </p>
-          <p>
-            En 2023, nous avons enseigné le module "Gestion de contenus" à des étudiants de première année de BUT MMI, avec des cours d'initiation à l'utilisation du
-            <abbr title="Content Management System" lang="en">CMS</abbr> WordPress, et de son éditeur Gutenberg.
-          </p>
-        </li>
-        <li>
-          <h3>Alternant Développeur Web</h3>
-          <p><small>Septembre 2019 à Septembre 2020</small></p>
-          <p>
-            Lors de ma LP DIWA, j'ai effectué mon alternance chez <a href="https://www.luminess.eu" rel="noopener nofollow noreferrer" target="_blank">Luminess</a> (anciennement Jouve)
-            comme <strong>Développeur Web Symfony</strong>, dans une équipe d'une vingtaine de personnes.
-          </p>
-          <p>
-            Cette année de professionnalisation m'a permis de travailler dans des secteurs divers, tels que le traitement de données bancaires,
-            les sites institutionnels ou d'<em lang="en">Open Data</em>.
-          </p>
-        </li>
-        <li>
-          <h3>Alternant Développeur Web</h3>
-          <p><small>Septembre 2018 à Septembre 2019</small></p>
-          <p>
-            J'ai réalisé ma deuxième année de DUT MMI en alternance chez <a href="https://72mis.fr" rel="noopener nofollow noreferrer" target="_blank">Maine Image Santé</a>, en
-            tant que Développeur Web. Ma mission principale était de <strong>créer le nouveau site internet</strong> de ce groupe d'imagerie médicale sarthois.
-          </p>
-          <p>
-            <a class="button button--with-icon" href="/projet/maine-image-sante">
-              <span>Voir l'étude de cas</span>
-              <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
-                <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
-              </svg>
-            </a>
-          </p>
-        </li>
-      </ol>
-    </section>
-    <section aria-labelledby="about-training-title" class="page_about__training">
-      <h2 id="about-training-title">Formations</h2>
-      <ol>
-        <li>
-          <h3><abbr title="Licence Professionnelle">LP</abbr> <abbr title="Développeur et Intégrateur de Web Applications">DIWA</abbr></h3>
-          <p><small>2019 à 2020</small></p>
-          <p>
-            La <strong>Licence Professionnelle "Développeur et Intégrateur de Web Applications"</strong> à l'<abbr title="Institut Universitaire de Technologie">IUT</abbr> de Laval aborde
-            des notions techniques du développement Web coté client et serveur, notamment avec les <em lang="en">frameworks</em> Symfony et React.
-          </p>
-        </li>
-        <li>
-          <h3><abbr title="Diplôme Universitaire de Technologie">DUT</abbr> MMI</h3>
-          <p><small>2017 à 2019</small></p>
-          <p>
-            Le <strong>Diplôme Universitaire de Technologie Métiers du Multimédia et de l'Internet</strong> est une formation bac+2 (remplacé en 2021 par les <abbr title="Bachelor Universitaire de Technologie">BUT</abbr>, en bac+3).
-            Le contenu est pluridisciplinaire, avec de la programmation, de la communication et de la création graphique.
-          </p>
-        </li>
-      </ol>
-    </section>
-  </main>
+<BaseLayout title="Présentation" description="Après un DUT, une licence pro, et deux ans en alternance, j'ai choisi de continuer la création de site internet en free-lance." class="page_about">
+  <header>
+    <h1>Développeur Web <span>free-lance</span>.</h1>
+    <p>Entrepreneur individuel qui conçoit des sites internet pour répondre au besoin de ses clients.</p>
+  </header>
+  <hr />
+  <section aria-labelledby="about-introduction-title" class="page_about__presentation">
+    <h2 id="about-introduction-title" class="visually-hidden">Présentation</h2>
+    <p>
+      Bonjour, je m'appelle Martin, et je suis développeur Web (mais également intégrateur, concepteur d'applications Web, ou encore "webmestre").
+      Depuis 2018, je crée des <strong>sites internet performants, sécurisés et adaptatifs</strong> pour répondre aux besoins de mes clients.
+      Selon les projets, j'utilise des systèmes de gestion de contenu (CMS) comme <strong>WordPress</strong>,
+      ou bien des <em lang="en">frameworks</em> tels que <strong>Symfony</strong> pour des projets sur-mesure.
+    </p>
+    <p>
+      Lors de mes formations, j'ai appris à maitriser la sémantique adaptée pour structurer les sites et leurs contenus,
+      afin d'optimiser le <strong>référencement naturel et local (SEO et Local SEO)</strong>.
+      Que ce soit pour la <strong>création ou la refonte d'un site Web</strong>, j'accorde une grande importance
+      à l'<strong>accessibilité des pages et du contenu (a11y)</strong>, ainsi qu'à l'optimisation des ressources, avec des principes d'écoconception.
+    </p>
+  </section>
+  <section aria-labelledby="about-experiences-title" class="page_about__work">
+    <h2 id="about-experiences-title">Expériences</h2>
+    <ol>
+      <li>
+        <h3>Free-lance</h3>
+        <p><small>Depuis septembre 2020</small></p>
+        <p>
+          Après la fin de mes études, j'ai décidé de continuer à travailler dans le développement Web à mon compte.
+          Création de Web applications, intégration de sites internet et de portfolios ...
+          Je rends réels les projets (virtuels) de mes clients.
+        </p>
+        <p>
+          <a class="button button--with-icon" href="/portfolio">
+            <span>Voir mes réalisations</span>
+            <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
+              <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </a>
+        </p>
+      </li>
+      <li>
+        <h3>Intervenant à l'IUT de Laval</h3>
+        <p><small>Avril et mai 2022, janvier et février 2023</small></p>
+        <p>
+          Avec deux amis développeur Web, nous avons donné des cours de Bases De Données
+          (<abbr title="Modèle Conceptuel de Données et Modèle Logique de Données">MCD et MLD</abbr>, <abbr title="Structured Query Language" lang="en">SQL</abbr>)
+          à des étudiants de première année de BUT MMI, en remplacement d'un professeur.
+        </p>
+        <p>
+          En 2023, nous avons enseigné le module "Gestion de contenus" à des étudiants de première année de BUT MMI, avec des cours d'initiation à l'utilisation du
+          <abbr title="Content Management System" lang="en">CMS</abbr> WordPress, et de son éditeur Gutenberg.
+        </p>
+      </li>
+      <li>
+        <h3>Alternant Développeur Web</h3>
+        <p><small>Septembre 2019 à Septembre 2020</small></p>
+        <p>
+          Lors de ma LP DIWA, j'ai effectué mon alternance chez <a href="https://www.luminess.eu" rel="noopener nofollow noreferrer" target="_blank">Luminess</a> (anciennement Jouve)
+          comme <strong>Développeur Web Symfony</strong>, dans une équipe d'une vingtaine de personnes.
+        </p>
+        <p>
+          Cette année de professionnalisation m'a permis de travailler dans des secteurs divers, tels que le traitement de données bancaires,
+          les sites institutionnels ou d'<em lang="en">Open Data</em>.
+        </p>
+      </li>
+      <li>
+        <h3>Alternant Développeur Web</h3>
+        <p><small>Septembre 2018 à Septembre 2019</small></p>
+        <p>
+          J'ai réalisé ma deuxième année de DUT MMI en alternance chez <a href="https://72mis.fr" rel="noopener nofollow noreferrer" target="_blank">Maine Image Santé</a>, en
+          tant que Développeur Web. Ma mission principale était de <strong>créer le nouveau site internet</strong> de ce groupe d'imagerie médicale sarthois.
+        </p>
+        <p>
+          <a class="button button--with-icon" href="/projet/maine-image-sante">
+            <span>Voir l'étude de cas</span>
+            <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
+              <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </a>
+        </p>
+      </li>
+    </ol>
+  </section>
+  <section aria-labelledby="about-training-title" class="page_about__training">
+    <h2 id="about-training-title">Formations</h2>
+    <ol>
+      <li>
+        <h3><abbr title="Licence Professionnelle">LP</abbr> <abbr title="Développeur et Intégrateur de Web Applications">DIWA</abbr></h3>
+        <p><small>2019 à 2020</small></p>
+        <p>
+          La <strong>Licence Professionnelle "Développeur et Intégrateur de Web Applications"</strong> à l'<abbr title="Institut Universitaire de Technologie">IUT</abbr> de Laval aborde
+          des notions techniques du développement Web coté client et serveur, notamment avec les <em lang="en">frameworks</em> Symfony et React.
+        </p>
+      </li>
+      <li>
+        <h3><abbr title="Diplôme Universitaire de Technologie">DUT</abbr> MMI</h3>
+        <p><small>2017 à 2019</small></p>
+        <p>
+          Le <strong>Diplôme Universitaire de Technologie Métiers du Multimédia et de l'Internet</strong> est une formation bac+2 (remplacé en 2021 par les <abbr title="Bachelor Universitaire de Technologie">BUT</abbr>, en bac+3).
+          Le contenu est pluridisciplinaire, avec de la programmation, de la communication et de la création graphique.
+        </p>
+      </li>
+    </ol>
+  </section>
 </BaseLayout>

@@ -4,16 +4,14 @@ import BaseLayout from '~layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="😢 Page introuvable" description={SITE.description}>
-  <main id="content">
-    <h1>Page introuvable</h1>
-    <p>Désolé, la page <code data-path>{Astro.url.pathname.replace(/\/$/, '')}</code> n'existe pas (ou plus).</p>
-    <a class="button button--with-icon" href="/">
-      <span>Retour à l'accueil</span>
-      <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
-        <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
-      </svg>
-    </a>
-  </main>
+  <h1>Page introuvable</h1>
+  <p>Désolé, la page <code data-path>{Astro.url.pathname.replace(/\/$/, '')}</code> n'existe pas (ou plus).</p>
+  <a class="button button--with-icon" href="/">
+    <span>Retour à l'accueil</span>
+    <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
+      <use xlink:href="/images/icons.svg#icon-arrow-right"></use>
+    </svg>
+  </a>
 </BaseLayout>
 
 <script>

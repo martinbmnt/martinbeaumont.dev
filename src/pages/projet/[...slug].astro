@@ -27,7 +27,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project: { data } } = Astro.props as Props;
+const { project: { data, slug } } = Astro.props as Props;
 const { Content } = await Astro.props.project.render();
 
 const schema = {
@@ -58,7 +58,7 @@ const schema = {
       <h1 id="article-title">{data.title}</h1>
       <p>{data.excerpt}</p>
     </header>
-    <ProjectCover cover={data.cover.src as ImageMetadata} cover_alt={data.cover.alt} />
+    <ProjectCover cover={data.cover.src as ImageMetadata} cover_alt={data.cover.alt} {slug} />
     <ProjectIntroduction technologies={data.technologies} services={data.services} site={data.site} />
     <Content />
     {data.review && 

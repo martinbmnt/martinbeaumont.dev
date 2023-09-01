@@ -12,7 +12,7 @@ interface Props {
 const { project: { data, slug }, index, showReleaseYear = true } = Astro.props as Props;
 ---
 
-<article data-year={showReleaseYear ? data.releaseYear : null}>
+<article data-year={showReleaseYear ? data.releaseYear : null} transition:name={`project-card-${slug}`}>
   <h3>{data.title}</h3>
   <p>{data.excerpt}</p>
   <p>
@@ -20,6 +20,7 @@ const { project: { data, slug }, index, showReleaseYear = true } = Astro.props a
     <small>{data.technologies.slice(0, 1)}, {data.services.slice(0, 1)}</small>
   </p>
   <Image
+    transition:name={`project-cover-${slug}`}
     src={data.cover.src as ImageMetadata}
     alt={data.cover.alt}
     width={480}
