@@ -529,4 +529,25 @@ main[class*='page'] {
   address {
     display: inline;
   }
+
+  details {
+    list-style-type: disclosure-closed;
+    margin: 1rem 0;
+    padding: .5rem 2rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 5px;
+
+    &[open] {
+      list-style-type: disclosure-open;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    ul {
+      margin: unset;
+    }
+  }
 }
