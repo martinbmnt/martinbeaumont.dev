@@ -292,7 +292,7 @@
     "@babel/traverse" "^7.22.11"
     "@babel/types" "^7.22.11"
 
-"@babel/highlight@^7.22.13":
+"@babel/highlight@^7.22.10", "@babel/highlight@^7.22.13":
   version "7.22.20"
   resolved "https://registry.yarnpkg.com/@babel/highlight/-/highlight-7.22.20.tgz#4ca92b71d80554b01427815e06f2df965b9c1f54"
   integrity sha512-dkdMCN3py0+ksCgYmGG8jKeGA/8Tk+gJwSYYlFGxG5lmhfKNoAy004YpLxpS1W2J8m/EK2Ew+yOs9pVRwO89mg==
@@ -301,7 +301,7 @@
     chalk "^2.4.2"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.1.0", "@babel/parser@^7.20.7", "@babel/parser@^7.22.10", "@babel/parser@^7.22.11", "@babel/parser@^7.22.5":
+"@babel/parser@^7.1.0", "@babel/parser@^7.20.7", "@babel/parser@^7.22.10", "@babel/parser@^7.22.5":
   version "7.22.10"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.22.10.tgz#e37634f9a12a1716136c44624ef54283cabd3f55"
   integrity sha512-lNbdGsQb9ekfsnjFGhEiF4hfFqGgfOP3H3d27re3n+CGhNuTSUEQdfWk556sTLNTloczcdM5TYF2LhzmDQKyvQ==
@@ -656,11 +656,6 @@
   version "8.47.0"
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.47.0.tgz#5478fdf443ff8158f9de171c704ae45308696c7d"
   integrity sha512-P6omY1zv5MItm93kLM8s2vr1HICJH8v0dvddDhysbIuZ+vcjOHg5Zbkf1mTkcmi2JA9oBG2anOkRnW8WJTS8Og==
-
-"@fastify/busboy@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.0.0.tgz#f22824caff3ae506b18207bad4126dbc6ccdb6b8"
-  integrity sha512-JUFJad5lv7jxj926GPgymrWQxxjPYuJNiNjNMzqT+HiuP6Vl3dk5xzG+8sTX96np0ZAluvaMzPsjhHZ5rNuNQQ==
 
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
@@ -4511,10 +4506,10 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shiki@^0.14.3:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.3.tgz#d1a93c463942bdafb9866d74d619a4347d0bbf64"
-  integrity sha512-U3S/a+b0KS+UkTyMjoNojvTgrBHjgp7L6ovhFVZsXmBGnVdQ4K4U9oK0z63w538S91ATngv1vXigHCSWOwnr+g==
+shiki@^0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.5.tgz#375dd214e57eccb04f0daf35a32aa615861deb93"
+  integrity sha512-1gCAYOcmCFONmErGTrS1fjzJLA7MGZmKzrBNX7apqSwhyITJg2O102uFzXUeBxNnEkDA9vHIKLyeKq0V083vIw==
   dependencies:
     ansi-sequence-parser "^1.1.0"
     jsonc-parser "^3.2.0"
@@ -4930,13 +4925,6 @@ unbzip2-stream@^1.3.3:
   dependencies:
     buffer "^5.2.1"
     through "^2.3.8"
-
-undici@^5.23.0:
-  version "5.26.3"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-5.26.3.tgz#ab3527b3d5bb25b12f898dfd22165d472dd71b79"
-  integrity sha512-H7n2zmKEWgOllKkIUkLvFmsJQj062lSm3uA4EYApG8gLuiOM0/go9bIoC3HVaSnfg4xunowDE2i9p8drkXuvDw==
-  dependencies:
-    "@fastify/busboy" "^2.0.0"
 
 unherit@^3.0.0:
   version "3.0.1"
