@@ -14,6 +14,7 @@ services:
   - Gestion de projet
   - Formation
 publishDate: 2023-04-23 14:00:00
+updateDate: 2023-12-05 12:00:00
 releaseYear: 2020 - 2023
 cover:
   src: ../../assets/images/project/soscine-stock-cover.jpg
@@ -130,14 +131,8 @@ Une fois la facturation clôturée, elle est envoyée au logiciel de comptabilit
 
 ## Bilan d'utilisation
 
-Depuis la mise en production de l'application &mdash; en août 2020, **plus de 28.000 demandes de réservation** ont été saisies à ce jour &mdash; avril 2023, en augmentation de plus de 25% par an.
+Depuis la mise en production de l'application &mdash; en août 2020, **plus de 28.000 demandes de réservation** ont été saisies à ce jour &mdash; avril 2023, en augmentation de plus de 25% par annnée.
 
-L'automatisation du traitement des devis et des réservations, le calcul de la disponibilité des produits, et l'intégration de la facturation dans l'application ont permis de gagner du temps &mdash; de 30 minutes à 1h par réservation, et de réduire les erreurs.
+L'automatisation du traitement des devis et des réservations, le calcul de la disponibilité des produits, et l'intégration de la facturation dans l'application ont permis de gagner du temps &mdash; de 30 minutes à 1h par réservation, de réduire les erreurs et de simplifier le suivi entre les opérateurs de l'entreprise.
 
-Lors de la publication de la première version &mdash; il y a maintenant 3 ans, les seules fonctionnalités présentes étaient l'inventaire des produits, la liste et la saisie des réservations, ainsi que l'annuaire client. Depuis, de nombreuses fonctionnalités ont été ajoutées, comme la facturation, la gestion des retards, la gestion des tickets de S.A.V.&nbsp;... Et d'autres sont en cours de développement.
-
-### Évolutions prévues
-
-Une refonte du site internet [soscine.fr](https://soscine.fr) est en cours de développement, afin de proposer une meilleure expérience utilisateur, et de faciliter la saisie des réservations.
-
-Cette refonte permettra également de proposer de nouveaux services, comme la gestion des réservations via un espace client. Les clients pourront ainsi modifier leurs réservations à venir, consulter les détails des réservations en cours, puis récupérer les factures associées.
+Lors de la publication de la première version &mdash; il y a maintenant 3 ans, les seules fonctionnalités présentes étaient l'inventaire des produits, la liste et la saisie des réservations, ainsi que l'annuaire client. Depuis, de nombreuses fonctionnalités ont été ajoutées, comme la facturation, la gestion des retards, la gestion des tickets de S.A.V.&nbsp;...
