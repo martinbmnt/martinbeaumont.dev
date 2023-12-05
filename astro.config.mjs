@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -7,9 +7,6 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     format: 'file'
-  },
-  image: {
-    service: sharpImageService(),
   },
   integrations: [
     sitemap()
