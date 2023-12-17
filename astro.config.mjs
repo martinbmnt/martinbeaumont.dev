@@ -8,11 +8,6 @@ export default defineConfig({
   build: {
     format: 'file'
   },
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-    },
-  },
   integrations: [
     sitemap()
   ],
