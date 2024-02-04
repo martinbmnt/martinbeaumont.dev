@@ -779,7 +779,7 @@ __metadata:
     eslint-plugin-astro: "npm:^0.31.4"
     pa11y-ci: "npm:^3.1.0"
     prettier: "npm:^3.1.1"
-    prettier-plugin-astro: "npm:^0.11.1"
+    prettier-plugin-astro: "npm:^0.13.0"
     sass: "npm:^1.63.4"
     shiki: "npm:^0.14.7"
     start-server-and-test: "npm:^2.0.3"
@@ -5592,14 +5592,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-astro@npm:^0.11.1":
-  version: 0.11.1
-  resolution: "prettier-plugin-astro@npm:0.11.1"
+"prettier-plugin-astro@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "prettier-plugin-astro@npm:0.13.0"
   dependencies:
     "@astrojs/compiler": "npm:^1.5.5"
     prettier: "npm:^3.0.0"
     sass-formatter: "npm:^0.7.6"
-  checksum: 10c0/95c3eafa8193d3f81b3e6737cadca6e29488b3b4b136f4167394c83f7e4bb823d3dc04e6dd8b8db04e1c581d6925ee2e608514dfa543a6901a31d87a5b1270f7
+  checksum: 10c0/45936be6f5fdc293941291595b44c7ffe4d199ad2a4284f8fa793d638771622d36df12e216e2ba9ab955a3a1342620e77c9e57f135da7dea5ccd8286d8e66cec
   languageName: node
   linkType: hard
 
