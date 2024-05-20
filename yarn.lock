@@ -134,13 +134,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/rss@npm:^4.0.4":
-  version: 4.0.4
-  resolution: "@astrojs/rss@npm:4.0.4"
+"@astrojs/rss@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "@astrojs/rss@npm:4.0.6"
   dependencies:
-    fast-xml-parser: "npm:^4.2.7"
+    fast-xml-parser: "npm:^4.3.6"
     kleur: "npm:^4.1.5"
-  checksum: 10c0/a545aebddeebb074ec816659193da111e603b8266c8e54fd373a15fc222419ff12b4fad9478ca1a12020d77e8ad6b39504ca92b16829cffba0f221fe5153ef05
+  checksum: 10c0/78313d04b9757085be8740a7fb8ca61f2aa020931b1aca2d7cfdff0e49b842d1303a7c2e223463a67216abd4c1b323be1e099bd346f8a06393c3fe1280bbe4c1
   languageName: node
   linkType: hard
 
@@ -770,7 +770,7 @@ __metadata:
   resolution: "@martinbmnt/martinbeaumont.dev@workspace:."
   dependencies:
     "@astrojs/check": "npm:^0.4.1"
-    "@astrojs/rss": "npm:^4.0.4"
+    "@astrojs/rss": "npm:^4.0.6"
     "@astrojs/sitemap": "npm:^3.0.5"
     "@typescript-eslint/eslint-plugin": "npm:^6.21.0"
     "@typescript-eslint/parser": "npm:^6.21.0"
@@ -3050,14 +3050,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-parser@npm:^4.2.7":
-  version: 4.3.2
-  resolution: "fast-xml-parser@npm:4.3.2"
+"fast-xml-parser@npm:^4.3.6":
+  version: 4.4.0
+  resolution: "fast-xml-parser@npm:4.4.0"
   dependencies:
     strnum: "npm:^1.0.5"
   bin:
     fxparser: src/cli/cli.js
-  checksum: 10c0/7c1611349384656ec4faa9802fbc8cf8c01206a1b79193d5cd54586307801562509007f6cf16e5da7d43da4fa4639770f38959a285b9466aa98dab0a9b8ca171
+  checksum: 10c0/ce32fad713471a40bea67959894168f297a5dd0aba64b89a2abc71a4fec0b1ae1d49c2dd8d8719ca8beeedf477824358c8a486b360b9f3ef12abc2e355d11318
   languageName: node
   linkType: hard
 
