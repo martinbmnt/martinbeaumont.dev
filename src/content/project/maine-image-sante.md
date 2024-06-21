@@ -29,7 +29,7 @@ Maine Image Santé est une société de radiologie et d'imagerie médicale, qui 
 
 Lors de ma seconde année de DUT MMI, j'ai effectué mon alternance chez eux en tant que Développeur Web. Ma mission principale était de **créer le nouveau site internet**.
 
-## Besoins des patiens …
+## Besoins des patients …
 
 Ce site institutionnel devait répondre à plusieurs attentes des patients :
 
