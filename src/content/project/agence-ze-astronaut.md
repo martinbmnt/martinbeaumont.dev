@@ -22,7 +22,7 @@ cover:
   alt: |
     Page d'accueil du site Web de l'agence Ze Astronaut, visible sur zeastronaut.com
   seo: ../../assets/images/project/ze-astronaut-social.png
-featured: true
+featured: false
 ---
 
 ## Présentation de l'agence
