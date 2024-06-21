@@ -174,4 +174,4 @@ const schema = {
 <meta name="twitter:creator" content={OPEN_GRAPH.twitter} />
 {canonicalImageSrc && <meta name="twitter:image" content={canonicalImageSrc} />}
 {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
-<script type="application/ld+json" set:html={JSON.stringify(schema)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
