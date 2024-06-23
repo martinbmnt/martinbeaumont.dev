@@ -23,6 +23,23 @@ aside {
   }
 }
 
+blockquote {
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--color-accent);
+
+  & > *:nth-last-child(2) {
+    margin-bottom: 1rem;
+  }
+
+  cite {
+    font-style: italic;
+
+    &:before {
+      content: '~ ';
+    }
+  }
+}
+
 img {
   height: auto;
 }
