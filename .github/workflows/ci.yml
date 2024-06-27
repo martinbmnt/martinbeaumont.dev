@@ -24,9 +24,9 @@ jobs:
 
       - name: Run Check
         run: |
-          yarn astro check
-          yarn tsc --noEmit
-          yarn lint:eslint
+          pnpm astro check
+          pnpm tsc --noEmit
+          pnpm lint:eslint
   # a11y-check:
   #   name: Check for a11y issues with Pa11y
   #   runs-on: ubuntu-latest

@@ -1,22 +1,21 @@
-name: Install Tools & Dependencies
-description: Installs Node.js & package dependencies
+name: Install tools and dependencies
+description: Install Node
 
 runs:
   using: composite
   steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v3
+      with:
+        version: 9
+
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
         node-version: 20
-        
-    - name: Cache Node dependencies
-      id: cache-dependencies
-      uses: actions/cache@v4
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-clear
-        
+        cache: 'pnpm'
+
     - name: Install Node dependencies
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
-      run: yarn install --immutable
+      run: pnpm install --prod=false --frozen-lockfile
       shell: bash

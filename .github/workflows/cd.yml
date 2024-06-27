@@ -17,7 +17,7 @@ jobs:
         uses: ./.github/actions/install
         
       - name: Build site
-        run: yarn build --silent
+        run: pnpm build
         
       - name: Deploy
         env:

@@ -1,5 +1,5 @@
 ---
-import Shiki from "shiki";
+import { createHighlighter } from "shiki";
 
 export interface Props {
   code: string;
@@ -9,7 +9,15 @@ export interface Props {
 
 const content = Astro.props as Props;
 
-const code = await Shiki.getHighlighter({theme: 'github-dark'}).then(higlighter => {return higlighter.codeToHtml(content.code, {lang: content.lang})});
+const highlighter = await createHighlighter({
+  langs: [content.lang],
+  themes: ['github-dark'],
+});
+
+const code = highlighter.codeToHtml(content.code, {
+  lang: content.lang,
+  theme: 'github-dark',
+});
 ---
 <figure class="portfolio_item__code_block">
   <div set:html={code} />
