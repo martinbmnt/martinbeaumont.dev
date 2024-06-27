@@ -15,7 +15,7 @@ services:
 publishDate: 2024-06-21 14:00:00
 releaseYear: 2024
 cover:
-  src: ../../assets/images/project/festival-oies-sauvages-cover.png
+  src: ../../assets/images/project/festival-oies-sauvages-cover.jpg
   alt: |
     Page d'accueil du site du festival Les Oies Sauvages, avec l'affiche du festival en entête.
   seo: ../../assets/images/project/festival-oies-sauvages-social.png
