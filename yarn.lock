@@ -781,7 +781,7 @@ __metadata:
     prettier: "npm:^3.2.5"
     prettier-plugin-astro: "npm:^0.13.0"
     sass: "npm:^1.70.0"
-    shiki: "npm:^0.14.7"
+    shiki: "npm:^1.10.0"
     start-server-and-test: "npm:^2.0.3"
     the-new-css-reset: "npm:^1.9.0"
     typescript: "npm:^5.2.2"
@@ -946,6 +946,13 @@ __metadata:
   version: 4.9.1
   resolution: "@rollup/rollup-win32-x64-msvc@npm:4.9.1"
   conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@shikijs/core@npm:1.10.0":
+  version: 1.10.0
+  resolution: "@shikijs/core@npm:1.10.0"
+  checksum: 10c0/5c964f58933a89a47e77d7512b3c536d8d2f6de55ea229e61ee0025b7db8af2b0233c59d9ce39331d4ccb082abdd5bce0724bca6434e2d7b9186d1f29f2194e4
   languageName: node
   linkType: hard
 
@@ -1460,13 +1467,6 @@ __metadata:
   version: 6.0.1
   resolution: "ansi-regex@npm:6.0.1"
   checksum: 10c0/cbe16dbd2c6b2735d1df7976a7070dd277326434f0212f43abf6d87674095d247968209babdaad31bb00882fa68807256ba9be340eec2f1004de14ca75f52a08
-  languageName: node
-  linkType: hard
-
-"ansi-sequence-parser@npm:^1.1.0":
-  version: 1.1.1
-  resolution: "ansi-sequence-parser@npm:1.1.1"
-  checksum: 10c0/ab2259ccf69f145ecf1418d4e71524158828f44afdf37c7536677871f4cebaa8b176fcb95de8f94a68129357dddc59586597da25f9d4ebf9968f6ef022bf0b31
   languageName: node
   linkType: hard
 
@@ -4063,13 +4063,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonc-parser@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "jsonc-parser@npm:3.2.0"
-  checksum: 10c0/5a12d4d04dad381852476872a29dcee03a57439574e4181d91dca71904fcdcc5e8e4706c0a68a2c61ad9810e1e1c5806b5100d52d3e727b78f5cdc595401045b
-  languageName: node
-  linkType: hard
-
 "keyv@npm:^4.5.3":
   version: 4.5.4
   resolution: "keyv@npm:4.5.4"
@@ -6231,15 +6224,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.14.7":
-  version: 0.14.7
-  resolution: "shiki@npm:0.14.7"
+"shiki@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "shiki@npm:1.10.0"
   dependencies:
-    ansi-sequence-parser: "npm:^1.1.0"
-    jsonc-parser: "npm:^3.2.0"
-    vscode-oniguruma: "npm:^1.7.0"
-    vscode-textmate: "npm:^8.0.0"
-  checksum: 10c0/5c7fcbb870d0facccc7ae2f3410a28121f8e0b3f298e4e956de817ad6ab60a4c7e20a9184edfe50a93447addbb88b95b69e6ef88ac16ac6ca3e94c50771a6459
+    "@shikijs/core": "npm:1.10.0"
+  checksum: 10c0/1f2a004ac9add7ae58e964e107e35d36d52773cd167673133526851a1cd1a2eab0eed89f5790ed654b926b8747ef07c156a132035110787b1bb2a051bc9ffa90
   languageName: node
   linkType: hard
 
@@ -7339,20 +7329,6 @@ __metadata:
   version: 5.2.0
   resolution: "vscode-nls@npm:5.2.0"
   checksum: 10c0/dc9e48f58ebbc807f435d351008813a2ea0c9432d51e778bcac9163c0642f929ddb518411ad654e775ce31e24d6acfa8fb7db8893c05b42c2019894e08b050f9
-  languageName: node
-  linkType: hard
-
-"vscode-oniguruma@npm:^1.7.0":
-  version: 1.7.0
-  resolution: "vscode-oniguruma@npm:1.7.0"
-  checksum: 10c0/bef0073c665ddf8c86e51da94529c905856559e9aba97a9882f951acd572da560384775941ab6e7e8db94d9c578b25fefb951e4b73c37e8712e16b0231de2689
-  languageName: node
-  linkType: hard
-
-"vscode-textmate@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "vscode-textmate@npm:8.0.0"
-  checksum: 10c0/836f7fe73fc94998a38ca193df48173a2b6eab08b4943d83c8cac9a2a0c3546cfdab4cf1b10b890ec4a4374c5bee03a885ef0e83e7fd2bd618cf00781c017c04
   languageName: node
   linkType: hard
 
