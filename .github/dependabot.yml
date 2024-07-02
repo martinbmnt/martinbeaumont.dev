@@ -9,7 +9,7 @@ updates:
     directory: "/"
     target-branch: "dependabot-updates"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       
   - package-ecosystem: "github-actions"
     directory: "/"
