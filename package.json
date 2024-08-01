@@ -34,7 +34,7 @@
     "sass": "^1.77.6",
     "sharp": "^0.33.4",
     "shiki": "^1.10.0",
-    "start-server-and-test": "^2.0.4",
+    "start-server-and-test": "^2.0.5",
     "the-new-css-reset": "^1.11.2",
     "typescript": "^5.5.3"
   },
