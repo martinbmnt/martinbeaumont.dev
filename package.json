@@ -36,7 +36,7 @@
     "shiki": "^1.10.0",
     "start-server-and-test": "^2.0.4",
     "the-new-css-reset": "^1.11.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "resolutions": {
     "semver": "^7.5.2",
