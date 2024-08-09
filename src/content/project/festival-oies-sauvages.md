@@ -42,7 +42,7 @@ Pour rendre le site accessible à toutes et tous, le design et la conception du 
 
 ## Création graphique
 
-La création de l'univers graphique est réalisée par <a href="https://www.instagram.com/le.chat.est.un.chat/" rel="nofollow noreferrer noopener" target="_blank" aria-label="Le chat est un chat (ouvrir le profil Instagram de l'artiste dans un nouvel onglet)">@le.chat.est.un.chat</a>. Le site internet se devait de reprendre les couleurs et les éléments de la charte graphiques, .
+La création de l'univers graphique est réalisée par <a href="https://www.instagram.com/le.chat.est.un.chat/" rel="nofollow noreferrer noopener" target="_blank" aria-label="Le chat est un chat (ouvrir le profil Instagram de l'artiste dans un nouvel onglet)">@le.chat.est.un.chat</a>. Le site internet se devait de reprendre les couleurs et les éléments de la charte graphiques.
 
 L'utilisation de **l'affiche du festival en bannière du site**, avec une déclinaison au format paysage pour les grands écrans, assure une cohérence entre les éléments imprimés, les publications sur les réseaux sociaux et ce site internet.
 
