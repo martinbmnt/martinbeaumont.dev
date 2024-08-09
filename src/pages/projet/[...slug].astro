@@ -52,36 +52,38 @@ const schema = {
   articleSection="Portfolio"
   publishDate={data.publishDate.toString()}
   updateDate={data.updateDate?.toString()}>
-  <article id="content" class="portfolio_item" aria-labelledby="article-title">
-    <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={data.title} />
-    <header>
-      <h1 id="article-title">{data.title}</h1>
-      <p>{data.excerpt}</p>
-    </header>
-    <ProjectCover cover={data.cover.src as ImageMetadata} cover_alt={data.cover.alt} />
-    <ProjectIntroduction technologies={data.technologies} services={data.services} site={data.site} />
-    <Content />
-    {data.review && 
-      <ProjectReview author={data.review.author} link={data.review.link}>
-        {data.review.content}
-      </ProjectReview>
-    }
-    <footer>
-      <p>
-        <small>
-          Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site
-          {data.site ? <a href={data.site} rel="noopener" target="_blank">{data.site.replace(/https:\/\//, '')}</a> : <>de {data.title}</>}.
-        </small>
-      </p>
-      <p>
-        <small>
-          Publié le
-          <Date datetime={data.publishDate.toString()} />{data.updateDate && <>, mis à jour le
-            <Date datetime={data.updateDate?.toString()} />
-          </>}
-        </small>
-      </p>
-    </footer>
-  </article>
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
+  <main>
+    <article id="content" class="portfolio_item" aria-labelledby="article-title">
+      <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={data.title} />
+      <header>
+        <h1 id="article-title">{data.title}</h1>
+        <p>{data.excerpt}</p>
+      </header>
+      <ProjectCover cover={data.cover.src as ImageMetadata} cover_alt={data.cover.alt} />
+      <ProjectIntroduction technologies={data.technologies} services={data.services} site={data.site} />
+      <Content />
+      {data.review && 
+        <ProjectReview author={data.review.author} link={data.review.link}>
+          {data.review.content}
+        </ProjectReview>
+      }
+      <footer>
+        <p>
+          <small>
+            Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site
+            {data.site ? <a href={data.site} rel="noopener" target="_blank">{data.site.replace(/https:\/\//, '')}</a> : <>de {data.title}</>}.
+          </small>
+        </p>
+        <p>
+          <small>
+            Publié le
+            <Date datetime={data.publishDate.toString()} />{data.updateDate && <>, mis à jour le
+              <Date datetime={data.updateDate?.toString()} />
+            </>}
+          </small>
+        </p>
+      </footer>
+    </article>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
+  </main>
 </BaseLayout>
