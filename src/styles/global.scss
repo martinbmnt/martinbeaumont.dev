@@ -4,21 +4,21 @@
 
 :root {
   color-scheme: light;
-  accent-color: var(--color-accent);
+  accent-color: var(--color--accent);
 
   // https://colorhunt.co/palette/f0ebe3e4dccf7d9d9c576f72
-  --color-light: #f8f9fa;
-  --color-light-accent: #e2dcc8;
-  --color-dark: #212529;
-  --color-accent: #5e1177;
-  --color-text: #535353;
-  --color-text-accentued: #484848;
-  --color-gray-light: #eee;
-  --color-gray-medium: #dadada;
-  --color-gray-dark: #7e7e7e;
-  --color-tap: #5e117740;
+  --color--light: #f8f9fa;
+  --color--light-accent: #e2dcc8;
+  --color--dark: #212529;
+  --color--accent: #5e1177;
+  --color--text: #535353;
+  --color--text-accentued: #484848;
+  --color--gray-light: #eee;
+  --color--gray-medium: #dadada;
+  --color--gray-dark: #7e7e7e;
+  --color--tap: #5e117740;
 
-  --outline-color: var(--color-accent);
+  --outline-color: var(--color--accent);
 
   --content-max-width: #{$content-max-width};
   --content-space-around: 1.25rem;
@@ -43,8 +43,8 @@ body {
   display: grid;
   gap: 1rem 0;
   grid-template-rows: auto 1fr 0 auto; // header main back-to-top footer
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-color: var(--color--light);
+  color: var(--color--dark);
   padding: var(--content-space-around);
 
   &.no-scroll {

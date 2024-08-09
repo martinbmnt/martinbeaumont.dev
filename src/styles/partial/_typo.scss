@@ -1,80 +1,42 @@
 :root {
-  // https://type-scale.com/ - Major second on mobile, then Minor third, and Major third for bigger screens
-  --font-size-h1: 1.802rem;
-  --font-size-h2: 1.602rem;
-  --font-size-h3: 1.424rem;
-  --font-size-h4: 1.266rem;
-  --font-size-h5: 1.125rem;
-  --font-size-normal: 1rem;
-  --font-size-small: 0.889rem;
-  --font-size-xsmall: 0.702rem;
+  --font-familly--title: 'Lexend Deca', Verdana, sans-serif;
+  --font-familly--text: 'Open Sans', Arial, sans-serif;
+  --font-familly--code: monospace;
 
-  --font-familly-title: 'Lexend Deca', Verdana, sans-serif;
-  --font-familly-text: 'Open Sans', Arial, sans-serif;
-  --font-familly-code: monospace;
-
-  --font-title: normal normal 400 var(--font-size-normal) var(--font-familly-title);
-  --font-text: normal normal 400 var(--font-size-normal) / 1.75rem var(--font-familly-text);
-  --font-code: normal normal 400 var(--font-size-normal) / 2rem var(--font-familly-code);
+  --font--title: normal normal 400 medium var(--font-familly--title);
+  --font--text: normal normal 400 medium / 1.75rem var(--font-familly--text);
+  --font--code: normal normal 400 medium / 2rem var(--font-familly--code);
 }
 
-@media (min-width: $screen-md) {
-  :root {
-    --font-size-h1: 2.488rem;
-    --font-size-h2: 2.074rem;
-    --font-size-h3: 1.728rem;
-    --font-size-h4: 1.44rem;
-    --font-size-h5: 1.2rem;
-    --font-size-small: 0.833rem;
-    --font-size-xsmall: 0.694rem;
-  }
-}
-
-@media (min-width: $screen-xl) {
-  :root {
-    --font-size-h1: 3.052rem;
-    --font-size-h2: 2.441rem;
-    --font-size-h3: 1.953rem;
-    --font-size-h4: 1.563rem;
-    --font-size-h5: 1.25rem;
-    --font-size-small: 0.8rem;
-    --font-size-xsmall: var(--font-size-small);
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
+:is(h1, h2, h3, h4, h5, h6) {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: var(--font-title);
-  color: black;
+  font: var(--font--title);
+  color: var(--color--dark);
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: xxx-large;
   margin-bottom: 2rem;
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  font-size: xx-large;
   margin: 4rem 0 0.5rem;
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  font-size: x-large;
   margin: 2rem 0 0.5rem;
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  font-size: large;
   margin: 2rem 0 1rem;
 }
 
 h5 {
-  font-size: var(--font-size-h5);
+  font-size: large;
 }
 
 strong {
@@ -94,8 +56,8 @@ p,
 li,
 address,
 blockquote {
-  font: var(--font-text);
-  color: var(--color-text);
+  font: var(--font--text);
+  color: var(--color--text);
 }
 
 figcaption,
@@ -104,9 +66,9 @@ pre + p em {
   display: block;
   max-width: 52ch;
   margin: 0.5rem auto;
-  font: var(--font-text);
-  font-size: var(--font-size-small);
-  color: var(--color-text);
+  font: var(--font--text);
+  font-size: small;
+  color: var(--color--text);
   font-style: italic;
   text-align: center;
   line-height: 1.5;
@@ -117,26 +79,26 @@ pre + p em {
 }
 
 code {
-  font: var(--font-code);
-  color: var(--color-text-accentued);
-  background-color: var(--color-gray-light);
+  font: var(--font--code);
+  color: var(--color--text-accentued);
+  background-color: var(--color--gray-light);
   padding: 0.125rem 0.25rem;
 }
 
 pre {
   white-space: nowrap;
-  
+
   .language-id {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-style: italic;
-    
+
     &:before {
       content: 'Langage : ';
     }
   }
-  
+
   code {
-    padding: 0.5rem 0.75rem .5rem 0;
+    padding: 0.5rem 0.75rem 0.5rem 0;
     overflow-x: auto;
     width: calc(100% - 1rem);
     margin-left: 0.5rem;
@@ -154,7 +116,7 @@ pre {
 }
 
 small {
-  font-size: var(--font-size-small);
+  font-size: small;
 }
 
 sup {
@@ -167,7 +129,7 @@ sup {
 }
 
 hr {
-  border-bottom: 1px solid var(--color-gray-medium);
+  border-bottom: 1px solid var(--color--gray-medium);
   margin: 1rem auto 1.5rem;
   width: 100%;
   max-width: 60ch;

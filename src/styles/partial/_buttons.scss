@@ -6,8 +6,8 @@
   line-height: 1.4;
   text-decoration: none;
   border-radius: 5px;
-  border: 2px solid var(--color-dark);
-  -webkit-tap-highlight-color: var(--color-tap);
+  border: 2px solid var(--color--dark);
+  -webkit-tap-highlight-color: var(--color--tap);
 }
 
 .button[data-encoded] {
@@ -17,7 +17,7 @@
 .button--with-icon {
   gap: 0.25rem;
   text-transform: lowercase;
-  transition: gap .025s;
+  transition: gap 0.025s;
 }
 
 .button--backtotop {
@@ -25,41 +25,41 @@
   bottom: var(--content-space-around);
   place-self: end;
   margin-top: calc(100vh + 200px);
-  background-color: var(--color-light);
+  background-color: var(--color--light);
   font-weight: bold;
-  font-size: var(--font-size-small);
+  font-size: small;
 }
 
 @media (any-hover: hover) {
   .button--with-icon {
     &:not(:hover) {
       gap: 0;
-      
+
       svg {
         width: 0;
       }
     }
-  
+
     &:focus {
-      border-color: var(--color-accent);
-  
+      border-color: var(--color--accent);
+
       svg {
-        fill: var(--color-accent);
+        fill: var(--color--accent);
       }
     }
-  
+
     svg {
-      transition: width .2s;
+      transition: width 0.2s;
     }
   }
 
   .button--backtotop {
     &:hover {
-      background-color: var(--color-gray-light);
+      background-color: var(--color--gray-light);
     }
 
     &:focus {
-      border-color: var(--color-accent);
+      border-color: var(--color--accent);
     }
   }
 }

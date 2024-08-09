@@ -1,23 +1,23 @@
 form {
   padding: 4px;
 
-  [role="alert"] {
-    border: 2px solid var(--color-accent);
-    padding: .5rem 1rem;
+  [role='alert'] {
+    border: 2px solid var(--color--accent);
+    padding: 0.5rem 1rem;
     place-self: center;
-  
-    &[aria-hidden="true"] {
+
+    &[aria-hidden='true'] {
       display: none;
     }
 
-    &[data-success="true"] {
+    &[data-success='true'] {
       & > :first-child:before {
         content: '✔️';
-        margin-right: .25rem;
+        margin-right: 0.25rem;
       }
     }
 
-    &[data-success="false"] {
+    &[data-success='false'] {
       & > :first-child:before {
         content: '❗';
       }
@@ -29,7 +29,7 @@ form {
   }
 
   button {
-    font: var(--font-title);
+    font: var(--font--title);
     place-self: center;
   }
 }
@@ -42,7 +42,7 @@ form {
     flex-direction: row-reverse;
     align-items: flex-start;
     gap: 1rem;
-    
+
     label {
       margin-right: auto;
       margin-bottom: unset;
@@ -51,7 +51,7 @@ form {
 
   p {
     line-height: 1.4;
-    margin: .5rem 0 0;
+    margin: 0.5rem 0 0;
   }
 
   small {
@@ -66,33 +66,33 @@ form {
 }
 
 label {
-  font: var(--font-text);
-  color: var(--color-text);
+  font: var(--font--text);
+  color: var(--color--text);
   margin-bottom: 0.5rem;
 }
 
 input,
 textarea {
-  border: 2px solid var(--color-dark);
-  background-color: var(--color-gray-light);
+  border: 2px solid var(--color--dark);
+  background-color: var(--color--gray-light);
   border-radius: 5px;
-  font: var(--font-title);
+  font: var(--font--title);
 
   &:focus {
     outline-offset: unset;
-    border-color: var(--color-accent);
-    outline: 2px dashed var(--color-accent);
+    border-color: var(--color--accent);
+    outline: 2px dashed var(--color--accent);
   }
 }
 
-input:not([type="radio"], [type="checkbox"]),
+input:not([type='radio'], [type='checkbox']),
 textarea {
-  font-size: var(--font-size-h5);
+  font-size: large;
   padding: 0.5rem;
   width: 100%;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   width: 1.5rem;
   height: 1.5rem;
   display: inline-block;
@@ -102,8 +102,10 @@ input[type="checkbox"] {
 
 textarea {
   resize: vertical;
-  min-height: 5rem;
-  max-height: 20rem;
+  min-height: calc(4lh + 1rem);
+  max-height: calc(10lh + 1rem);
+  field-sizing: content;
+  line-height: 1.5;
 }
 
 button {

@@ -8,12 +8,12 @@ aside {
 
   a {
     text-decoration: 2px underline;
-    text-decoration-color: var(--color-accent);
+    text-decoration-color: var(--color--accent);
     color: black;
   }
 
   strong {
-    color: var(--color-accent);
+    color: var(--color--accent);
   }
 
   p,
@@ -25,7 +25,7 @@ aside {
 
 blockquote {
   padding-left: 0.75rem;
-  border-left: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color--accent);
 
   & > *:nth-last-child(2) {
     margin-bottom: 1rem;
@@ -49,7 +49,7 @@ picture {
 }
 
 main[class*='page'] {
-  padding-block-end: calc(4px + 0.8rem + calc(1.4 * var(--font-size-small))); // Height of back to top button
+  padding-block-end: calc(4px + 0.8rem + calc(1.4 * 8 / 9 * 1rem)); // Height of back to top button
 
   h1 {
     text-align: center;
@@ -71,28 +71,28 @@ main[class*='page'] {
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
-    background-color: var(--color-gray-light);
+    background-color: var(--color--gray-light);
 
-    &[data-year]:not([data-year=""]):after {
+    &[data-year]:not([data-year='']):after {
       position: absolute;
-      background: var(--color-accent);
-      color: var(--color-light);
+      background: var(--color--accent);
+      color: var(--color--light);
       padding: 0.125rem 0.75rem;
       border-radius: 1rem;
       margin: unset;
       right: 0.75rem;
       top: calc(330px / 3 * 2 + 0.75rem);
-      font-family: var(--font-familly-title);
+      font-family: var(--font-familly--title);
     }
 
     h3 {
       margin: 2rem 1rem 0;
-      font-size: var(--font-size-h5);
+      font-size: larger;
       order: 1;
     }
 
     p {
-      color: var(--color-text-accentued);
+      color: var(--color--text-accentued);
     }
 
     p:first-of-type {
@@ -100,9 +100,9 @@ main[class*='page'] {
       order: 3;
     }
 
-    p:nth-of-type(n+2) {
+    p:nth-of-type(n + 2) {
       margin: 0 1rem;
-      color: var(--color-accent);
+      color: var(--color--accent);
       order: 2;
     }
 
@@ -117,7 +117,7 @@ main[class*='page'] {
 
     a {
       text-transform: lowercase;
-      font-size: var(--font-size-small);
+      font-size: small;
       margin-left: auto;
 
       &:before {
@@ -129,10 +129,11 @@ main[class*='page'] {
   }
 }
 
-@media (min-width: calc($screen-sm / 3 * 2)) { // 24em - 384px
+@media (min-width: calc($screen-sm / 3 * 2)) {
+  // 24em - 384px
   .bloc_portfolio__grid {
     article {
-      &[data-year]:not([data-year=""]):after {
+      &[data-year]:not([data-year='']):after {
         content: attr(data-year);
       }
     }
@@ -152,13 +153,13 @@ main[class*='page'] {
     justify-content: flex-end;
     padding-bottom: 1rem;
     position: relative;
-    border: 1px solid var(--color-accent);
-    border-radius: .5rem;
+    border: 1px solid var(--color--accent);
+    border-radius: 0.5rem;
 
     &:hover,
     &:focus-within {
       h3:after {
-        opacity: .05;
+        opacity: 0.05;
       }
     }
 
@@ -166,16 +167,16 @@ main[class*='page'] {
       position: relative;
       padding: 2rem 1rem;
       margin: unset;
-      font-size: var(--font-size-h5);
+      font-size: large;
       text-align: center;
 
       &:after {
         content: '';
         position: absolute;
         inset: 0;
-        background-color: var(--color-accent);
+        background-color: var(--color--accent);
         opacity: 0;
-        transition: opacity .2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
       }
     }
 
@@ -189,20 +190,20 @@ main[class*='page'] {
 
     p:first-of-type {
       margin: 0.5rem 1rem;
-      color: var(--color-accent);
+      color: var(--color--accent);
     }
-    
-    p:nth-of-type(n+2) {
+
+    p:nth-of-type(n + 2) {
       margin: 0 1rem;
     }
-    
+
     p:last-of-type {
       margin-top: 1rem;
     }
 
     a {
       text-transform: lowercase;
-      font-size: var(--font-size-small);
+      font-size: small;
       margin-left: auto;
 
       &:before {
@@ -231,40 +232,40 @@ main[class*='page'] {
 
     &:hover {
       svg {
-        color: var(--color-gray-dark);
+        color: var(--color--gray-dark);
       }
     }
 
     &:focus-within {
       svg {
-        color: var(--color-accent);
+        color: var(--color--accent);
       }
     }
   }
 
   a {
-    border: 2px solid var(--color-dark);
+    border: 2px solid var(--color--dark);
     border-radius: 5px;
     display: grid;
     grid-template-columns: 65% 35%;
     text-decoration: unset;
     outline-offset: 2px;
-    -webkit-tap-highlight-color: var(--color-tap);
+    -webkit-tap-highlight-color: var(--color--tap);
 
     &:focus {
-      border-color: var(--color-accent);
+      border-color: var(--color--accent);
     }
   }
 
   h3 {
     margin: unset;
     place-self: center;
-    
+
     &:after {
       content: attr(data-link);
       display: block;
-      font-size: var(--font-size-xsmall);
-      color: var(--color-accent);
+      font-size: small;
+      color: var(--color--accent);
     }
   }
 
@@ -274,8 +275,8 @@ main[class*='page'] {
     margin: 2rem 2rem 2rem auto;
     aspect-ratio: 1 / 1;
     place-self: center;
-    color: var(--color-gray-medium);
-    transition: color .15s ease-out;
+    color: var(--color--gray-medium);
+    transition: color 0.15s ease-out;
 
     &:not(:hover) {
       transition-duration: 0;
@@ -286,14 +287,8 @@ main[class*='page'] {
 @media (min-width: $screen-md) {
   .social_networks {
     ul {
-      padding: .5rem;
+      padding: 0.5rem;
       grid-template-columns: repeat(2, 37ch);
-    }
-
-    h3 {
-      &:after {
-        font-size: var(--font-size-small);
-      }
     }
   }
 }
@@ -301,7 +296,7 @@ main[class*='page'] {
 @media (min-width: $screen-lg) {
   .social_networks {
     ul {
-      padding: .5rem;
+      padding: 0.5rem;
       grid-template-columns: repeat(auto-fill, minmax(37ch, 1fr));
     }
 
@@ -316,7 +311,7 @@ main[class*='page'] {
     }
 
     h3 {
-      font-size: var(--font-size-h3);
+      font-size: x-large;
     }
   }
 }
@@ -332,12 +327,12 @@ main[class*='page'] {
   h2 {
     display: grid;
     gap: 0.5rem;
-  
+
     &:before {
       content: attr(data-subtitle);
-      color: var(--color-accent);
+      color: var(--color--accent);
       text-transform: lowercase;
-      font-size: var(--font-size-small);
+      font-size: small;
     }
   }
   .page_home__portfolio {
@@ -364,10 +359,10 @@ main[class*='page'] {
       margin-top: 4rem;
       margin-bottom: 6rem;
     }
-    
+
     h2 {
       &:before {
-        font-size: var(--font-size-h5);
+        font-size: large;
       }
     }
   }
@@ -392,17 +387,17 @@ main[class*='page'] {
     h1 {
       margin-bottom: 1rem;
     }
-  
+
     p {
       max-width: $text-max-width;
       margin: auto;
       position: relative;
       line-height: 1.25rem;
-  
+
       &:before {
         content: '[n. m.]';
-        font: var(--font-code);
-        background-color: var(--color-gray-light);
+        font: var(--font--code);
+        background-color: var(--color--gray-light);
         padding: 0.125rem 0.25rem;
         margin-right: 0.25rem;
         vertical-align: text-bottom;
@@ -410,18 +405,18 @@ main[class*='page'] {
       }
     }
   }
-  
+
   .page_about__presentation p {
     max-width: $text-max-width;
     margin-left: auto;
     margin-right: auto;
-  
+
     &:first-of-type:before {
       content: '👋';
-      font: var(--font-text);
+      font: var(--font--text);
     }
   }
-  
+
   .page_about__work,
   .page_about__training {
     ol {
@@ -429,7 +424,7 @@ main[class*='page'] {
     }
 
     li {
-      border-bottom: 1px solid var(--color-gray-medium);
+      border-bottom: 1px solid var(--color--gray-medium);
     }
 
     h3 {
@@ -439,7 +434,7 @@ main[class*='page'] {
     p {
       &:first-of-type {
         margin: unset;
-        color: var(--color-accent);
+        color: var(--color--accent);
         text-transform: lowercase;
       }
 
@@ -485,7 +480,7 @@ main[class*='page'] {
       &:nth-last-of-type(2) {
         margin-bottom: 0;
       }
-  
+
       &:last-of-type {
         text-align: center;
       }
@@ -506,8 +501,8 @@ main[class*='page'] {
   .page_contact {
     grid-template-columns: repeat(2, 1fr);
 
-    .form_row:nth-child(n+3),
-    [role="alert"],
+    .form_row:nth-child(n + 3),
+    [role='alert'],
     button {
       grid-column: 1 / -1;
     }
@@ -550,8 +545,8 @@ main[class*='page'] {
   details {
     list-style-type: disclosure-closed;
     margin: 1rem 0;
-    padding: .5rem 2rem;
-    border: 1px solid var(--color-accent);
+    padding: 0.5rem 2rem;
+    border: 1px solid var(--color--accent);
     border-radius: 5px;
 
     &[open] {

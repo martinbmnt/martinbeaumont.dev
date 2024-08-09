@@ -4,7 +4,7 @@
   --content-max-width: #{$portfolio-max-width};
 
   h3 {
-    color: var(--color-text);
+    color: var(--color--text);
   }
 
   > ul {
@@ -34,7 +34,7 @@
 
   .footnotes {
     :target {
-      outline: 2px dashed var(--color-accent);
+      outline: 2px dashed var(--color--accent);
     }
 
     ol {
@@ -61,7 +61,7 @@
 }
 
 .portfolio_item__cover {
-  border: 2px solid var(--color-accent);
+  border: 2px solid var(--color--accent);
 }
 
 .portfolio_item__summary {
@@ -79,13 +79,13 @@
   }
 
   h3 {
-    font-size: var(--font-size-normal);
+    font-size: medium;
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
-    gap: .25rem;
+    gap: 0.25rem;
   }
 
   p {
@@ -94,7 +94,7 @@
 
   li:not(:last-child):after {
     content: '-';
-    margin-left: .25rem;
+    margin-left: 0.25rem;
   }
 }
 
@@ -113,9 +113,9 @@
     &:before {
       content: '“';
       font-size: 2rem;
-      font-family: var(--font-familly-title);
+      font-family: var(--font-familly--title);
       line-height: 0;
-      color: var(--color-accent);
+      color: var(--color--accent);
     }
   }
 
