@@ -45,4 +45,4 @@ export const collections = {
       draft: z.boolean().default(false),
     })
   }),
-}
+};

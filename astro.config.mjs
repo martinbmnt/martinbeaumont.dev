@@ -17,4 +17,7 @@ export default defineConfig({
       footnoteBackLabel: 'Revenir au contenu',
     },
   },
+  experimental: {
+    contentIntellisense: true,
+  },
 });
