@@ -35,7 +35,7 @@
     "sharp": "^0.33.4",
     "shiki": "^1.13.0",
     "start-server-and-test": "^2.0.5",
-    "the-new-css-reset": "^1.11.2",
+    "the-new-css-reset": "^1.11.3",
     "typescript": "^5.5.4"
   },
   "resolutions": {
