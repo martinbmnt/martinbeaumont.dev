@@ -12,7 +12,7 @@ services:
   - Accessibilité
   - Design
   - Référencement
-publishDate: 2024-06-21 14:00:00
+publishDate: 2024-06-21T14:00:00+01:00
 releaseYear: 2024
 cover:
   src: ../../assets/images/project/festival-oies-sauvages-cover.jpg

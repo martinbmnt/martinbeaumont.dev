@@ -14,7 +14,7 @@ services:
   - Intégration en FSE (Full Site Editing)
   - Intégration et déploiement continus
   - Gestion de l'hébergement
-publishDate: 2024-06-20 14:00:00
+publishDate: 2024-06-20T14:00:00+01:00
 releaseYear: 2024
 cover:
   src: ../../assets/images/project/jisbar-cover.jpg

@@ -12,7 +12,7 @@ services:
   - Design
   - Référencement
   - Formation
-publishDate: 2022-08-19 14:00:00
+publishDate: 2022-08-19T14:00:00+01:00
 releaseYear: 2019
 cover:
   src: ../../assets/images/project/maine-image-sante-cover.jpg

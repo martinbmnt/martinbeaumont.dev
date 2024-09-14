@@ -15,7 +15,7 @@ services:
   - Référencement
   - Intégration et déploiement continus
   - Gestion de l'hébergement
-publishDate: 2022-11-26 14:00:00
+publishDate: 2022-11-26T14:00:00+01:00
 releaseYear: 2022
 cover:
   src: ../../assets/images/project/ze-astronaut-cover.jpg

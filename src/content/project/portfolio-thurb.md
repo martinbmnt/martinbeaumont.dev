@@ -13,7 +13,7 @@ services:
   - Référencement
   - Gestion de l'hébergement
   - Formation
-publishDate: 2022-08-20 14:00:00
+publishDate: 2022-08-20T14:00:00+01:00
 releaseYear: 2021
 cover:
   src: ../../assets/images/project/portfolio-thurb-cover.jpg

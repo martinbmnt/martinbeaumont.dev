@@ -15,7 +15,7 @@ services:
   - Référencement
   - Intégration & déploiement continus
   - Gestion de l'hébergement
-publishDate: 2022-08-31 14:00:00
+publishDate: 2022-08-31T14:00:00+01:00
 releaseYear: 2022
 cover:
   src: ../../assets/images/project/portfolio-thommy-cover.jpg

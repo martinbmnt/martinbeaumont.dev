@@ -13,8 +13,8 @@ services:
   - Gestion de l'hébergement
   - Gestion de projet
   - Formation
-publishDate: 2023-04-23 14:00:00
-updateDate: 2023-12-05 12:00:00
+publishDate: 2023-04-23T14:00:00+01:00
+updateDate: 2023-12-05T14:00:00+01:00
 releaseYear: 2020 - 2023
 cover:
   src: ../../assets/images/project/soscine-stock-cover.jpg

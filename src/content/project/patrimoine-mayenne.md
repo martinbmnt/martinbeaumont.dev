@@ -15,7 +15,7 @@ services:
   - Optimisation des performances
   - Référencement
   - Conseil
-publishDate: 2022-08-21 14:00:00
+publishDate: 2022-08-21T14:00:00+01:00
 releaseYear: 2022
 cover:
   src: ../../assets/images/project/patrimoine-mayenne-cover.jpg
