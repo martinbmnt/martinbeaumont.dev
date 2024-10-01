@@ -31,7 +31,7 @@
     "pa11y-ci": "^3.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.77.8",
+    "sass": "^1.79.4",
     "sharp": "^0.33.5",
     "shiki": "^1.16.1",
     "start-server-and-test": "^2.0.5",
