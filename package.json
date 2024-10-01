@@ -25,7 +25,7 @@
     "@astrojs/sitemap": "3.1.6",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "4.15.1",
+    "astro": "4.15.10",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^1.2.3",
     "pa11y-ci": "^3.1.0",
