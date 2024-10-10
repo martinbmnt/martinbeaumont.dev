@@ -14,11 +14,9 @@ export async function GET() {
 /* THANKS */
 
   Feedbacks: Maxence Colet
-  Twitter: @MaxenceClt
   From: Laval, France
   
   CSS Reset by: Elad Shechter (@eladsc) / https://github.com/elad2412/the-new-css-reset
-    
 
 /* SITE */
 
