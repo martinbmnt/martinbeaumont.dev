@@ -56,9 +56,9 @@ Header set Permissions-Policy "geolocation=(), microphone=(), interest-cohort=()
 
 # Configure ModPagespeed
 
-ModPagespeedCriticalImagesBeaconEnabled false
-ModPagespeedModifyCachingHeaders off
-ModPagespeedXHeaderValue "Configured for martinbeaumont.dev"
+#ModPagespeedCriticalImagesBeaconEnabled false
+#ModPagespeedModifyCachingHeaders off
+#ModPagespeedXHeaderValue "Configured for martinbeaumont.dev"
 
 # Disable directory indexes
 
