@@ -26,7 +26,6 @@ review:
   author: Thommy
   content: |
     J'ai contacté Martin pour la réalisation de mon site Web au cours de l'année. Ma demande était précise et il a su y répondre parfaitement.
-    Malgré des retours parfois hors budget, ils ont été effectués sans problème.
     Et surtout la réactivité et les délais de réalisation en font un professionnel excellent.
     Merci Martin !
   link: https://goo.gl/maps/4j1bSkYfGbggaWn2A
