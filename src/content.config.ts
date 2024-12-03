@@ -1,8 +1,9 @@
 import { z, defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 export const collections = {
   project: defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/[^_]*.md', base: "./src/data/project" }),
     schema: ({ image }) => z.object({
       title: z.string(),
       excerpt: z.string(),
@@ -13,13 +14,9 @@ export const collections = {
       updateDate: z.date().optional(),
       releaseYear: z.number().or(z.string()),
       cover: z.object({
-        src: image().refine((img) => img.width >= 1280 && img.height >= 960, {
-          message: 'Cover images must be at least 1280x960'
-        }),
+        src: image(),
         alt: z.string(),
-        seo: image().refine((img) => img.width === 1200 && img.height === 600, {
-          message: 'SEO images must be 1200x600'
-        }),
+        seo: image(),
       }),
       review: z.optional(z.object({
         author: z.string(),
@@ -31,7 +28,7 @@ export const collections = {
     })
   }),
   technology: defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/[^_]*.md', base: "./src/data/technology" }),
     schema: ({ image }) => z.object({
       title: z.string(),
       logo: z.object({

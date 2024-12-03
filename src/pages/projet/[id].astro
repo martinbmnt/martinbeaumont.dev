@@ -9,6 +9,7 @@ import ProjectIntroduction from '~components/Project/ProjectIntroduction.astro';
 import ProjectCover from '~components/Project/ProjectCover.astro';
 import ProjectReview from "~components/Project/ProjectReview.astro";
 import type { ImageMetadata } from "astro";
+import { render } from "astro:content";
 
 interface Props {
   project: CollectionEntry<'project'>;
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
 
   return projects.map((project) => ({
     params: {
-      slug: project.slug
+      id: project.id
     },
     props: {
       project
@@ -27,18 +28,18 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project: { data } } = Astro.props as Props;
-const { Content } = await Astro.props.project.render();
+const { project } = Astro.props;
+const { Content } = await render(project);
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: `${data.title} – Portfolio – Martin Beaumont`,
+  headline: `${project.data.title} – Portfolio – Martin Beaumont`,
   image: [
-    `${Astro.site.href}${data.cover.src}`,
+    `${Astro.site.href}${project.data.cover.src}`,
   ],
-  datePublished: data.publishDate,
-  dateModified: data.updateDate,
+  datePublished: project.data.publishDate,
+  dateModified: project.data.updateDate,
   author: {
     '@id': `${Astro.site}#author`,
   },
@@ -46,39 +47,39 @@ const schema = {
 ---
 
 <BaseLayout
-  title={`${data.title} – Portfolio`}
-  description={data.excerpt}
-  image={({src: data.cover.seo.src, alt: data.cover.alt})}
+  title={`${project.data.title} – Portfolio`}
+  description={project.data.excerpt}
+  image={({src: project.data.cover.seo.src, alt: project.data.cover.alt})}
   articleSection="Portfolio"
-  publishDate={data.publishDate.toString()}
-  updateDate={data.updateDate?.toString()}>
+  publishDate={project.data.publishDate.toString()}
+  updateDate={project.data.updateDate?.toString()}>
   <main>
     <article id="content" class="portfolio_item" aria-labelledby="article-title">
-      <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={data.title} />
+      <Breadcrumb page={{ path: '/portfolio', name: 'Portfolio' }} article={project.data.title} />
       <header>
-        <h1 id="article-title">{data.title}</h1>
-        <p>{data.excerpt}</p>
+        <h1 id="article-title">{project.data.title}</h1>
+        <p>{project.data.excerpt}</p>
       </header>
-      <ProjectCover cover={data.cover.src as ImageMetadata} cover_alt={data.cover.alt} />
-      <ProjectIntroduction technologies={data.technologies} services={data.services} site={data.site} />
+      <ProjectCover cover={project.data.cover.src as ImageMetadata} cover_alt={project.data.cover.alt} />
+      <ProjectIntroduction technologies={project.data.technologies} services={project.data.services} site={project.data.site} />
       <Content />
-      {data.review && 
-        <ProjectReview author={data.review.author} link={data.review.link}>
-          {data.review.content}
+      {project.data.review && 
+        <ProjectReview author={project.data.review.author} link={project.data.review.link}>
+          {project.data.review.content}
         </ProjectReview>
       }
       <footer>
         <p>
           <small>
             Crédits images : sauf mention contraire, les captures d'écrans présentent sur cette page proviennent du site
-            {data.site ? <a href={data.site} rel="noopener" target="_blank">{data.site.replace(/https:\/\//, '')}</a> : <>de {data.title}</>}.
+            {project.data.site ? <a href={project.data.site} rel="noopener" target="_blank">{project.data.site.replace(/https:\/\//, '')}</a> : <>de {project.data.title}</>}.
           </small>
         </p>
         <p>
           <small>
             Publié le
-            <Date datetime={data.publishDate.toString()} />{data.updateDate && <>, mis à jour le
-              <Date datetime={data.updateDate?.toString()} />
+            <Date datetime={project.data.publishDate.toString()} />{project.data.updateDate && <>, mis à jour le
+              <Date datetime={project.data.updateDate?.toString()} />
             </>}
           </small>
         </p>
