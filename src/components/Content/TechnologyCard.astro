@@ -5,7 +5,7 @@ interface Props {
   technology: CollectionEntry<'technology'>;
 }
 
-const { technology: { data, slug } } = Astro.props as Props;
+const { technology: { data, id } } = Astro.props;
 
 const projects = (await getCollection('project', (project) => project.data.technologies.includes(data.title)));
 ---
@@ -20,7 +20,7 @@ const projects = (await getCollection('project', (project) => project.data.techn
   </p>
   <p>{data.description}</p>
   <p>
-    <a class="button button--with-icon" href={`/technologie/${slug}`}>
+    <a class="button button--with-icon" href={`/technologie/${id}`}>
       <span>En savoir plus</span>
       <span class="visually-hidden"> sur {data.title}</span>
       <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">

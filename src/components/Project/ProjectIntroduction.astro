@@ -11,7 +11,7 @@ const content = Astro.props as Props;
 
 const technologies = (await getCollection('technology', (technology) => content.technologies.includes(technology.data.title)))
   .reduce((acum, technology) => {
-    acum[technology.data.title] = technology.slug;
+    acum[technology.data.title] = technology.id;
     return acum;
   }, {} as Record<string, string>);
 ---

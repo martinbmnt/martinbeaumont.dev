@@ -29,7 +29,7 @@ const { project: { data, slug }, index, showReleaseYear = true } = Astro.props a
     decoding={index && index < 3 ? "sync" : "async"}
   />
   <p>
-    <a class="button button--with-icon" href={`/projet/${slug}`}>
+    <a class="button button--with-icon" href={`/projet/${id}`}>
       <span>Voir l'étude de cas</span>
       <span class="visually-hidden"> du projet {data.title}</span>
       <svg focusable="false" aria-hidden="true" class="icon-arrow-right-thin">
