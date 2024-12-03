@@ -23,7 +23,7 @@ const socials = [
   <ul aria-label="Me retrouver sur les réseaux sociaux">
     {socials.map((social) => (
       <li>
-        <a href={social.link} target="_blank" rel="nofollow noopener">
+        <a href={social.link} target="_blank" rel="nofollow noopener me">
           <h3 data-link={social.link.replace(/http(s)?:(\/)+(www\.)?/, '')}>
             <span class="visually-hidden">Profil</span>
             <span lang="en">{social.name}</span>
