@@ -7,7 +7,7 @@ export interface Props {
   site?: string;
 }
 
-const content = Astro.props as Props;
+const content = Astro.props;
 
 const technologies = (await getCollection('technology', (technology) => content.technologies.includes(technology.data.title)))
   .reduce((acum, technology) => {

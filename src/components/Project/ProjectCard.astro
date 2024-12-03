@@ -9,7 +9,7 @@ interface Props {
   showReleaseYear?: boolean;
 }
 
-const { project: { data, slug }, index, showReleaseYear = true } = Astro.props as Props;
+const { project: { data, id }, index, showReleaseYear = true } = Astro.props;
 ---
 
 <article data-year={showReleaseYear ? data.releaseYear : null}>

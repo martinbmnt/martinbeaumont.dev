@@ -15,7 +15,7 @@ export interface Props {
 }
 
 const canonicalURL = getCanonicalURL(Astro.site.host, Astro.url.pathname.replace(/\.html/, ''));
-const content = Astro.props as Props;
+const content = Astro.props;
 
 const formattedContentTitleForMeta = content.title ? `${content.title} – ${SITE.title}` : SITE.title;
 const imageSrc = content?.image?.src ?? OPEN_GRAPH.image.src;
