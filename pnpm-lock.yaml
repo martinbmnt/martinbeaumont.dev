@@ -34,8 +34,8 @@ importers:
         specifier: ^8.17.0
         version: 8.17.0(eslint@9.16.0)(typescript@5.7.2)
       astro:
-        specifier: 5.0.0
-        version: 5.0.0(@types/node@22.10.1)(rollup@4.28.0)(sass@1.81.1)(typescript@5.7.2)(yaml@2.6.1)
+        specifier: 5.0.1
+        version: 5.0.1(@types/node@22.10.1)(rollup@4.28.0)(sass@1.81.1)(typescript@5.7.2)(yaml@2.6.1)
       eslint:
         specifier: ^9.16.0
         version: 9.16.0
@@ -1035,8 +1035,8 @@ packages:
     resolution: {integrity: sha512-F6NW1RJo5pp2kPnnM97M5Ohw8zAGjv83MpxHqfAochH68n/kiXN57+hYaNUCA7XkScoVNr6yzvly3hsY34TGfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.0.0:
-    resolution: {integrity: sha512-hsDlZ8m8rHWDdvCi3TcgFT6vS2S4Wt33m9AUOPfLUZ1JkzchIKtviWbGFqJCu3LhlpnUHyP2AxujWVm+IBS6tw==}
+  astro@5.0.1:
+    resolution: {integrity: sha512-7XzFq3eFdSkeT/aCNealVv4klwmKoOYb6LZymbyZQrdUA9vEoUCKFcujVo4YbJJ8WXyEm515ZHPCxHTdDneEug==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3719,7 +3719,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@5.0.0(@types/node@22.10.1)(rollup@4.28.0)(sass@1.81.1)(typescript@5.7.2)(yaml@2.6.1):
+  astro@5.0.1(@types/node@22.10.1)(rollup@4.28.0)(sass@1.81.1)(typescript@5.7.2)(yaml@2.6.1):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
