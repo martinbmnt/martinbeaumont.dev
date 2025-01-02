@@ -2,7 +2,7 @@
 title: Festival Les Oies Sauvages
 excerpt: |
   Création d'un site internet pour présenter l'évènement et le programme du festival.
-site: https://festival-oiessauvages.fr
+site: https://2024.festival-oiessauvages.fr
 technologies:
   - Astro
   - Sass
