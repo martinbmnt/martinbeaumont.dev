@@ -11,7 +11,7 @@ Other content images must be 896 pixels wide, and JPG encoding.
 
 ## Content
 
-First, create a new Markdown file in `src/content/project`.
+First, create a new Markdown file in `src/data/project`.
 
 Duplicate frontmatter from another project, update with the new project informations.
 
