@@ -15,13 +15,17 @@
     margin-top: unset;
   }
 
+  > ol {
+    list-style: decimal;
+  }
+
   figure > p {
     margin-bottom: 0.5rem;
   }
 
   .footnotes ol,
-  > ul {
-    padding-left: 1rem;
+  > :is(ul, ol) {
+    padding-inline-start: 2ch;
 
     ::marker {
       content: unset;
